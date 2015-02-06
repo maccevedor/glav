@@ -1,40 +1,69 @@
-#Symfony (2.6.4)
+Symfony Standard Edition
+========================
 
+Welcome to the Symfony Standard Edition - a fully-functional Symfony2
+application that you can use as the skeleton for your new applications.
 
-##Using the Pack##
+For details on how to download and get started with Symfony, see the
+[Installation][1] chapter of the Symfony Documentation.
 
-To use the Pack, we created 2 menu options, which you can find on the right of the menu. These menus can be configured in the `.codio` file.
+What's inside?
+--------------
 
+The Symfony Standard Edition is configured with the following defaults:
 
-1. **Configure Project** : Select this when you first access the project to configures the Symfony Site Timezones for your Project.
-1. **Symfony Config**: This previews your app. Note the Preview menu allows you to select 'Inside Codio' or 'New Browser Tab'. 
+  * An AppBundle you can use to start coding;
 
-##Configure Symfony##
-To configure your Symfony Site Timezones
+  * Twig as the only configured template engine;
 
-1. Go to the Run menu.
-1. Select `Configure Project`.
+  * Doctrine ORM/DBAL;
 
-If you prefer to run the configuration script yourself, open the terminal (Tools>Terminal) and enter
+  * Swiftmailer;
 
-    bash symfonyconfig.sh
-    
-##Accessing the application
+  * Annotations enabled for everything.
 
-To access your Symfony application
+It comes pre-configured with the following bundles:
 
-1. Go to the Preview menu.
-1. Select `Symfony Config`.
+  * **FrameworkBundle** - The core Symfony framework bundle
 
+  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
+    template and routing annotation capability
 
-We set this up using https so it can be previewed inside a Codio Tab.
+  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
 
-##How the Pack was prepared
-This Starter Pack was built on the `LAMP+Composer` Codio Certified Stack.
+  * [**TwigBundle**][8] - Adds support for the Twig templating engine
 
-##Useful Links
+  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
+    component
 
-- [Symfony Site](http://symfony.com)
-- [Symfony Docs](http://symfony.com/doc/current/index.html)
+  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
+    sending emails
 
+  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
 
+  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
+    library
+
+  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
+    the web debug toolbar
+
+  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
+    configuring and working with Symfony distributions
+
+  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
+    capabilities
+
+All libraries and bundles included in the Symfony Standard Edition are
+released under the MIT or BSD license.
+
+Enjoy!
+
+[1]:  http://symfony.com/doc/2.6/book/installation.html
+[6]:  http://symfony.com/doc/2.6/bundles/SensioFrameworkExtraBundle/index.html
+[7]:  http://symfony.com/doc/2.6/book/doctrine.html
+[8]:  http://symfony.com/doc/2.6/book/templating.html
+[9]:  http://symfony.com/doc/2.6/book/security.html
+[10]: http://symfony.com/doc/2.6/cookbook/email.html
+[11]: http://symfony.com/doc/2.6/cookbook/logging/monolog.html
+[12]: http://symfony.com/doc/2.6/cookbook/assetic/asset_management.html
+[13]: http://symfony.com/doc/2.6/bundles/SensioGeneratorBundle/index.html
