@@ -1,0 +1,8 @@
+{
+    "commands": {
+     "Configure Project": "bash symfonyconfig.sh"
+    },
+    "preview": {
+     "Symfony Config": "https://{{domain}}:9500/web/config.php"
+    }
+}
