@@ -1,4 +1,17 @@
-Inician Programacion
+ Crear base de datos con las entitys
+ 
+ php app/console doctrine:schema:update --force 
+ 
+ Si saba se de datos ya existe 
+  y la queremos importar 
+  
+php app/console doctrine:mapping:convert xml ./src/Acme/DemoBundle/Resources/config/doctrine/metadata/orm --from-database --force
+php app/console doctrine:mapping:import AcmeDemoBundle annotation
+php app/console doctrine:generate:entities AcmeDemoBundle
+
+Para eliminar la cache utilizamos :
+
+php app/console cache:clear
 
 # Symfony (2.6.4)
 
