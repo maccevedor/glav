@@ -13,6 +13,12 @@ Para eliminar la cache utilizamos :
 
 php app/console cache:clear
 
+
+Gennera getter and setter 
+
+php app/console doctrine:generate:entities AppBundle/Entity/Product
+
+
 # Symfony (2.6.4)
 
 
