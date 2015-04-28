@@ -5,12 +5,12 @@ namespace GlavBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Automotor
+ * Factura
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\AutomotorRepository")
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\FacturaRepository")
  */
-class Automotor
+class Factura
 {
     /**
      * @var integer
@@ -30,35 +30,62 @@ class Automotor
     private $hash;
     
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="id_tipo_automotor", type="string", length=255)
+     * @ORM\Column(name="id_usuario", type="integer", length=50)
      */
     
     
-    private $id_tipo_automotor;
+    private $id_usuario;
+    
+
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_factura_detalle", type="integer", length=50)
+     */
+    
+    
+    
+    private $id_factura_detalle;
+    
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="valor", type="string", length=255)
+     */
+    
+    
+    private $valor;
+    
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="iva", type="string", length=255)
+     */
+    
+    
+    private $iva;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="tipo_rubro", type="string", length=255)
+     * @ORM\Column(name="total", type="string", length=255)
      */
-    private $tipo_rubro;
+    
+    
+    private $total;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="modelo", type="string", length=250, nullable=true)
+     * @ORM\Column(name="observacion", type="string", length=255)
      */
-    private $modelo;
     
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="matricula", type="string", length=200, nullable=true)
-     */
-    private $matricula;
+    private $observacion;
+        
 
       
     /**

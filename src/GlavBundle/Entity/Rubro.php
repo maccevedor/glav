@@ -43,7 +43,7 @@ class Rubro
      *
      * @ORM\Column(name="tipo_rubro", type="string", length=255)
      */
-    private $tipo_rubro;
+    private $id_tipo_rubro;
     
     /**
      * @var string

@@ -5,12 +5,12 @@ namespace GlavBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Automotor
+ * TipoRubro
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\AutomotorRepository")
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\TipoRubroRepository")
  */
-class Automotor
+class TipoRubro
 {
     /**
      * @var integer
@@ -28,39 +28,18 @@ class Automotor
      */
     
     private $hash;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="id_tipo_automotor", type="string", length=255)
-     */
-    
-    
-    private $id_tipo_automotor;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo_rubro", type="string", length=255)
-     */
-    private $tipo_rubro;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="modelo", type="string", length=250, nullable=true)
-     */
-    private $modelo;
-    
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="matricula", type="string", length=200, nullable=true)
-     */
-    private $matricula;
 
-      
+  
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255)
+     */
+    
+    
+    private $descripcion;
+    
+        
     /**
      * @var string
      *
