@@ -81,6 +81,7 @@ class Servicio
     
     
     private $observacion;
+    
         
         
     /**
@@ -128,6 +129,257 @@ class Servicio
         return $this->id;
     }
 
+
+    /**
+     * Set hash
+     *
+     * @param string $hash
+     * @return Servicio
+     */
+    public function setHash($hash)
+    {
+        $this->hash = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Get hash
+     *
+     * @return string 
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    /**
+     * Set id_usuario
+     *
+     * @param integer $idUsuario
+     * @return Servicio
+     */
+    public function setIdUsuario($idUsuario)
+    {
+        $this->id_usuario = $idUsuario;
+
+        return $this;
+    }
+
+    /**
+     * Get id_usuario
+     *
+     * @return integer 
+     */
+    public function getIdUsuario()
+    {
+        return $this->id_usuario;
+    }
+
+    /**
+     * Set id_cliente
+     *
+     * @param integer $idCliente
+     * @return Servicio
+     */
+    public function setIdCliente($idCliente)
+    {
+        $this->id_cliente = $idCliente;
+
+        return $this;
+    }
+
+    /**
+     * Get id_cliente
+     *
+     * @return integer 
+     */
+    public function getIdCliente()
+    {
+        return $this->id_cliente;
+    }
+
+    /**
+     * Set id_empleado
+     *
+     * @param integer $idEmpleado
+     * @return Servicio
+     */
+    public function setIdEmpleado($idEmpleado)
+    {
+        $this->id_empleado = $idEmpleado;
+
+        return $this;
+    }
+
+    /**
+     * Get id_empleado
+     *
+     * @return integer 
+     */
+    public function getIdEmpleado()
+    {
+        return $this->id_empleado;
+    }
+
+    /**
+     * Set id_automotor
+     *
+     * @param integer $idAutomotor
+     * @return Servicio
+     */
+    public function setIdAutomotor($idAutomotor)
+    {
+        $this->id_automotor = $idAutomotor;
+
+        return $this;
+    }
+
+    /**
+     * Get id_automotor
+     *
+     * @return integer 
+     */
+    public function getIdAutomotor()
+    {
+        return $this->id_automotor;
+    }
+
+    /**
+     * Set id_estado_servicio
+     *
+     * @param integer $idEstadoServicio
+     * @return Servicio
+     */
+    public function setIdEstadoServicio($idEstadoServicio)
+    {
+        $this->id_estado_servicio = $idEstadoServicio;
+
+        return $this;
+    }
+
+    /**
+     * Get id_estado_servicio
+     *
+     * @return integer 
+     */
+    public function getIdEstadoServicio()
+    {
+        return $this->id_estado_servicio;
+    }
+
+    /**
+     * Set observacion
+     *
+     * @param string $observacion
+     * @return Servicio
+     */
+    public function setObservacion($observacion)
+    {
+        $this->observacion = $observacion;
+
+        return $this;
+    }
+
+    /**
+     * Get observacion
+     *
+     * @return string 
+     */
+    public function getObservacion()
+    {
+        return $this->observacion;
+    }
+
+    /**
+     * Set fecha_servicio
+     *
+     * @param \DateTime $fechaServicio
+     * @return Servicio
+     */
+    public function setFechaServicio($fechaServicio)
+    {
+        $this->fecha_servicio = $fechaServicio;
+
+        return $this;
+    }
+
+    /**
+     * Get fecha_servicio
+     *
+     * @return \DateTime 
+     */
+    public function getFechaServicio()
+    {
+        return $this->fecha_servicio;
+    }
+
+    /**
+     * Set fecha_entrega
+     *
+     * @param \DateTime $fechaEntrega
+     * @return Servicio
+     */
+    public function setFechaEntrega($fechaEntrega)
+    {
+        $this->fecha_entrega = $fechaEntrega;
+
+        return $this;
+    }
+
+    /**
+     * Get fecha_entrega
+     *
+     * @return \DateTime 
+     */
+    public function getFechaEntrega()
+    {
+        return $this->fecha_entrega;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     * @return Servicio
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set fecha
+     *
+     * @param \DateTime $fecha
+     * @return Servicio
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return \DateTime 
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
 }
-
-

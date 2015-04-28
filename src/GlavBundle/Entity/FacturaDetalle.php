@@ -108,6 +108,188 @@ class FacturaDetalle
         return $this->id;
     }
 
+
+    /**
+     * Set hash
+     *
+     * @param string $hash
+     * @return FacturaDetalle
+     */
+    public function setHash($hash)
+    {
+        $this->hash = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Get hash
+     *
+     * @return string 
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+    /**
+     * Set id_servicio
+     *
+     * @param integer $idServicio
+     * @return FacturaDetalle
+     */
+    public function setIdServicio($idServicio)
+    {
+        $this->id_servicio = $idServicio;
+
+        return $this;
+    }
+
+    /**
+     * Get id_servicio
+     *
+     * @return integer 
+     */
+    public function getIdServicio()
+    {
+        return $this->id_servicio;
+    }
+
+    /**
+     * Set cantidad
+     *
+     * @param string $cantidad
+     * @return FacturaDetalle
+     */
+    public function setCantidad($cantidad)
+    {
+        $this->cantidad = $cantidad;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad
+     *
+     * @return string 
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
+    /**
+     * Set valor
+     *
+     * @param string $valor
+     * @return FacturaDetalle
+     */
+    public function setValor($valor)
+    {
+        $this->valor = $valor;
+
+        return $this;
+    }
+
+    /**
+     * Get valor
+     *
+     * @return string 
+     */
+    public function getValor()
+    {
+        return $this->valor;
+    }
+
+    /**
+     * Set iva
+     *
+     * @param string $iva
+     * @return FacturaDetalle
+     */
+    public function setIva($iva)
+    {
+        $this->iva = $iva;
+
+        return $this;
+    }
+
+    /**
+     * Get iva
+     *
+     * @return string 
+     */
+    public function getIva()
+    {
+        return $this->iva;
+    }
+
+    /**
+     * Set total
+     *
+     * @param string $total
+     * @return FacturaDetalle
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+
+        return $this;
+    }
+
+    /**
+     * Get total
+     *
+     * @return string 
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param string $estado
+     * @return FacturaDetalle
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return string 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set fecha
+     *
+     * @param \DateTime $fecha
+     * @return FacturaDetalle
+     */
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
+
+    /**
+     * Get fecha
+     *
+     * @return \DateTime 
+     */
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
 }
-
-
