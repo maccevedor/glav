@@ -3726,7 +3726,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'/logs'),
             'kernel.bundles' => array(
@@ -4200,7 +4200,7 @@ class appDevDebugProjectContainer extends Container
             ),
             'assetic.java.bin' => '/usr/bin/java',
             'assetic.node.bin' => ($this->targetDirs[4].'/.nvm/v0.10.25/bin/node'),
-            'assetic.ruby.bin' => ($this->targetDirs[4].'/.rbenv/versions/2.0.0-p353/bin/ruby'),
+            'assetic.ruby.bin' => ($this->targetDirs[4].'/.rbenv/shims/ruby'),
             'assetic.sass.bin' => '/usr/local/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(

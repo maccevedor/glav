@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">/home/codio/workspace/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">app</parameter>
+    <parameter key="kernel.name">ap_</parameter>
     <parameter key="kernel.cache_dir">/home/codio/workspace/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/home/codio/workspace/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -464,7 +464,7 @@
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
     <parameter key="assetic.node.bin">/home/codio/.nvm/v0.10.25/bin/node</parameter>
-    <parameter key="assetic.ruby.bin">/home/codio/.rbenv/versions/2.0.0-p353/bin/ruby</parameter>
+    <parameter key="assetic.ruby.bin">/home/codio/.rbenv/shims/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/local/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
     <parameter key="assetic.twig_extension.functions" type="collection"/>
