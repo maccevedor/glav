@@ -1,13 +1,10 @@
 <?php
-
 namespace GlavBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Factura
  *
- * @ORM\Table()
+ * @ORM\Table(name="Factura", indexes={})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\FacturaRepository")
  */
 class Factura
@@ -37,18 +34,8 @@ class Factura
     
     
     private $id_usuario;
-    
 
     
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_factura_detalle", type="integer", length=50)
-     */
-    
-    
-    
-    private $id_factura_detalle;
     
         /**
      * @var string
@@ -86,7 +73,6 @@ class Factura
     
     private $observacion;
         
-
       
     /**
      * @var string
@@ -107,7 +93,6 @@ class Factura
         $this->hash=md5(time());
         $this->fecha =  new \DateTime('now');
     }
-
     /**
      * Get id
      *
@@ -117,8 +102,6 @@ class Factura
     {
         return $this->id;
     }
-
-
     /**
      * Set hash
      *
@@ -128,10 +111,8 @@ class Factura
     public function setHash($hash)
     {
         $this->hash = $hash;
-
         return $this;
     }
-
     /**
      * Get hash
      *
@@ -141,7 +122,6 @@ class Factura
     {
         return $this->hash;
     }
-
     /**
      * Set id_usuario
      *
@@ -151,10 +131,8 @@ class Factura
     public function setIdUsuario($idUsuario)
     {
         $this->id_usuario = $idUsuario;
-
         return $this;
     }
-
     /**
      * Get id_usuario
      *
@@ -164,30 +142,6 @@ class Factura
     {
         return $this->id_usuario;
     }
-
-    /**
-     * Set id_factura_detalle
-     *
-     * @param integer $idFacturaDetalle
-     * @return Factura
-     */
-    public function setIdFacturaDetalle($idFacturaDetalle)
-    {
-        $this->id_factura_detalle = $idFacturaDetalle;
-
-        return $this;
-    }
-
-    /**
-     * Get id_factura_detalle
-     *
-     * @return integer 
-     */
-    public function getIdFacturaDetalle()
-    {
-        return $this->id_factura_detalle;
-    }
-
     /**
      * Set valor
      *
@@ -197,10 +151,8 @@ class Factura
     public function setValor($valor)
     {
         $this->valor = $valor;
-
         return $this;
     }
-
     /**
      * Get valor
      *
@@ -210,7 +162,6 @@ class Factura
     {
         return $this->valor;
     }
-
     /**
      * Set iva
      *
@@ -220,10 +171,8 @@ class Factura
     public function setIva($iva)
     {
         $this->iva = $iva;
-
         return $this;
     }
-
     /**
      * Get iva
      *
@@ -233,7 +182,6 @@ class Factura
     {
         return $this->iva;
     }
-
     /**
      * Set total
      *
@@ -243,10 +191,8 @@ class Factura
     public function setTotal($total)
     {
         $this->total = $total;
-
         return $this;
     }
-
     /**
      * Get total
      *
@@ -256,7 +202,6 @@ class Factura
     {
         return $this->total;
     }
-
     /**
      * Set observacion
      *
@@ -266,10 +211,8 @@ class Factura
     public function setObservacion($observacion)
     {
         $this->observacion = $observacion;
-
         return $this;
     }
-
     /**
      * Get observacion
      *
@@ -279,7 +222,6 @@ class Factura
     {
         return $this->observacion;
     }
-
     /**
      * Set estado
      *
@@ -289,10 +231,8 @@ class Factura
     public function setEstado($estado)
     {
         $this->estado = $estado;
-
         return $this;
     }
-
     /**
      * Get estado
      *
@@ -302,7 +242,6 @@ class Factura
     {
         return $this->estado;
     }
-
     /**
      * Set fecha
      *
@@ -312,10 +251,8 @@ class Factura
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-
         return $this;
     }
-
     /**
      * Get fecha
      *

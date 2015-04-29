@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Automotor
  *
  * @ORM\Table()
+ * @ORM\Table(name="Automotor", indexes={@ORM\Index(name="FK_Automotor_TipoAutomotor", columns={"id_tipo_automotor"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\AutomotorRepository")
  */
 class Automotor
@@ -30,11 +31,13 @@ class Automotor
     private $hash;
     
     /**
-     * @var string
+     * @var \TipoAutomotor
      *
-     * @ORM\Column(name="id_tipo_automotor", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TipoAutomotor")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_tipo_automotor", referencedColumnName="id")
+     * })
      */
-    
     
     private $id_tipo_automotor;
     

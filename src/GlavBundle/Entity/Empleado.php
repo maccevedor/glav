@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Empleado
  *
- * @ORM\Table()
+ * @ORM\Table(name="Empleado", indexes={@ORM\Index(name="FK_Empleado_cargo", columns={"id_cargo"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\EmpleadoRepository")
  */
 class Empleado
@@ -20,6 +20,16 @@ class Empleado
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var \Cargo
+     *
+     * @ORM\ManyToOne(targetEntity="Cargo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_cargo", referencedColumnName="id")
+     * })
+     */
+    private $id_cargo;
     
     /**
      * @var string

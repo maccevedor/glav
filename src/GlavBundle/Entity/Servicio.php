@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Servicio
  *
- * @ORM\Table()
+ * @ORM\Table(name="Servicio", indexes={@ORM\Index(name="FK_Servicio_Cliente", columns={"id_cliente"}),@ORM\Index(name="FK_Servicio_Empleado", columns={"id_empleado"}),@ORM\Index(name="FK_Servicio_Automotor", columns={"id_automotor"}),@ORM\Index(name="FK_Servicio_ServicioEstado", columns={"id_servicio_estado"}),@ORM\Index(name="FK_Servicio_Rubro", columns={"id_rubro"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\ServicioRepository")
  */
 class Servicio
@@ -29,49 +29,64 @@ class Servicio
     
     private $hash;
     
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_usuario", type="integer", length=50)
-     */
-    
-    
-    private $id_usuario;
     
     /**
-     * @var integer
+     * @var \Cliente
      *
-     * @ORM\Column(name="id_cliente", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_cliente", referencedColumnName="id")
+     * })
      */
     
     
     private $id_cliente;
     
     /**
-     * @var integer
+     * @var \Empleado
      *
-     * @ORM\Column(name="id_empleado", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="Empleado")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_empleado", referencedColumnName="id")
+     * })
      */
     
     
     private $id_empleado;
     
     /**
-     * @var integer
+     * @var \Automotor
      *
-     * @ORM\Column(name="id_automotor", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="Automotor")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_automotor", referencedColumnName="id")
+     * })
      */
     
     
     private $id_automotor;
     
     /**
-     * @var integer
+     * @var \ServicioEstado
      *
-     * @ORM\Column(name="id_estado_servicio", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="ServicioEstado")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_servicio_estado", referencedColumnName="id")
+     * })
      */
     
-    private $id_estado_servicio;
+    private $id_servicio_estado;
+    
+    /**
+     * @var \Rubro
+     *
+     * @ORM\ManyToOne(targetEntity="Rubro")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_rubro", referencedColumnName="id")
+     * })
+     */
+    
+    private $id_rubro;
     
     /**
      * @var string

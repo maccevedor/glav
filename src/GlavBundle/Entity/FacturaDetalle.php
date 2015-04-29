@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * FacturaDetalle
  *
- * @ORM\Table()
+ * @ORM\Table(name="FacturaDetalle", indexes={@ORM\Index(name="FK_FacturaDetalle_Factura", columns={"id_factura"}),@ORM\Index(name="FK_Factura_Servicio", columns={"id_servicio"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\FacturaDetalleRepository")
  */
 class FacturaDetalle
@@ -29,14 +29,25 @@ class FacturaDetalle
     
     private $hash;
     
-
     /**
-     * @var integer
+     * @var \Factura
      *
-     * @ORM\Column(name="id_servicio", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="Factura")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_factura", referencedColumnName="id")
+     * })
      */
+    private $id_factura;
     
     
+    /**
+     * @var \Servicio
+     *
+     * @ORM\ManyToOne(targetEntity="Servicio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_servicio", referencedColumnName="id")
+     * })
+     */
     private $id_servicio;
     
     /**

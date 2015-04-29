@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Rubro
  *
  * @ORM\Table()
+ * @ORM\Table(name="Rubro", indexes={@ORM\Index(name="FK_Rubro_TipoRubro", columns={"id_tipo_rubro"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\RubroRepository")
  */
 class Rubro
@@ -39,9 +40,12 @@ class Rubro
     private $nombre;
     
     /**
-     * @var string
+     * @var \TipoRubro
      *
-     * @ORM\Column(name="tipo_rubro", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="TipoRubro")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_tipo_rubro", referencedColumnName="id")
+     * })
      */
     private $id_tipo_rubro;
     
