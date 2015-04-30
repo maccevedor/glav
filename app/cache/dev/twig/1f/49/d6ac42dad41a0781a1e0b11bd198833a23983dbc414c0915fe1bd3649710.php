@@ -18,6 +18,7 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
         }
 
         $this->blocks = array(
+            'menu' => array($this, 'block_menu'),
             'infoUserTop' => array($this, 'block_infoUserTop'),
         );
     }
@@ -32,17 +33,41 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 2
+    public function block_menu($context, array $blocks = array())
+    {
+        // line 3
+        echo "
+        <ul class=\"nav nav-tabs nav-stacked main-menu\">
+\t\t    <li><a href=\"index.html\"><i class=\"icon-tablet\"></i><span class=\"hidden-tablet\"> Cargo</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> Empleado</span></a></li>\t
+            <li><a href=\"index.html\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\"> Cliente</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-list\"></i><span class=\"hidden-tablet\"> Rubro</span></a></li>
+             <li><a href=\"index.html\"><i class=\"icon-fire\"></i><span class=\"hidden-tablet\"> Tipo de Rubro</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-cog\"></i><span class=\"hidden-tablet\"> Tipo de Automotor</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-inbox\"></i><span class=\"hidden-tablet\"> Servicio</span></a></li>\t
+            <li><a href=\"index.html\"><i class=\"icon-envelope\"></i><span class=\"hidden-tablet\"> Facturas</span></a></li>\t
+            
+            <li><a href=\"index.html\"><i class=\"icon-save\"></i><span class=\"hidden-tablet\"> Informes</span></a></li>
+            
+
+\t\t\t\t\t</ul>
+
+    ";
+    }
+
+    // line 22
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 4
+        // line 23
         echo "              
-              Hello ";
-        // line 5
+       Hello ";
+        // line 24
         echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")), "html", null, true);
         echo "!
 
-                ";
+    ";
     }
 
     public function getTemplateName()
@@ -57,6 +82,6 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
 
     public function getDebugInfo()
     {
-        return array (  42 => 5,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  67 => 24,  64 => 23,  61 => 22,  40 => 3,  37 => 2,  11 => 1,);
     }
 }

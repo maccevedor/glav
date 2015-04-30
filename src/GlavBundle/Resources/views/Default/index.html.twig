@@ -1,7 +1,26 @@
 {% extends 'frontend.html.twig' %}
+    {% block menu %}
 
- {% block infoUserTop %}
+        <ul class="nav nav-tabs nav-stacked main-menu">
+		    <li><a href="index.html"><i class="icon-tablet"></i><span class="hidden-tablet"> Cargo</span></a></li>
+            <li><a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Empleado</span></a></li>	
+            <li><a href="index.html"><i class="icon-user"></i><span class="hidden-tablet"> Cliente</span></a></li>
+            <li><a href="index.html"><i class="icon-list"></i><span class="hidden-tablet"> Rubro</span></a></li>
+             <li><a href="index.html"><i class="icon-fire"></i><span class="hidden-tablet"> Tipo de Rubro</span></a></li>
+            <li><a href="index.html"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
+            <li><a href="index.html"><i class="icon-cog"></i><span class="hidden-tablet"> Tipo de Automotor</span></a></li>
+            <li><a href="index.html"><i class="icon-inbox"></i><span class="hidden-tablet"> Servicio</span></a></li>	
+            <li><a href="index.html"><i class="icon-envelope"></i><span class="hidden-tablet"> Facturas</span></a></li>	
+            
+            <li><a href="index.html"><i class="icon-save"></i><span class="hidden-tablet"> Informes</span></a></li>
+            
+
+					</ul>
+
+    {% endblock %}
+
+    {% block infoUserTop %}
               
-              Hello {{ name }}!
+       Hello {{ name }}!
 
-                {% endblock %}
+    {% endblock %}

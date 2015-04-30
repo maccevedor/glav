@@ -10,6 +10,7 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
         $this->parent = false;
 
         $this->blocks = array(
+            'menu' => array($this, 'block_menu'),
             'infoUserTop' => array($this, 'block_infoUserTop'),
         );
     }
@@ -23,7 +24,7 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 
 \t<!-- start: Meta -->
 \t<meta charset=\"utf-8\">
-\t<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+\t<title>Glav 2.0</title>
 \t<meta name=\"description\" content=\"Bootstrap Metro Dashboard\">
 \t<meta name=\"author\" content=\"Dennis Ji\">
 \t<meta name=\"keyword\" content=\"Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina\">
@@ -90,7 +91,7 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t<span class=\"icon-bar\"></span>
 \t\t\t\t\t<span class=\"icon-bar\"></span>
 \t\t\t\t</a>
-\t\t\t\t<a class=\"brand\" href=\"index.html\"><span>JANUX</span></a>
+\t\t\t\t<a class=\"brand\" href=\"index.html\"><span>Glav 2.0</span></a>
 \t\t\t\t\t\t\t\t
 \t\t\t\t<!-- start: Header Menu -->
 \t\t\t\t<div class=\"nav-no-collapse header-nav\">
@@ -372,31 +373,12 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t<!-- start: Main Menu -->
 \t\t\t<div id=\"sidebar-left\" class=\"span2\">
 \t\t\t\t<div class=\"nav-collapse sidebar-nav\">
-\t\t\t\t\t<ul class=\"nav nav-tabs nav-stacked main-menu\">
-\t\t\t\t\t\t<li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> Dashboard</span></a></li>\t
-\t\t\t\t\t\t<li><a href=\"messages.html\"><i class=\"icon-envelope\"></i><span class=\"hidden-tablet\"> Messages</span></a></li>
-\t\t\t\t\t\t<li><a href=\"tasks.html\"><i class=\"icon-tasks\"></i><span class=\"hidden-tablet\"> Tasks</span></a></li>
-\t\t\t\t\t\t<li><a href=\"ui.html\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> UI Features</span></a></li>
-\t\t\t\t\t\t<li><a href=\"widgets.html\"><i class=\"icon-dashboard\"></i><span class=\"hidden-tablet\"> Widgets</span></a></li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Dropdown</span><span class=\"label label-important\"> 3 </span></a>
-\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 1</span></a></li>
-\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 2</span></a></li>
-\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 3</span></a></li>
-\t\t\t\t\t\t\t</ul>\t
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li><a href=\"form.html\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Forms</span></a></li>
-\t\t\t\t\t\t<li><a href=\"chart.html\"><i class=\"icon-list-alt\"></i><span class=\"hidden-tablet\"> Charts</span></a></li>
-\t\t\t\t\t\t<li><a href=\"typography.html\"><i class=\"icon-font\"></i><span class=\"hidden-tablet\"> Typography</span></a></li>
-\t\t\t\t\t\t<li><a href=\"gallery.html\"><i class=\"icon-picture\"></i><span class=\"hidden-tablet\"> Gallery</span></a></li>
-\t\t\t\t\t\t<li><a href=\"table.html\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> Tables</span></a></li>
-\t\t\t\t\t\t<li><a href=\"calendar.html\"><i class=\"icon-calendar\"></i><span class=\"hidden-tablet\"> Calendar</span></a></li>
-\t\t\t\t\t\t<li><a href=\"file-manager.html\"><i class=\"icon-folder-open\"></i><span class=\"hidden-tablet\"> File Manager</span></a></li>
-\t\t\t\t\t\t<li><a href=\"icon.html\"><i class=\"icon-star\"></i><span class=\"hidden-tablet\"> Icons</span></a></li>
-\t\t\t\t\t\t<li><a href=\"login.html\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> Login Page</span></a></li>
-\t\t\t\t\t</ul>
-\t\t\t\t</div>
+                
+                \t\t\t  ";
+        // line 336
+        $this->displayBlock('menu', $context, $blocks);
+        // line 365
+        echo "\t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<!-- end: Main Menu -->
 \t\t\t
@@ -411,9 +393,9 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t<div id=\"content\" class=\"span10\">
 \t\t\t
 \t\t\t  ";
-        // line 373
+        // line 379
         $this->displayBlock('infoUserTop', $context, $blocks);
-        // line 377
+        // line 383
         echo "\t\t\t<ul class=\"breadcrumb\">
 \t\t\t\t<li>
 \t\t\t\t\t<i class=\"icon-home\"></i>
@@ -1094,123 +1076,123 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t<!-- start: JavaScript-->
     
     <script src=\"";
-        // line 1056
+        // line 1062
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1057
+        // line 1063
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-migrate-1.0.0.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1058
+        // line 1064
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-ui-1.10.0.custom.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1059
+        // line 1065
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1060
+        // line 1066
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/modernizr.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1061
+        // line 1067
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1062
+        // line 1068
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.cookie.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1063
+        // line 1069
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/fullcalendar.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1064
+        // line 1070
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1065
+        // line 1071
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/excanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1066
+        // line 1072
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1067
+        // line 1073
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1068
+        // line 1074
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.stack.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1069
+        // line 1075
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.resize.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1070
+        // line 1076
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.chosen.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1071
+        // line 1077
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.uniform.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1072
+        // line 1078
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.cleditor.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1073
+        // line 1079
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.noty.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1074
+        // line 1080
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.elfinder.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1075
+        // line 1081
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.raty.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1076
+        // line 1082
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.iphone.toggle.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1077
+        // line 1083
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1078
+        // line 1084
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.gritter.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1079
+        // line 1085
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.imagesloaded.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1080
+        // line 1086
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.masonry.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1081
+        // line 1087
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.knob.modified.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1082
+        // line 1088
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1083
+        // line 1089
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/counter.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1084
+        // line 1090
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/retina.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1085
+        // line 1091
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\"></script>
     \t<!-- end: JavaScript-->
@@ -1219,10 +1201,44 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 </html>";
     }
 
-    // line 373
+    // line 336
+    public function block_menu($context, array $blocks = array())
+    {
+        // line 337
+        echo "              
+              
+                
+\t\t\t\t\t<ul class=\"nav nav-tabs nav-stacked main-menu\">
+\t\t\t\t\t\t<li><a href=\"index.html\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\"> Dashboard</span></a></li>\t
+\t\t\t\t\t\t<li><a href=\"messages.html\"><i class=\"icon-envelope\"></i><span class=\"hidden-tablet\"> Messages</span></a></li>
+\t\t\t\t\t\t<li><a href=\"tasks.html\"><i class=\"icon-tasks\"></i><span class=\"hidden-tablet\"> Tasks</span></a></li>
+\t\t\t\t\t\t<li><a href=\"ui.html\"><i class=\"icon-eye-open\"></i><span class=\"hidden-tablet\"> UI Features</span></a></li>
+\t\t\t\t\t\t<li><a href=\"widgets.html\"><i class=\"icon-dashboard\"></i><span class=\"hidden-tablet\"> Widgets</span></a></li>
+\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t<a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Dropdown</span><span class=\"label label-important\"> 3 </span></a>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 1</span></a></li>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 2</span></a></li>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Sub Menu 3</span></a></li>
+\t\t\t\t\t\t\t</ul>\t
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li><a href=\"form.html\"><i class=\"icon-edit\"></i><span class=\"hidden-tablet\"> Forms</span></a></li>
+\t\t\t\t\t\t<li><a href=\"chart.html\"><i class=\"icon-list-alt\"></i><span class=\"hidden-tablet\"> Charts</span></a></li>
+\t\t\t\t\t\t<li><a href=\"typography.html\"><i class=\"icon-font\"></i><span class=\"hidden-tablet\"> Typography</span></a></li>
+\t\t\t\t\t\t<li><a href=\"gallery.html\"><i class=\"icon-picture\"></i><span class=\"hidden-tablet\"> Gallery</span></a></li>
+\t\t\t\t\t\t<li><a href=\"table.html\"><i class=\"icon-align-justify\"></i><span class=\"hidden-tablet\"> Tables</span></a></li>
+\t\t\t\t\t\t<li><a href=\"calendar.html\"><i class=\"icon-calendar\"></i><span class=\"hidden-tablet\"> Calendar</span></a></li>
+\t\t\t\t\t\t<li><a href=\"file-manager.html\"><i class=\"icon-folder-open\"></i><span class=\"hidden-tablet\"> File Manager</span></a></li>
+\t\t\t\t\t\t<li><a href=\"icon.html\"><i class=\"icon-star\"></i><span class=\"hidden-tablet\"> Icons</span></a></li>
+\t\t\t\t\t\t<li><a href=\"login.html\"><i class=\"icon-lock\"></i><span class=\"hidden-tablet\"> Login Page</span></a></li>
+\t\t\t\t\t</ul>
+                    ";
+    }
+
+    // line 379
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 374
+        // line 380
         echo "              
               
                 ";
@@ -1240,6 +1256,6 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 
     public function getDebugInfo()
     {
-        return array (  1226 => 374,  1223 => 373,  1214 => 1085,  1210 => 1084,  1206 => 1083,  1202 => 1082,  1198 => 1081,  1194 => 1080,  1190 => 1079,  1186 => 1078,  1182 => 1077,  1178 => 1076,  1174 => 1075,  1170 => 1074,  1166 => 1073,  1162 => 1072,  1158 => 1071,  1154 => 1070,  1150 => 1069,  1146 => 1068,  1142 => 1067,  1138 => 1066,  1134 => 1065,  1130 => 1064,  1126 => 1063,  1122 => 1062,  1118 => 1061,  1114 => 1060,  1110 => 1059,  1106 => 1058,  1102 => 1057,  1098 => 1056,  417 => 377,  415 => 373,  75 => 36,  68 => 32,  61 => 28,  51 => 21,  47 => 20,  43 => 19,  39 => 18,  20 => 1,);
+        return array (  1242 => 380,  1239 => 379,  1208 => 337,  1205 => 336,  1196 => 1091,  1192 => 1090,  1188 => 1089,  1184 => 1088,  1180 => 1087,  1176 => 1086,  1172 => 1085,  1168 => 1084,  1164 => 1083,  1160 => 1082,  1156 => 1081,  1152 => 1080,  1148 => 1079,  1144 => 1078,  1140 => 1077,  1136 => 1076,  1132 => 1075,  1128 => 1074,  1124 => 1073,  1120 => 1072,  1116 => 1071,  1112 => 1070,  1108 => 1069,  1104 => 1068,  1100 => 1067,  1096 => 1066,  1092 => 1065,  1088 => 1064,  1084 => 1063,  1080 => 1062,  399 => 383,  397 => 379,  381 => 365,  379 => 336,  76 => 36,  69 => 32,  62 => 28,  52 => 21,  48 => 20,  44 => 19,  40 => 18,  21 => 1,);
     }
 }
