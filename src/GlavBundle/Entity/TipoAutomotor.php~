@@ -5,12 +5,12 @@ namespace GlavBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Cargo
+ * TipoAutomotor
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\CargoRepository")
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\TipoAutomotorRepository")
  */
-class Cargo
+class TipoAutomotor
 {
     /**
      * @var integer
@@ -30,15 +30,6 @@ class Cargo
     private $hash;
 
   
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre", type="string", length=255)
-     */
-    
-    
-    private $nombre;
-    
     /**
      * @var string
      *
@@ -84,7 +75,7 @@ class Cargo
      * Set hash
      *
      * @param string $hash
-     * @return Cargo
+     * @return TipoAutomotor
      */
     public function setHash($hash)
     {
@@ -104,33 +95,33 @@ class Cargo
     }
 
     /**
-     * Set nombre
+     * Set descripcion
      *
-     * @param string $nombre
-     * @return Cargo
+     * @param string $descripcion
+     * @return TipoAutomotor
      */
-    public function setNombre($nombre)
+    public function setDescripcion($descripcion)
     {
-        $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
 
         return $this;
     }
 
     /**
-     * Get nombre
+     * Get descripcion
      *
      * @return string 
      */
-    public function getNombre()
+    public function getDescripcion()
     {
-        return $this->nombre;
+        return $this->descripcion;
     }
 
     /**
      * Set estado
      *
      * @param string $estado
-     * @return Cargo
+     * @return TipoAutomotor
      */
     public function setEstado($estado)
     {
@@ -153,7 +144,7 @@ class Cargo
      * Set fecha
      *
      * @param \DateTime $fecha
-     * @return Cargo
+     * @return TipoAutomotor
      */
     public function setFecha($fecha)
     {
@@ -170,28 +161,5 @@ class Cargo
     public function getFecha()
     {
         return $this->fecha;
-    }
-
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Cargo
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
     }
 }

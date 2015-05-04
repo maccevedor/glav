@@ -1,13 +1,16 @@
 <?php
+
 namespace GlavBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Factura
+ * FacturaDetalle
  *
- * @ORM\Table(name="Factura", indexes={})
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\FacturaRepository")
+ * @ORM\Table(name="FacturaDetalle", indexes={@ORM\Index(name="FK_FacturaDetalle_Factura", columns={"id_factura"}),@ORM\Index(name="FK_Factura_Servicio", columns={"id_servicio"})})
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\FacturaDetalleRepository")
  */
-class Factura
+class FacturaDetalle
 {
     /**
      * @var integer
@@ -27,14 +30,34 @@ class Factura
     private $hash;
     
     /**
-     * @var integer
+     * @var \Factura
      *
-     * @ORM\Column(name="id_usuario", type="integer", length=50)
+     * @ORM\ManyToOne(targetEntity="Factura")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_factura", referencedColumnName="id")
+     * })
+     */
+    private $id_factura;
+    
+    
+    /**
+     * @var \Servicio
+     *
+     * @ORM\ManyToOne(targetEntity="Servicio")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_servicio", referencedColumnName="id")
+     * })
+     */
+    private $id_servicio;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad", type="string", length=255)
      */
     
     
-    private $id_usuario;
-
+    private $cantidad;
     
     
         /**
@@ -63,16 +86,8 @@ class Factura
     
     
     private $total;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="observacion", type="string", length=255)
-     */
-    
-    
-    private $observacion;
         
+
       
     /**
      * @var string
@@ -93,6 +108,7 @@ class Factura
         $this->hash=md5(time());
         $this->fecha =  new \DateTime('now');
     }
+
     /**
      * Get id
      *
@@ -102,17 +118,21 @@ class Factura
     {
         return $this->id;
     }
+
+
     /**
      * Set hash
      *
      * @param string $hash
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setHash($hash)
     {
         $this->hash = $hash;
+
         return $this;
     }
+
     /**
      * Get hash
      *
@@ -122,37 +142,66 @@ class Factura
     {
         return $this->hash;
     }
+
     /**
-     * Set id_usuario
+     * Set id_servicio
      *
-     * @param integer $idUsuario
-     * @return Factura
+     * @param integer $idServicio
+     * @return FacturaDetalle
      */
-    public function setIdUsuario($idUsuario)
+    public function setIdServicio($idServicio)
     {
-        $this->id_usuario = $idUsuario;
+        $this->id_servicio = $idServicio;
+
         return $this;
     }
+
     /**
-     * Get id_usuario
+     * Get id_servicio
      *
      * @return integer 
      */
-    public function getIdUsuario()
+    public function getIdServicio()
     {
-        return $this->id_usuario;
+        return $this->id_servicio;
     }
+
+    /**
+     * Set cantidad
+     *
+     * @param string $cantidad
+     * @return FacturaDetalle
+     */
+    public function setCantidad($cantidad)
+    {
+        $this->cantidad = $cantidad;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad
+     *
+     * @return string 
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
     /**
      * Set valor
      *
      * @param string $valor
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setValor($valor)
     {
         $this->valor = $valor;
+
         return $this;
     }
+
     /**
      * Get valor
      *
@@ -162,17 +211,20 @@ class Factura
     {
         return $this->valor;
     }
+
     /**
      * Set iva
      *
      * @param string $iva
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setIva($iva)
     {
         $this->iva = $iva;
+
         return $this;
     }
+
     /**
      * Get iva
      *
@@ -182,17 +234,20 @@ class Factura
     {
         return $this->iva;
     }
+
     /**
      * Set total
      *
      * @param string $total
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setTotal($total)
     {
         $this->total = $total;
+
         return $this;
     }
+
     /**
      * Get total
      *
@@ -202,37 +257,20 @@ class Factura
     {
         return $this->total;
     }
-    /**
-     * Set observacion
-     *
-     * @param string $observacion
-     * @return Factura
-     */
-    public function setObservacion($observacion)
-    {
-        $this->observacion = $observacion;
-        return $this;
-    }
-    /**
-     * Get observacion
-     *
-     * @return string 
-     */
-    public function getObservacion()
-    {
-        return $this->observacion;
-    }
+
     /**
      * Set estado
      *
      * @param string $estado
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setEstado($estado)
     {
         $this->estado = $estado;
+
         return $this;
     }
+
     /**
      * Get estado
      *
@@ -242,17 +280,20 @@ class Factura
     {
         return $this->estado;
     }
+
     /**
      * Set fecha
      *
      * @param \DateTime $fecha
-     * @return Factura
+     * @return FacturaDetalle
      */
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
+
         return $this;
     }
+
     /**
      * Get fecha
      *

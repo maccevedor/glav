@@ -378,27 +378,4 @@ class Empleado
     {
         return $this->fecha;
     }
-
-    /**
-     * Set id_cargo
-     *
-     * @param \GlavBundle\Entity\Cargo $idCargo
-     * @return Empleado
-     */
-    public function setIdCargo(\GlavBundle\Entity\Cargo $idCargo = null)
-    {
-        $this->id_cargo = $idCargo;
-
-        return $this;
-    }
-
-    /**
-     * Get id_cargo
-     *
-     * @return \GlavBundle\Entity\Cargo 
-     */
-    public function getIdCargo()
-    {
-        return $this->id_cargo;
-    }
 }

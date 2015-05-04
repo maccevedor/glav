@@ -5,12 +5,12 @@ namespace GlavBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Cargo
+ * ServicioEstado
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\CargoRepository")
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\ServicioEstadoRepository")
  */
-class Cargo
+class ServicioEstado
 {
     /**
      * @var integer
@@ -38,15 +38,6 @@ class Cargo
     
     
     private $nombre;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="descripcion", type="string", length=255)
-     */
-    
-    
-    private $descripcion;
     
         
     /**
@@ -84,7 +75,7 @@ class Cargo
      * Set hash
      *
      * @param string $hash
-     * @return Cargo
+     * @return ServicioEstado
      */
     public function setHash($hash)
     {
@@ -107,7 +98,7 @@ class Cargo
      * Set nombre
      *
      * @param string $nombre
-     * @return Cargo
+     * @return ServicioEstado
      */
     public function setNombre($nombre)
     {
@@ -130,7 +121,7 @@ class Cargo
      * Set estado
      *
      * @param string $estado
-     * @return Cargo
+     * @return ServicioEstado
      */
     public function setEstado($estado)
     {
@@ -153,7 +144,7 @@ class Cargo
      * Set fecha
      *
      * @param \DateTime $fecha
-     * @return Cargo
+     * @return ServicioEstado
      */
     public function setFecha($fecha)
     {
@@ -170,28 +161,5 @@ class Cargo
     public function getFecha()
     {
         return $this->fecha;
-    }
-
-    /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     * @return Cargo
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string 
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
     }
 }

@@ -5,12 +5,12 @@ namespace GlavBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Empleado
+ * Cliente
  *
- * @ORM\Table(name="Empleado", indexes={@ORM\Index(name="FK_Empleado_cargo", columns={"id_cargo"})})
- * @ORM\Entity(repositoryClass="GlavBundle\Entity\EmpleadoRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="GlavBundle\Entity\ClienteRepository")
  */
-class Empleado
+class Cliente
 {
     /**
      * @var integer
@@ -20,16 +20,6 @@ class Empleado
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-    
-    /**
-     * @var \Cargo
-     *
-     * @ORM\ManyToOne(targetEntity="Cargo")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_cargo", referencedColumnName="id")
-     * })
-     */
-    private $id_cargo;
     
     /**
      * @var string
@@ -130,7 +120,7 @@ class Empleado
      * Set nombre
      *
      * @param string $nombre
-     * @return Empleado
+     * @return Cliente
      */
     public function setNombre($nombre)
     {
@@ -153,7 +143,7 @@ class Empleado
      * Set apellido
      *
      * @param string $apellido
-     * @return Empleado
+     * @return Cliente
      */
     public function setApellido($apellido)
     {
@@ -176,7 +166,7 @@ class Empleado
      * Set identificacion
      *
      * @param string $identificacion
-     * @return Empleado
+     * @return Cliente
      */
     public function setIdentificacion($identificacion)
     {
@@ -199,7 +189,7 @@ class Empleado
      * Set genero
      *
      * @param string $genero
-     * @return Empleado
+     * @return Cliente
      */
     public function setGenero($genero)
     {
@@ -222,7 +212,7 @@ class Empleado
      * Set fNacimiento
      *
      * @param \DateTime $fNacimiento
-     * @return Empleado
+     * @return Cliente
      */
     public function setFNacimiento($fNacimiento)
     {
@@ -245,7 +235,7 @@ class Empleado
      * Set direccion
      *
      * @param string $direccion
-     * @return Empleado
+     * @return Cliente
      */
     public function setDireccion($direccion)
     {
@@ -268,7 +258,7 @@ class Empleado
      * Set telefono
      *
      * @param string $telefono
-     * @return Empleado
+     * @return Cliente
      */
     public function setTelefono($telefono)
     {
@@ -291,7 +281,7 @@ class Empleado
      * Set celular
      *
      * @param string $celular
-     * @return Empleado
+     * @return Cliente
      */
     public function setCelular($celular)
     {
@@ -314,7 +304,7 @@ class Empleado
      * Set email
      *
      * @param string $email
-     * @return Empleado
+     * @return Cliente
      */
     public function setEmail($email)
     {
@@ -337,7 +327,7 @@ class Empleado
      * Set estado
      *
      * @param string $estado
-     * @return Empleado
+     * @return Cliente
      */
     public function setEstado($estado)
     {
@@ -360,7 +350,7 @@ class Empleado
      * Set fecha
      *
      * @param \DateTime $fecha
-     * @return Empleado
+     * @return Cliente
      */
     public function setFecha($fecha)
     {
@@ -377,28 +367,5 @@ class Empleado
     public function getFecha()
     {
         return $this->fecha;
-    }
-
-    /**
-     * Set id_cargo
-     *
-     * @param \GlavBundle\Entity\Cargo $idCargo
-     * @return Empleado
-     */
-    public function setIdCargo(\GlavBundle\Entity\Cargo $idCargo = null)
-    {
-        $this->id_cargo = $idCargo;
-
-        return $this;
-    }
-
-    /**
-     * Get id_cargo
-     *
-     * @return \GlavBundle\Entity\Cargo 
-     */
-    public function getIdCargo()
-    {
-        return $this->id_cargo;
     }
 }
