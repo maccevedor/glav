@@ -1,37 +1,49 @@
-{% extends 'frontend.html.twig' %}
-{% block contenido %}
-<div>
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="container">
-                  <div class="row">
-                      <a href="{{ path('edu_camp_login') }}"> Regresar </a>   
-                  </div>
+{% extends '::base.html.twig' %}
 
-                    <div>
-						<h1>Crear Cargo</h1>
+{% block body -%}
+    <h1>Cargo list</h1>
 
-                        <div>
-                            <div>  
-								<form action="{{ path('apps_educam_admision_laboral_guardar') }}" method="post">
-								{{ form_widget(form) }}
-								<input type="hidden" id="idPersona" name="idPersona" value="{{ idPersona }}" />
-								<br>
-								<input type="submit" />
-								</form>
-                             </div>
-                             <br>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>
-{% endblock %}
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hash</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cargo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.hash }}</td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.descripcion }}</td>
+                <td>{{ entity.estado }}</td>
+                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cargo_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('cargo_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('cargo_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

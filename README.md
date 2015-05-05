@@ -19,6 +19,11 @@ Gennera getter and setter
 php app/console doctrine:generate:entities AppBundle/Entity/Product
 
 
+Generar el crud con la consola 
+
+php app/console generate:doctrine:crud --entity=AcmeBlogBundle:Post
+
+
 # Symfony (2.6.4)
 
 

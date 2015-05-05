@@ -1,0 +1,30 @@
+empleado:
+    path:     /
+    defaults: { _controller: "GlavBundle:Empleado:index" }
+
+empleado_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:Empleado:show" }
+
+empleado_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:Empleado:new" }
+
+empleado_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:Empleado:create" }
+    requirements: { _method: post }
+
+empleado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:Empleado:edit" }
+
+empleado_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:Empleado:update" }
+    requirements: { _method: post|put }
+
+empleado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:Empleado:delete" }
+    requirements: { _method: post|delete }

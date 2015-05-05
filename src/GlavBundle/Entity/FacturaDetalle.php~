@@ -303,4 +303,27 @@ class FacturaDetalle
     {
         return $this->fecha;
     }
+
+    /**
+     * Set id_factura
+     *
+     * @param \GlavBundle\Entity\Factura $idFactura
+     * @return FacturaDetalle
+     */
+    public function setIdFactura(\GlavBundle\Entity\Factura $idFactura = null)
+    {
+        $this->id_factura = $idFactura;
+
+        return $this;
+    }
+
+    /**
+     * Get id_factura
+     *
+     * @return \GlavBundle\Entity\Factura 
+     */
+    public function getIdFactura()
+    {
+        return $this->id_factura;
+    }
 }

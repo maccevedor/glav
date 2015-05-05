@@ -1,3 +1,11 @@
+glav_cargo:
+    resource: "@GlavBundle/Resources/config/routing/cargo.yml"
+    prefix:   /cargo
+
+glav_empleado:
+    resource: "@GlavBundle/Resources/config/routing/empleado.yml"
+    prefix:   /empleado
+
 glav_homepage:
     path:     /hello/{name}
     defaults: { _controller: GlavBundle:Default:index }
