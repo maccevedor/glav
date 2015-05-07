@@ -1,3 +1,7 @@
+glav_cliente:
+    resource: "@GlavBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
 glav_cargo:
     resource: "@GlavBundle/Resources/config/routing/cargo.yml"
     prefix:   /cargo

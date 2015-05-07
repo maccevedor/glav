@@ -13,6 +13,8 @@ Para eliminar la cache utilizamos :
 
 php app/console cache:clear
 
+php app/console cache:clear --env=prod
+
 
 Gennera getter and setter 
 

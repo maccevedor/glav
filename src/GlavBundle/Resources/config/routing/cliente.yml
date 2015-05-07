@@ -1,0 +1,30 @@
+cliente:
+    path:     /
+    defaults: { _controller: "GlavBundle:Cliente:index" }
+
+cliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:Cliente:show" }
+
+cliente_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:Cliente:new" }
+
+cliente_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:Cliente:create" }
+    requirements: { _method: post }
+
+cliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:Cliente:edit" }
+
+cliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:Cliente:update" }
+    requirements: { _method: post|put }
+
+cliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:Cliente:delete" }
+    requirements: { _method: post|delete }
