@@ -18,14 +18,14 @@ class ClienteType extends AbstractType
             ->add('identificacion')
             ->add('nombre')
             ->add('apellido')
-            ->add('genero')
+            ->add('genero', 'choice', array('choices' => array('masculino' => 'Masculino', 'femenino' => 'Femenino')))
             ->add('fNacimiento')
             ->add('direccion')
             ->add('telefono')
             ->add('celular')
             ->add('email')
-            ->add('estado')
-            ->add('fecha')
+            //->add('estado')
+            //->add('fecha')
         ;
     }
     
