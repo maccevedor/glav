@@ -1,4 +1,10 @@
-{% extends 'frontend.html.twig' %}    
+{% extends 'frontend.html.twig' %}  
+
+        {% block User %}
+        
+        {% endblock %}
+
+
     {% block menu %}
 
         <ul class="nav nav-tabs nav-stacked main-menu">
@@ -18,3 +24,8 @@
 					</ul>
 
     {% endblock %}
+    {% block infoUserTop %}
+            {{ block('fos_user_content') }}
+    {% endblock %}
+        
+            

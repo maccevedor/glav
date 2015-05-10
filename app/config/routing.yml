@@ -5,3 +5,7 @@ glav:
 app:
     resource: @AppBundle/Controller/
     type:     annotation
+
+#FosUser
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
