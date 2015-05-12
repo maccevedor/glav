@@ -22,27 +22,57 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 3
-        if ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
-        }
-        // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 3
     public function block_menu($context, array $blocks = array())
     {
-        // line 6
-        echo "    ";
+        // line 4
+        echo "  ";
+        if ($this->env->getExtension('security')->isGranted("ROLE_SUPER_ADMIN")) {
+            // line 5
+            echo "    ";
+            $this->displayParentBlock("menu", $context, $blocks);
+            echo "
+  ";
+        } else {
+            // line 6
+            echo "  
+          <ul class=\"nav nav-tabs nav-stacked main-menu\">
+\t\t    <li><a href=\"";
+            // line 8
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\"><i class=\"icon-tablet\"></i><span class=\"hidden-tablet\"> Iniciar Session</span></a></li>
+            <li><a href=\"";
+            // line 9
+            echo $this->env->getExtension('routing')->getPath("empleado");
+            echo "\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\">Consultar Factura</span></a></li>\t
+            <li><a href=\"";
+            // line 10
+            echo $this->env->getExtension('routing')->getPath("cliente");
+            echo "\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\">Ayuda</span></a></li>
+\t\t</ul>
+  
+  ";
+        }
+        // line 14
+        echo "  
+";
     }
 
-    // line 13
+    // line 19
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 14
+        // line 20
         echo "    <h1>Cliente list</h1>
     
 
+    
+";
+        // line 24
+        echo twig_escape_filter($this->env, twig_join_filter($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "roles", array()), ", "), "html", null, true);
+        echo " 
     
     <table class=\"table table-striped\">
         <thead>
@@ -64,62 +94,62 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
         </thead>
         <tbody>
         ";
-        // line 37
+        // line 45
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 38
+            // line 46
             echo "            <tr>
                 <td><a href=\"";
-            // line 39
+            // line 47
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cliente_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 40
+            // line 48
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "identificacion", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 41
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 42
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "apellido", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 43
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "genero", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 44
+            // line 52
             if ($this->getAttribute($context["entity"], "fNacimiento", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fNacimiento", array()), "Y-m-d"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 45
+            // line 53
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "direccion", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 46
+            // line 54
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "telefono", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 47
+            // line 55
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "celular", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 48
+            // line 56
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "email", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 49
+            // line 57
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "estado", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 50
+            // line 58
             if ($this->getAttribute($context["entity"], "fecha", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fecha", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -128,13 +158,13 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
                 <ul>
                     <li>
                         <a href=\"";
-            // line 54
+            // line 62
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cliente_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">show</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 57
+            // line 65
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cliente_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">edit</a>
                     </li>
@@ -146,14 +176,14 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 63
+        // line 71
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 68
+        // line 76
         echo $this->env->getExtension('routing')->getPath("cliente_new");
         echo "\">
                 Create a new entry
@@ -175,6 +205,6 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
 
     public function getDebugInfo()
     {
-        return array (  157 => 68,  150 => 63,  138 => 57,  132 => 54,  123 => 50,  119 => 49,  115 => 48,  111 => 47,  107 => 46,  103 => 45,  97 => 44,  93 => 43,  89 => 42,  85 => 41,  81 => 40,  75 => 39,  72 => 38,  68 => 37,  43 => 14,  40 => 13,  36 => 6,  33 => 5,  29 => 1,  26 => 3,  11 => 1,);
+        return array (  187 => 76,  180 => 71,  168 => 65,  162 => 62,  153 => 58,  149 => 57,  145 => 56,  141 => 55,  137 => 54,  133 => 53,  127 => 52,  123 => 51,  119 => 50,  115 => 49,  111 => 48,  105 => 47,  102 => 46,  98 => 45,  74 => 24,  68 => 20,  65 => 19,  60 => 14,  53 => 10,  49 => 9,  45 => 8,  41 => 6,  35 => 5,  32 => 4,  29 => 3,  11 => 1,);
     }
 }
