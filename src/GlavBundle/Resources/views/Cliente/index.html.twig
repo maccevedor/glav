@@ -1,8 +1,20 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
+{% if is_granted("ROLE_USER") %}
+    
+    {% block menu %}
+    {% endblock %}
+    
+{% endif %}
+
+
+
+
 {% block infoUserTop %}
     <h1>Cliente list</h1>
+    
 
+    
     <table class="table table-striped">
         <thead>
             <tr>

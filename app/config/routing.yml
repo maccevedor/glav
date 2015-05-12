@@ -9,3 +9,8 @@ app:
 #FosUser
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    #schemes:  [https] #Utilizar Https pero me esta borrando el puerto 
+
+glav_homepage:
+    pattern:  /
+    defaults: { _controller:GlavBundle:Default:home }

@@ -10,4 +10,8 @@ class DefaultController extends Controller
     {
         return $this->render('GlavBundle:Default:index.html.twig', array('name' => $name));
     }
+    public function homeAction()
+    {
+        return $this->render('GlavBundle:Default:index.html.twig');
+    }
 }
