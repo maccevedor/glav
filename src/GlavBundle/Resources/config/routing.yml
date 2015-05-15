@@ -1,3 +1,19 @@
+glav_automotor:
+    resource: "@GlavBundle/Resources/config/routing/automotor.yml"
+    prefix:   /automotor
+
+glav_rubro:
+    resource: "@GlavBundle/Resources/config/routing/rubro.yml"
+    prefix:   /rubro
+
+glav_tiporubro:
+    resource: "@GlavBundle/Resources/config/routing/tiporubro.yml"
+    prefix:   /tiporubro
+
+glav_tipoautomotor:
+    resource: "@GlavBundle/Resources/config/routing/tipoautomotor.yml"
+    prefix:   /tipoautomotor
+
 glav_cliente:
     resource: "@GlavBundle/Resources/config/routing/cliente.yml"
     prefix:   /cliente

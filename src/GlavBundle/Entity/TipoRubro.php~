@@ -28,6 +28,15 @@ class TipoRubro
      */
     
     private $hash;
+    
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    
+    
+    private $nombre;
 
   
     /**
@@ -161,5 +170,11 @@ class TipoRubro
     public function getFecha()
     {
         return $this->fecha;
+    }
+    
+        
+    public function __toString()
+    {
+        return $this->getDescripcion();
     }
 }

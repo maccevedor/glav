@@ -1,0 +1,30 @@
+tipoautomotor:
+    path:     /
+    defaults: { _controller: "GlavBundle:TipoAutomotor:index" }
+
+tipoautomotor_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:TipoAutomotor:show" }
+
+tipoautomotor_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:TipoAutomotor:new" }
+
+tipoautomotor_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:TipoAutomotor:create" }
+    methods:  POST
+
+tipoautomotor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:TipoAutomotor:edit" }
+
+tipoautomotor_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:TipoAutomotor:update" }
+    methods:  [POST, PUT]
+
+tipoautomotor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:TipoAutomotor:delete" }
+    methods:  [POST, DELETE]

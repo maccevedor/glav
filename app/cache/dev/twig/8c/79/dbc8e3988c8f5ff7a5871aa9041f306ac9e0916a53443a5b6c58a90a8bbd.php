@@ -52,10 +52,22 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
         // line 15
         echo $this->env->getExtension('routing')->getPath("cliente");
         echo "\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\"> Cliente</span></a></li>
-            <li><a href=\"index.html\"><i class=\"icon-list\"></i><span class=\"hidden-tablet\"> Rubro</span></a></li>
-             <li><a href=\"index.html\"><i class=\"icon-fire\"></i><span class=\"hidden-tablet\"> Tipo de Rubro</span></a></li>
-            <li><a href=\"index.html\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
-            <li><a href=\"index.html\"><i class=\"icon-cog\"></i><span class=\"hidden-tablet\"> Tipo de Automotor</span></a></li>
+                         <li><a href=\"";
+        // line 16
+        echo $this->env->getExtension('routing')->getPath("tiporubro");
+        echo "\"><i class=\"icon-fire\"></i><span class=\"hidden-tablet\"> Tipo de Rubro</span></a></li>
+            <li><a href=\"";
+        // line 17
+        echo $this->env->getExtension('routing')->getPath("rubro");
+        echo "\"><i class=\"icon-list\"></i><span class=\"hidden-tablet\"> Rubro</span></a></li>
+                        <li><a href=\"";
+        // line 18
+        echo $this->env->getExtension('routing')->getPath("tipoautomotor");
+        echo "\"><i class=\"icon-cog\"></i><span class=\"hidden-tablet\"> Tipo de Automotor</span></a></li>
+            <li><a href=\"";
+        // line 19
+        echo $this->env->getExtension('routing')->getPath("automotor");
+        echo "\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
             <li><a href=\"index.html\"><i class=\"icon-inbox\"></i><span class=\"hidden-tablet\"> Servicio</span></a></li>\t
             <li><a href=\"index.html\"><i class=\"icon-envelope\"></i><span class=\"hidden-tablet\"> Facturas</span></a></li>\t
             
@@ -89,6 +101,6 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
 
     public function getDebugInfo()
     {
-        return array (  74 => 30,  71 => 29,  53 => 15,  49 => 14,  45 => 13,  41 => 11,  38 => 10,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  86 => 30,  83 => 29,  69 => 19,  65 => 18,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  45 => 13,  41 => 11,  38 => 10,  33 => 4,  30 => 3,  11 => 1,);
     }
 }

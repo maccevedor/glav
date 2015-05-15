@@ -127,6 +127,249 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/automotor')) {
+            // automotor
+            if (rtrim($pathinfo, '/') === '/automotor') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'automotor');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::indexAction',  '_route' => 'automotor',);
+            }
+
+            // automotor_show
+            if (preg_match('#^/automotor/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'automotor_show')), array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::showAction',));
+            }
+
+            // automotor_new
+            if ($pathinfo === '/automotor/new') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::newAction',  '_route' => 'automotor_new',);
+            }
+
+            // automotor_create
+            if ($pathinfo === '/automotor/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_automotor_create;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::createAction',  '_route' => 'automotor_create',);
+            }
+            not_automotor_create:
+
+            // automotor_edit
+            if (preg_match('#^/automotor/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'automotor_edit')), array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::editAction',));
+            }
+
+            // automotor_update
+            if (preg_match('#^/automotor/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_automotor_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'automotor_update')), array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::updateAction',));
+            }
+            not_automotor_update:
+
+            // automotor_delete
+            if (preg_match('#^/automotor/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_automotor_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'automotor_delete')), array (  '_controller' => 'GlavBundle\\Controller\\AutomotorController::deleteAction',));
+            }
+            not_automotor_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/rubro')) {
+            // rubro
+            if (rtrim($pathinfo, '/') === '/rubro') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'rubro');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\RubroController::indexAction',  '_route' => 'rubro',);
+            }
+
+            // rubro_show
+            if (preg_match('#^/rubro/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rubro_show')), array (  '_controller' => 'GlavBundle\\Controller\\RubroController::showAction',));
+            }
+
+            // rubro_new
+            if ($pathinfo === '/rubro/new') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\RubroController::newAction',  '_route' => 'rubro_new',);
+            }
+
+            // rubro_create
+            if ($pathinfo === '/rubro/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_rubro_create;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\RubroController::createAction',  '_route' => 'rubro_create',);
+            }
+            not_rubro_create:
+
+            // rubro_edit
+            if (preg_match('#^/rubro/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rubro_edit')), array (  '_controller' => 'GlavBundle\\Controller\\RubroController::editAction',));
+            }
+
+            // rubro_update
+            if (preg_match('#^/rubro/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_rubro_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rubro_update')), array (  '_controller' => 'GlavBundle\\Controller\\RubroController::updateAction',));
+            }
+            not_rubro_update:
+
+            // rubro_delete
+            if (preg_match('#^/rubro/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_rubro_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rubro_delete')), array (  '_controller' => 'GlavBundle\\Controller\\RubroController::deleteAction',));
+            }
+            not_rubro_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/tipo')) {
+            if (0 === strpos($pathinfo, '/tiporubro')) {
+                // tiporubro
+                if (rtrim($pathinfo, '/') === '/tiporubro') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'tiporubro');
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::indexAction',  '_route' => 'tiporubro',);
+                }
+
+                // tiporubro_show
+                if (preg_match('#^/tiporubro/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tiporubro_show')), array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::showAction',));
+                }
+
+                // tiporubro_new
+                if ($pathinfo === '/tiporubro/new') {
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::newAction',  '_route' => 'tiporubro_new',);
+                }
+
+                // tiporubro_create
+                if ($pathinfo === '/tiporubro/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_tiporubro_create;
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::createAction',  '_route' => 'tiporubro_create',);
+                }
+                not_tiporubro_create:
+
+                // tiporubro_edit
+                if (preg_match('#^/tiporubro/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tiporubro_edit')), array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::editAction',));
+                }
+
+                // tiporubro_update
+                if (preg_match('#^/tiporubro/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_tiporubro_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tiporubro_update')), array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::updateAction',));
+                }
+                not_tiporubro_update:
+
+                // tiporubro_delete
+                if (preg_match('#^/tiporubro/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_tiporubro_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tiporubro_delete')), array (  '_controller' => 'GlavBundle\\Controller\\TipoRubroController::deleteAction',));
+                }
+                not_tiporubro_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/tipoautomotor')) {
+                // tipoautomotor
+                if (rtrim($pathinfo, '/') === '/tipoautomotor') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'tipoautomotor');
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::indexAction',  '_route' => 'tipoautomotor',);
+                }
+
+                // tipoautomotor_show
+                if (preg_match('#^/tipoautomotor/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tipoautomotor_show')), array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::showAction',));
+                }
+
+                // tipoautomotor_new
+                if ($pathinfo === '/tipoautomotor/new') {
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::newAction',  '_route' => 'tipoautomotor_new',);
+                }
+
+                // tipoautomotor_create
+                if ($pathinfo === '/tipoautomotor/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_tipoautomotor_create;
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::createAction',  '_route' => 'tipoautomotor_create',);
+                }
+                not_tipoautomotor_create:
+
+                // tipoautomotor_edit
+                if (preg_match('#^/tipoautomotor/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tipoautomotor_edit')), array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::editAction',));
+                }
+
+                // tipoautomotor_update
+                if (preg_match('#^/tipoautomotor/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_tipoautomotor_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tipoautomotor_update')), array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::updateAction',));
+                }
+                not_tipoautomotor_update:
+
+                // tipoautomotor_delete
+                if (preg_match('#^/tipoautomotor/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_tipoautomotor_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'tipoautomotor_delete')), array (  '_controller' => 'GlavBundle\\Controller\\TipoAutomotorController::deleteAction',));
+                }
+                not_tipoautomotor_delete:
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/c')) {
             if (0 === strpos($pathinfo, '/cliente')) {
                 // cliente

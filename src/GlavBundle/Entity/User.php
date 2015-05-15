@@ -23,7 +23,17 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
-        $this->roles = array('ROLE_USER');
+        $this->roles = array('ROLE_SUPER_ADMIN');
 
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

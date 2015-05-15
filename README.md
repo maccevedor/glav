@@ -1,4 +1,9 @@
- Crear base de datos con las entitys
+Crear base datos
+
+php app/console doctrine:database:create
+
+
+Crear base de datos con las entitys
  
  php app/console doctrine:schema:update --force 
  
@@ -24,6 +29,10 @@ php app/console doctrine:generate:entities AppBundle/Entity/Product
 Generar el crud con la consola 
 
 php app/console generate:doctrine:crud --entity=AcmeBlogBundle:Post
+
+sobre escribr crud
+
+php app/console generate:doctrine:crud --overwrite --entity=GlavBundle:TipoRubro 
 
 
 # Symfony (2.6.4)

@@ -310,7 +310,7 @@
                     <ul class="dropdown-menu">
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li>
-                            <a href="#"><i class="halflings-icon white user"></i> {{ app.user.username }}</a>
+                            <a href="{{ path('fos_user_profile_show') }}"><i class="halflings-icon white user"></i> {{ app.user.username }}</a>
                         </li>    
                         <li>
                             <a href="{{ path('fos_user_security_logout') }}"><i class="halflings-icon off"></i> Log Out / Salir</a>

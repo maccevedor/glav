@@ -1,0 +1,15 @@
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+
+{% block infoUserTop %}
+    <h1>TipoAutomotor creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('tipoautomotor') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

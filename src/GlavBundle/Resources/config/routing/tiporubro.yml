@@ -1,0 +1,30 @@
+tiporubro:
+    path:     /
+    defaults: { _controller: "GlavBundle:TipoRubro:index" }
+
+tiporubro_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:TipoRubro:show" }
+
+tiporubro_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:TipoRubro:new" }
+
+tiporubro_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:TipoRubro:create" }
+    methods:  POST
+
+tiporubro_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:TipoRubro:edit" }
+
+tiporubro_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:TipoRubro:update" }
+    methods:  [POST, PUT]
+
+tiporubro_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:TipoRubro:delete" }
+    methods:  [POST, DELETE]

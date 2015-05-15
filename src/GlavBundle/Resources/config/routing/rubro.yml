@@ -1,0 +1,30 @@
+rubro:
+    path:     /
+    defaults: { _controller: "GlavBundle:Rubro:index" }
+
+rubro_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:Rubro:show" }
+
+rubro_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:Rubro:new" }
+
+rubro_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:Rubro:create" }
+    methods:  POST
+
+rubro_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:Rubro:edit" }
+
+rubro_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:Rubro:update" }
+    methods:  [POST, PUT]
+
+rubro_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:Rubro:delete" }
+    methods:  [POST, DELETE]
