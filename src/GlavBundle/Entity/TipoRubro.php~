@@ -172,9 +172,34 @@ class TipoRubro
         return $this->fecha;
     }
     
-        
+
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return TipoRubro
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    
+            
     public function __toString()
     {
-        return $this->getDescripcion();
+        return $this->getNombre();
     }
 }

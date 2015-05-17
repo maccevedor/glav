@@ -16,7 +16,6 @@ class AutomotorType extends AbstractType
     {
         $builder
             ->add('hash')
-            ->add('tipo_rubro')
             ->add('modelo')
             ->add('matricula')
             ->add('estado')

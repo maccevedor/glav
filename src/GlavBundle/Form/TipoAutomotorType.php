@@ -16,6 +16,7 @@ class TipoAutomotorType extends AbstractType
     {
         $builder
             ->add('hash')
+            ->add('nombre')
             ->add('descripcion')
             ->add('estado')
             ->add('fecha')

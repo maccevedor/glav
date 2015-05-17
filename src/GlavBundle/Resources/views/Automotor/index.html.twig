@@ -3,12 +3,11 @@
 {% block infoUserTop %}
     <h1>Automotor list</h1>
 
-    <table class="records_list">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Hash</th>
-                <th>Tipo_rubro</th>
                 <th>Modelo</th>
                 <th>Matricula</th>
                 <th>Estado</th>
@@ -21,7 +20,6 @@
             <tr>
                 <td><a href="{{ path('automotor_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.hash }}</td>
-                <td>{{ entity.tiporubro }}</td>
                 <td>{{ entity.modelo }}</td>
                 <td>{{ entity.matricula }}</td>
                 <td>{{ entity.estado }}</td>

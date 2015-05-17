@@ -127,6 +127,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/servicio')) {
+            // servicio
+            if (rtrim($pathinfo, '/') === '/servicio') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'servicio');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::indexAction',  '_route' => 'servicio',);
+            }
+
+            // servicio_show
+            if (preg_match('#^/servicio/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'servicio_show')), array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::showAction',));
+            }
+
+            // servicio_new
+            if ($pathinfo === '/servicio/new') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::newAction',  '_route' => 'servicio_new',);
+            }
+
+            // servicio_create
+            if ($pathinfo === '/servicio/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_servicio_create;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::createAction',  '_route' => 'servicio_create',);
+            }
+            not_servicio_create:
+
+            // servicio_edit
+            if (preg_match('#^/servicio/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'servicio_edit')), array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::editAction',));
+            }
+
+            // servicio_update
+            if (preg_match('#^/servicio/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_servicio_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'servicio_update')), array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::updateAction',));
+            }
+            not_servicio_update:
+
+            // servicio_delete
+            if (preg_match('#^/servicio/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_servicio_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'servicio_delete')), array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::deleteAction',));
+            }
+            not_servicio_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/automotor')) {
             // automotor
             if (rtrim($pathinfo, '/') === '/automotor') {

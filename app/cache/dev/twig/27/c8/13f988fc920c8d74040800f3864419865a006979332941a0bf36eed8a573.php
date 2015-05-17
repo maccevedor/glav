@@ -8,15 +8,15 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "GlavBundle:TipoAutomotor:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("GlavBundle::layoutAdmin.html.twig", "GlavBundle:TipoAutomotor:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'infoUserTop' => array($this, 'block_infoUserTop'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "GlavBundle::layoutAdmin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_infoUserTop($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>TipoAutomotor</h1>
+        echo "    <h1>TipoAutomotor</h1>
 
     <table class=\"record_properties\">
         <tbody>
@@ -47,23 +47,30 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
         echo "</td>
             </tr>
             <tr>
-                <th>Descripcion</th>
+                <th>Nombre</th>
                 <td>";
         // line 18
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nombre", array()), "html", null, true);
+        echo "</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>";
+        // line 22
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "descripcion", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Estado</th>
                 <td>";
-        // line 22
+        // line 26
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "estado", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Fecha</th>
                 <td>";
-        // line 26
+        // line 30
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "fecha", array()), "Y-m-d H:i:s"), "html", null, true);
         echo "</td>
             </tr>
@@ -73,7 +80,7 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
         <ul class=\"record_actions\">
     <li>
         <a href=\"";
-        // line 33
+        // line 37
         echo $this->env->getExtension('routing')->getPath("tipoautomotor");
         echo "\">
             Back to the list
@@ -81,14 +88,14 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
     </li>
     <li>
         <a href=\"";
-        // line 38
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tipoautomotor_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id", array()))), "html", null, true);
         echo "\">
             Edit
         </a>
     </li>
     <li>";
-        // line 42
+        // line 46
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form');
         echo "</li>
 </ul>
@@ -107,6 +114,6 @@ class __TwigTemplate_27c813f988fc920c8d74040800f3864419865a006979332941a0bf36eed
 
     public function getDebugInfo()
     {
-        return array (  92 => 42,  85 => 38,  77 => 33,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  99 => 46,  92 => 42,  84 => 37,  74 => 30,  67 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

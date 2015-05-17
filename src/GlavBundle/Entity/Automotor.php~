@@ -41,13 +41,7 @@ class Automotor
     
     private $id_tipo_automotor;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo_rubro", type="string", length=255)
-     */
-    private $tipo_rubro;
-    
+
     /**
      * @var string
      *

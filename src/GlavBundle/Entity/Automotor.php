@@ -41,13 +41,7 @@ class Automotor
     
     private $id_tipo_automotor;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="tipo_rubro", type="string", length=255)
-     */
-    private $tipo_rubro;
-    
+
     /**
      * @var string
      *
@@ -254,5 +248,10 @@ class Automotor
     public function getFecha()
     {
         return $this->fecha;
+    }
+    
+    public function __toString()
+    {
+        return $this->getMatricula();
     }
 }

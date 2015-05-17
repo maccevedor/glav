@@ -30,11 +30,12 @@ class __TwigTemplate_32509cf393af8f50fd302015820db83eb06ea4370a5afe3a6a548b7a1a2
         // line 4
         echo "    <h1>TipoAutomotor list</h1>
 
-    <table class=\"table table-striped>
+    <table class=\"table table-striped\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Hash</th>
+                <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
                 <th>Fecha</th>
@@ -43,32 +44,36 @@ class __TwigTemplate_32509cf393af8f50fd302015820db83eb06ea4370a5afe3a6a548b7a1a2
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 19
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 19
+            // line 20
             echo "            <tr>
                 <td><a href=\"";
-            // line 20
+            // line 21
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tipoautomotor_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 21
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "hash", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
-            echo "</td>
-                <td>";
             // line 23
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "estado", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 24
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 25
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "estado", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 26
             if ($this->getAttribute($context["entity"], "fecha", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fecha", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -77,13 +82,13 @@ class __TwigTemplate_32509cf393af8f50fd302015820db83eb06ea4370a5afe3a6a548b7a1a2
                 <ul>
                     <li>
                         <a href=\"";
-            // line 28
+            // line 30
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tipoautomotor_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">show</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 31
+            // line 33
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("tipoautomotor_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">edit</a>
                     </li>
@@ -95,14 +100,14 @@ class __TwigTemplate_32509cf393af8f50fd302015820db83eb06ea4370a5afe3a6a548b7a1a2
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 39
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 42
+        // line 44
         echo $this->env->getExtension('routing')->getPath("tipoautomotor_new");
         echo "\">
                 Create a new entry
@@ -124,6 +129,6 @@ class __TwigTemplate_32509cf393af8f50fd302015820db83eb06ea4370a5afe3a6a548b7a1a2
 
     public function getDebugInfo()
     {
-        return array (  106 => 42,  99 => 37,  87 => 31,  81 => 28,  72 => 24,  68 => 23,  64 => 22,  60 => 21,  54 => 20,  51 => 19,  47 => 18,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  111 => 44,  104 => 39,  92 => 33,  86 => 30,  77 => 26,  73 => 25,  69 => 24,  65 => 23,  61 => 22,  55 => 21,  52 => 20,  48 => 19,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

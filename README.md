@@ -1,3 +1,20 @@
+Realizar copia de los archivos
+
+
+//Realiza la copia de los archivos del sevidor
+git clone https://github.com/anderipe/glav.git 
+
+
+// Realiza la descarga de la base de datos de git
+git fetch
+
+// desca los archivos q cambiaron
+git pull
+
+
+// estado de git
+git status
+
 Crear base datos
 
 php app/console doctrine:database:create
@@ -6,6 +23,8 @@ php app/console doctrine:database:create
 Crear base de datos con las entitys
  
  php app/console doctrine:schema:update --force 
+ 
+ php app/console doctrine:schema:update --dump-sql
  
  Si saba se de datos ya existe 
   y la queremos importar 
