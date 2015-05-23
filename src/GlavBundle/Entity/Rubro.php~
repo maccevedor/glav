@@ -287,4 +287,8 @@ class Rubro
     {
         return $this->fecha;
     }
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

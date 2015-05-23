@@ -5,6 +5,7 @@ namespace GlavBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class ServicioType extends AbstractType
 {
@@ -15,17 +16,20 @@ class ServicioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
-            ->add('observacion')
-            ->add('fecha_servicio')
-            ->add('fecha_entrega')
-            ->add('estado')
-            ->add('fecha')
+            ->add('fecha_servicio')    
+            //->add('estado')
+            //->add('fecha')
             ->add('id_cliente')
             ->add('id_empleado')
             ->add('id_automotor')
-            ->add('id_servicio_estado')
+            ->add('estadoServicio', 'choice', array(
+                  'choice_list' => new ChoiceList(array('Iniciado', 'Espera','Finalizado','Anulado'), array('Iniciado',  'Espera','Finalizado','Anulado')),
+                        'label' => 'Selecciona estado del servido',
+                    	'empty_value' => 'Selecciona estado del servido'
+                ,'attr' => array('class'=>'form-control')))
             ->add('id_rubro')
+            ->add('fecha_entrega')
+            ->add('observacion')
         ;
     }
     

@@ -71,7 +71,7 @@ class __TwigTemplate_b7da17c43919efa0d1050420b70e609922d77f0c20b1a44c70b82839bb0
         echo twig_escape_filter($this->env, twig_join_filter($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "roles", array()), ", "), "html", null, true);
         echo " 
     
-    <table class=\"table table-striped\">
+    <table class=\"table table-striped table-bordered dataTable no-footer\">
         <thead>
             <tr>
                 <th>Id</th>

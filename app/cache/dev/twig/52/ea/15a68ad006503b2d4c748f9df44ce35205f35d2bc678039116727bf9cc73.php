@@ -24,21 +24,21 @@ class __TwigTemplate_52ea15a68ad006503b2d4c748f9df44ce35205f35d2bc678039116727bf
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 3
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 5
+        // line 4
         echo "    <h1>Servicio creation</h1>
 
     ";
-        // line 7
+        // line 6
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
         echo "
 
         <ul class=\"record_actions\">
     <li>
         <a href=\"";
-        // line 11
+        // line 10
         echo $this->env->getExtension('routing')->getPath("servicio");
         echo "\">
             Back to the list
@@ -60,6 +60,6 @@ class __TwigTemplate_52ea15a68ad006503b2d4c748f9df44ce35205f35d2bc678039116727bf
 
     public function getDebugInfo()
     {
-        return array (  42 => 11,  35 => 7,  31 => 5,  28 => 4,  11 => 1,);
+        return array (  42 => 10,  35 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

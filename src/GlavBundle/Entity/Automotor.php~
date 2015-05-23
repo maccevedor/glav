@@ -249,4 +249,9 @@ class Automotor
     {
         return $this->fecha;
     }
+    
+    public function __toString()
+    {
+        return $this->getMatricula();
+    }
 }

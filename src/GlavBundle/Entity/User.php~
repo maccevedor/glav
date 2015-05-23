@@ -23,7 +23,7 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
-        $this->roles = array('ROLE_SUPER_ADMIN');
+        $this->roles = array('ROLE_ADMIN');
 
     }
 

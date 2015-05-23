@@ -8,15 +8,15 @@ class __TwigTemplate_94729907acbfdf46878527d8748ba14e6756486f40301a448c8b87613df
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "GlavBundle:TipoRubro:show.html.twig", 1);
+        $this->parent = $this->loadTemplate("GlavBundle::layoutAdmin.html.twig", "GlavBundle:TipoRubro:show.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'infoUserTop' => array($this, 'block_infoUserTop'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "GlavBundle::layoutAdmin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,10 +25,10 @@ class __TwigTemplate_94729907acbfdf46878527d8748ba14e6756486f40301a448c8b87613df
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_infoUserTop($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>TipoRubro</h1>
+        echo "    <h1>TipoRubro</h1>
 
     <table class=\"record_properties\">
         <tbody>

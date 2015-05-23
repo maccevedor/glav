@@ -1,5 +1,8 @@
 Realizar copia de los archivos
 
+Inicializar el servidor 
+php app/console server:run localhost:3000  
+
 
 //Realiza la copia de los archivos del sevidor
 git clone https://github.com/anderipe/glav.git 
@@ -24,6 +27,8 @@ Crear base de datos con las entitys
  
  php app/console doctrine:schema:update --force 
  
+ 
+ // Muestra que cambios se vna hacer en la base datos
  php app/console doctrine:schema:update --dump-sql
  
  Si saba se de datos ya existe 
@@ -53,6 +58,31 @@ sobre escribr crud
 
 php app/console generate:doctrine:crud --overwrite --entity=GlavBundle:TipoRubro 
 
+-----Tareas---------
+
+Que no se vea el hash
+
+Los campos de estado deben desaparecer
+
+Dejar fijo del Iva
+
+
+Mejorar los label
+
+Estados del servicio
+
+Iniciado , finalizado , anulado , en espera
+
+1.16
+
+
+Agregar register al role administrador
+ventana de deslogado aplicar plantilla
+Configurar el boton de home
+Eliminar la columna hash de la lista
+el tamaño de las tablas esta desproporcionado y no se puede mover la ventana para mirar todas las columnas
+Agregar label al campo hora
+Los campos de fecha no genera fecha actual
 
 # Symfony (2.6.4)
 

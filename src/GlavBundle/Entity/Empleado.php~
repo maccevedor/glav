@@ -401,4 +401,9 @@ class Empleado
     {
         return $this->id_cargo;
     }
+    
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

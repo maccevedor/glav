@@ -3,7 +3,8 @@
      "Configure Project": "bash symfonyconfig.sh"
     },
     "preview": {
-     "Symfony Config": "https://{{domain}}:9500/web/config.php",
-     "Developer": "https://drum-barcode.codio.io:9500/web/app_dev.php/"
+     //"Symfony Config": "https://{{domain}}:9500/web/config.php",
+     "Developer": "https://drum-barcode.codio.io:9500/web/app_dev.php/",
+     "Box URL": "http://drum-barcode.codio.io:3000/web/app_dev.php/"
     }
 }

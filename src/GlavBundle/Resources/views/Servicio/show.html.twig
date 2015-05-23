@@ -1,6 +1,5 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
-
 {% block infoUserTop %}
     <h1>Servicio</h1>
 
@@ -13,6 +12,10 @@
             <tr>
                 <th>Hash</th>
                 <td>{{ entity.hash }}</td>
+            </tr>
+            <tr>
+                <th>Estadoservicio</th>
+                <td>{{ entity.estadoServicio }}</td>
             </tr>
             <tr>
                 <th>Observacion</th>
