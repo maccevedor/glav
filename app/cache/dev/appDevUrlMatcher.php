@@ -127,6 +127,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/factura')) {
+            // factura
+            if (rtrim($pathinfo, '/') === '/factura') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'factura');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::indexAction',  '_route' => 'factura',);
+            }
+
+            // factura_show
+            if (preg_match('#^/factura/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_show')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::showAction',));
+            }
+
+            // factura_new
+            if ($pathinfo === '/factura/new') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::newAction',  '_route' => 'factura_new',);
+            }
+
+            // factura_create
+            if ($pathinfo === '/factura/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_factura_create;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::createAction',  '_route' => 'factura_create',);
+            }
+            not_factura_create:
+
+            // factura_edit
+            if (preg_match('#^/factura/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_edit')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::editAction',));
+            }
+
+            // factura_update
+            if (preg_match('#^/factura/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_factura_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_update')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::updateAction',));
+            }
+            not_factura_update:
+
+            // factura_delete
+            if (preg_match('#^/factura/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_factura_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_delete')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::deleteAction',));
+            }
+            not_factura_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/servicio')) {
             // servicio
             if (rtrim($pathinfo, '/') === '/servicio') {

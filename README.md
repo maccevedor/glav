@@ -52,7 +52,7 @@ php app/console doctrine:generate:entities AppBundle/Entity/Product
 
 Generar el crud con la consola 
 
-php app/console generate:doctrine:crud --entity=AcmeBlogBundle:Post
+php app/console generate:doctrine:crud --entity=GlavBundle:Factura
 
 sobre escribr crud
 
