@@ -4,9 +4,12 @@ namespace GlavBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use GlavBundle\Entity\Factura;
+use GlavBundle\Entity\Servicio;
+use GlavBundle\Entity\FacturaDetalle;
 use GlavBundle\Form\FacturaType;
+use GlavBundle\Form\FacturaDetalleType;
+
 
 /**
  * Factura controller.
@@ -78,12 +81,16 @@ class FacturaController extends Controller
      */
     public function newAction()
     {
-        $entity = new Factura();
-        $form   = $this->createCreateForm($entity);
+        $entity = new Factura;
+        $facturaDetalle = new FacturaDetalle;
+        //$form   = $this->createCreateForm($entity);
+        $form = $this->createForm(new FacturaType() ,$entity);
+        $formF  = $this->createForm(new FacturaDetalleType() ,$facturaDetalle);
 
         return $this->render('GlavBundle:Factura:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'formF' => $formF->createView(),
         ));
     }
 
@@ -220,5 +227,21 @@ class FacturaController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+    
+    public function valorServicioAction(Request $datos)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $idServicio = $datos->get('servicioId');
+        $servicio = $em->getRepository('GlavBundle:Servicio')->find($idServicio);
+        $valor = $servicio->getIdRubro()->getValor();
+        echo $valor;exit();
+        
+
+        $entities = $em->getRepository('GlavBundle:Factura')->findAll();
+
+        return $this->render('GlavBundle:Factura:index.html.twig', array(
+            'entities' => $entities,
+        ));
     }
 }

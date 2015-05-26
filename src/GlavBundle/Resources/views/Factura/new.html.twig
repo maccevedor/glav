@@ -1,9 +1,22 @@
-{% extends '::base.html.twig' %}
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
-{% block body -%}
+
+{% block infoUserTop %}
+<form id="factura" action="{{ path('cliente') }}" method="post" enctype="multipart/form-data" >
+
     <h1>Factura creation</h1>
+{{ app.user.id }}
+    {{ form_widget(form) }}
+    
+    
+    <h1>Detalle de Factura</h1>
 
-    {{ form(form) }}
+    {{ form_widget(formF) }}
+    <div id="informacion">
+    </div>
+
+    <input type="submit" />
+
 
         <ul class="record_actions">
     <li>
@@ -12,4 +25,24 @@
         </a>
     </li>
 </ul>
+
+</form>
+<script type="text/javascript">
+
+window.onload = function() {
+    $('#glavbundle_facturadetalle_id_servicio').on('change', function() {
+    alert( $(this).find(":selected").val());
+    servicioId = $(this).find(":selected").val();
+    //$('#informacion').load('{{ path('factura_valor') }}',
+            //$('#dialogoBox').hide();
+            $('#informacion').load('{{ path('factura_valor') }}',{servicioId:servicioId},function()
+            {
+                $('#informacion').show();
+            });
+
+});
+}
+
+</script>
+
 {% endblock %}

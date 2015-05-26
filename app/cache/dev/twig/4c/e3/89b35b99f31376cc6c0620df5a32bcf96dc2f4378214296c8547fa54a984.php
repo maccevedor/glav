@@ -264,7 +264,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t\t\t\t</li>\t
                             \t<li>
                                     <a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"img/avatar.jpg\" alt=\"Avatar\"></span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"";
+        // line 226
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\" alt=\"Avatar\"></span>
 \t\t\t\t\t\t\t\t\t\t<span class=\"header\">
 \t\t\t\t\t\t\t\t\t\t\t<span class=\"from\">
 \t\t\t\t\t\t\t\t\t\t    \tDennis Ji
@@ -280,7 +283,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
                                 </li>
                                 <li>
                                     <a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"img/avatar.jpg\" alt=\"Avatar\"></span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"";
+        // line 242
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\" alt=\"Avatar\"></span>
 \t\t\t\t\t\t\t\t\t\t<span class=\"header\">
 \t\t\t\t\t\t\t\t\t\t\t<span class=\"from\">
 \t\t\t\t\t\t\t\t\t\t    \tDennis Ji
@@ -296,7 +302,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
                                 </li>
                                 <li>
                                     <a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"img/avatar.jpg\" alt=\"Avatar\"></span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"";
+        // line 258
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\" alt=\"Avatar\"></span>
 \t\t\t\t\t\t\t\t\t\t<span class=\"header\">
 \t\t\t\t\t\t\t\t\t\t\t<span class=\"from\">
 \t\t\t\t\t\t\t\t\t\t    \tDennis Ji
@@ -312,7 +321,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
                                 </li>
 \t\t\t\t\t\t\t\t<li>
                                     <a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"img/avatar.jpg\" alt=\"Avatar\"></span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"";
+        // line 274
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\" alt=\"Avatar\"></span>
 \t\t\t\t\t\t\t\t\t\t<span class=\"header\">
 \t\t\t\t\t\t\t\t\t\t\t<span class=\"from\">
 \t\t\t\t\t\t\t\t\t\t    \tDennis Ji
@@ -328,7 +340,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
                                 </li>
                                 <li>
                                     <a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"img/avatar.jpg\" alt=\"Avatar\"></span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"avatar\"><img src=\"";
+        // line 290
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\" alt=\"Avatar\"></span>
 \t\t\t\t\t\t\t\t\t\t<span class=\"header\">
 \t\t\t\t\t\t\t\t\t\t\t<span class=\"from\">
 \t\t\t\t\t\t\t\t\t\t    \tDennis Ji
@@ -1033,7 +1048,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t\t<ul class=\"dashboard-list metro\">
 \t\t\t\t\t\t\t<li class=\"green\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"img/avatar.jpg\">
+\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
+        // line 789
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<strong>Name:</strong> Dennis Ji<br>
 \t\t\t\t\t\t\t\t<strong>Since:</strong> Jul 25, 2012 11:09<br>
@@ -1041,7 +1059,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li class=\"yellow\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"img/avatar.jpg\">
+\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
+        // line 797
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<strong>Name:</strong> Dennis Ji<br>
 \t\t\t\t\t\t\t\t<strong>Since:</strong> Jul 25, 2012 11:09<br>
@@ -1049,7 +1070,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li class=\"red\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"img/avatar.jpg\">
+\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
+        // line 805
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<strong>Name:</strong> Dennis Ji<br>
 \t\t\t\t\t\t\t\t<strong>Since:</strong> Jul 25, 2012 11:09<br>
@@ -1057,7 +1081,10 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t<li class=\"blue\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"img/avatar.jpg\">
+\t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
+        // line 813
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
+        echo "\">
 \t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t<strong>Name:</strong> Dennis Ji<br>
 \t\t\t\t\t\t\t\t<strong>Since:</strong> Jul 25, 2012 11:09<br>
@@ -1305,6 +1332,6 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 
     public function getDebugInfo()
     {
-        return array (  663 => 416,  660 => 415,  630 => 364,  627 => 363,  618 => 1120,  614 => 1119,  610 => 1118,  606 => 1117,  602 => 1116,  598 => 1115,  594 => 1114,  590 => 1113,  586 => 1112,  582 => 1111,  578 => 1110,  574 => 1109,  570 => 1108,  566 => 1107,  562 => 1106,  558 => 1105,  554 => 1104,  550 => 1103,  546 => 1102,  542 => 1101,  538 => 1100,  534 => 1099,  530 => 1098,  526 => 1097,  522 => 1096,  518 => 1095,  514 => 1094,  510 => 1093,  506 => 1092,  502 => 1091,  456 => 1047,  454 => 415,  428 => 391,  426 => 363,  393 => 332,  386 => 328,  383 => 327,  374 => 321,  366 => 318,  363 => 317,  361 => 316,  357 => 314,  81 => 41,  74 => 37,  67 => 33,  57 => 26,  53 => 25,  49 => 24,  40 => 18,  21 => 1,);
+        return array (  1086 => 813,  1075 => 805,  1064 => 797,  1053 => 789,  678 => 416,  675 => 415,  645 => 364,  642 => 363,  633 => 1120,  629 => 1119,  625 => 1118,  621 => 1117,  617 => 1116,  613 => 1115,  609 => 1114,  605 => 1113,  601 => 1112,  597 => 1111,  593 => 1110,  589 => 1109,  585 => 1108,  581 => 1107,  577 => 1106,  573 => 1105,  569 => 1104,  565 => 1103,  561 => 1102,  557 => 1101,  553 => 1100,  549 => 1099,  545 => 1098,  541 => 1097,  537 => 1096,  533 => 1095,  529 => 1094,  525 => 1093,  521 => 1092,  517 => 1091,  471 => 1047,  469 => 415,  443 => 391,  441 => 363,  408 => 332,  401 => 328,  398 => 327,  389 => 321,  381 => 318,  378 => 317,  376 => 316,  372 => 314,  345 => 290,  326 => 274,  307 => 258,  288 => 242,  269 => 226,  81 => 41,  74 => 37,  67 => 33,  57 => 26,  53 => 25,  49 => 24,  40 => 18,  21 => 1,);
     }
 }

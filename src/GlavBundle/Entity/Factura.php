@@ -53,7 +53,7 @@ class Factura
      */
     
     
-    private $iva;
+    private $iva = "1.16";
     
     /**
      * @var string
@@ -261,5 +261,9 @@ class Factura
     public function getFecha()
     {
         return $this->fecha;
+    }
+    public function __toString()
+    {
+        return $this->getId();
     }
 }

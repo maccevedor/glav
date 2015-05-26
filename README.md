@@ -77,12 +77,14 @@ Iniciado , finalizado , anulado , en espera
 
 
 Agregar register al role administrador
-ventana de deslogado aplicar plantilla
+ventana de deslogado aplicar plantilla(ok)
 Configurar el boton de home
 Eliminar la columna hash de la lista
 el tamaño de las tablas esta desproporcionado y no se puede mover la ventana para mirar todas las columnas
 Agregar label al campo hora
 Los campos de fecha no genera fecha actual
+
+preguntar cuando se realizaria el despuesto d elo que se le presta al operario
 
 # Symfony (2.6.4)
 

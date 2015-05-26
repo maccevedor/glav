@@ -15,14 +15,14 @@ class FacturaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+            //->add('hash')
             ->add('id_usuario')
             ->add('valor')
             ->add('iva')
-            ->add('total')
+            //->add('total')
             ->add('observacion')
-            ->add('estado')
-            ->add('fecha')
+            //->add('estado')
+            //->add('fecha')
         ;
     }
     

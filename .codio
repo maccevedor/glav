@@ -1,6 +1,8 @@
 {
     "commands": {
-     "Configure Project": "bash symfonyconfig.sh"
+     //"Configure Project": "bash symfonyconfig.sh"
+     "Run": "php app/console server:run localhost:3000"
+
     },
     "preview": {
      //"Symfony Config": "https://{{domain}}:9500/web/config.php",

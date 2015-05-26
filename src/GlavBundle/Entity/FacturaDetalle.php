@@ -76,7 +76,8 @@ class FacturaDetalle
      */
     
     
-    private $iva;
+    private $iva = "1.16";
+
     
     /**
      * @var string

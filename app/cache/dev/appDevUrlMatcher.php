@@ -128,6 +128,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/factura')) {
+            if (0 === strpos($pathinfo, '/facturadetalle')) {
+                // facturadetalle
+                if (rtrim($pathinfo, '/') === '/facturadetalle') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'facturadetalle');
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::indexAction',  '_route' => 'facturadetalle',);
+                }
+
+                // facturadetalle_show
+                if (preg_match('#^/facturadetalle/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'facturadetalle_show')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::showAction',));
+                }
+
+                // facturadetalle_new
+                if ($pathinfo === '/facturadetalle/new') {
+                    return array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::newAction',  '_route' => 'facturadetalle_new',);
+                }
+
+                // facturadetalle_create
+                if ($pathinfo === '/facturadetalle/create') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_facturadetalle_create;
+                    }
+
+                    return array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::createAction',  '_route' => 'facturadetalle_create',);
+                }
+                not_facturadetalle_create:
+
+                // facturadetalle_edit
+                if (preg_match('#^/facturadetalle/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'facturadetalle_edit')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::editAction',));
+                }
+
+                // facturadetalle_update
+                if (preg_match('#^/facturadetalle/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                        $allow = array_merge($allow, array('POST', 'PUT'));
+                        goto not_facturadetalle_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'facturadetalle_update')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::updateAction',));
+                }
+                not_facturadetalle_update:
+
+                // facturadetalle_delete
+                if (preg_match('#^/facturadetalle/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                        $allow = array_merge($allow, array('POST', 'DELETE'));
+                        goto not_facturadetalle_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'facturadetalle_delete')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaDetalleController::deleteAction',));
+                }
+                not_facturadetalle_delete:
+
+            }
+
             // factura
             if (rtrim($pathinfo, '/') === '/factura') {
                 if (substr($pathinfo, -1) !== '/') {
@@ -184,6 +244,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_delete')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::deleteAction',));
             }
             not_factura_delete:
+
+            // factura_valor
+            if ($pathinfo === '/factura/valor') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::valorServicioAction',  '_route' => 'factura_valor',);
+            }
 
         }
 

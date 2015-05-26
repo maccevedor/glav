@@ -34,22 +34,22 @@ class __TwigTemplate_d9c06482abe7c1b6c74a52124efb7edf888ed51b0361f1e74e4927cefe6
         ";
     }
 
-    // line 10
+    // line 7
     public function block_menu($context, array $blocks = array())
     {
-        // line 11
+        // line 8
         echo "
         <ul class=\"nav nav-tabs nav-stacked main-menu\">
 \t\t    <li><a href=\"";
-        // line 13
+        // line 10
         echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
         echo "\"><i class=\"icon-tablet\"></i><span class=\"hidden-tablet\"> Iniciar Session</span></a></li>
             <li><a href=\"";
-        // line 14
+        // line 11
         echo $this->env->getExtension('routing')->getPath("empleado");
         echo "\"><i class=\"icon-bar-chart\"></i><span class=\"hidden-tablet\">Consultar Factura</span></a></li>\t
             <li><a href=\"";
-        // line 15
+        // line 12
         echo $this->env->getExtension('routing')->getPath("cliente");
         echo "\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\">Ayuda</span></a></li>
 \t\t</ul>
@@ -57,10 +57,10 @@ class __TwigTemplate_d9c06482abe7c1b6c74a52124efb7edf888ed51b0361f1e74e4927cefe6
     ";
     }
 
-    // line 19
+    // line 16
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 20
+        // line 17
         echo "            ";
         $this->displayBlock("fos_user_content", $context, $blocks);
         echo "
@@ -79,6 +79,6 @@ class __TwigTemplate_d9c06482abe7c1b6c74a52124efb7edf888ed51b0361f1e74e4927cefe6
 
     public function getDebugInfo()
     {
-        return array (  64 => 20,  61 => 19,  53 => 15,  49 => 14,  45 => 13,  41 => 11,  38 => 10,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  64 => 17,  61 => 16,  53 => 12,  49 => 11,  45 => 10,  41 => 8,  38 => 7,  33 => 4,  30 => 3,  11 => 1,);
     }
 }

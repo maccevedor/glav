@@ -468,4 +468,8 @@ class Servicio
     {
         return $this->estadoServicio;
     }
+    public function __toString()
+    {
+        return $this->getObservacion();
+    }
 }

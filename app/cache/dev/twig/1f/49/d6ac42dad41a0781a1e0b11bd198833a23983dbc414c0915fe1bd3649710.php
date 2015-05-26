@@ -63,12 +63,31 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
             // line 14
             echo $this->env->getExtension('routing')->getPath("automotor");
             echo "\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
-            
+           <li>
+\t\t\t\t\t\t\t<a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Informes</span><span class=\"label label-important\"> 3 </span></a>
+\t\t\t\t\t\t\t<ul>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Diarios</span></a></li>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Mensuales</span></a></li>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Totales </span></a></li>
+\t\t\t\t\t\t\t</ul>\t
+\t\t\t\t\t\t</li>
+ 
+            \t\t</ul>
+                    
+                    
+  ";
+        } elseif ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
+            // line 27
+            echo "  
+  
+          <ul class=\"nav nav-tabs nav-stacked main-menu\">
+
             <li><a href=\"";
-            // line 16
-            echo $this->env->getExtension('routing')->getPath("servicio");
-            echo "\"><i class=\"icon-inbox\"></i><span class=\"hidden-tablet\"> Servicio</span></a></li>\t
-            <li><a href=\"index.html\"><i class=\"icon-envelope\"></i><span class=\"hidden-tablet\"> Facturas</span></a></li>\t
+            // line 31
+            echo $this->env->getExtension('routing')->getPath("cliente");
+            echo "\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\"> Cliente</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
+            <li><a href=\"index.html\"><i class=\"icon-inbox\"></i><span class=\"hidden-tablet\"> Servicio</span></a></li>\t   
             <li>
 \t\t\t\t\t\t\t<a class=\"dropmenu\" href=\"#\"><i class=\"icon-folder-close-alt\"></i><span class=\"hidden-tablet\"> Informes</span><span class=\"label label-important\"> 3 </span></a>
 \t\t\t\t\t\t\t<ul>
@@ -77,46 +96,30 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
 \t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Totales </span></a></li>
 \t\t\t\t\t\t\t</ul>\t
 \t\t\t\t\t\t</li>
-\t\t\t\t\t</ul>
-                    
-                    
-  ";
-        } elseif ($this->env->getExtension('security')->isGranted("ROLE_USER")) {
-            // line 29
-            echo "  
-  
-          <ul class=\"nav nav-tabs nav-stacked main-menu\">
 
-            <li><a href=\"";
-            // line 33
-            echo $this->env->getExtension('routing')->getPath("cliente");
-            echo "\"><i class=\"icon-user\"></i><span class=\"hidden-tablet\"> Cliente</span></a></li>
-            <li><a href=\"index.html\"><i class=\"icon-road\"></i><span class=\"hidden-tablet\"> Automotor</span></a></li>
-            <li><a href=\"index.html\"><i class=\"icon-inbox\"></i><span class=\"hidden-tablet\"> Servicio</span></a></li>\t   
-            <li><a href=\"index.html\"><i class=\"icon-save\"></i><span class=\"hidden-tablet\"> Informes</span></a></li>
 \t\t\t\t\t</ul>
   
   ";
         } else {
-            // line 39
+            // line 45
             echo "  
   
     ";
-            // line 41
+            // line 47
             $this->displayParentBlock("menu", $context, $blocks);
             echo "
 
   
   ";
         }
-        // line 45
+        // line 51
         echo "  ";
     }
 
-    // line 48
+    // line 54
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 49
+        // line 55
         echo "<img class=\"grayscale\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/img/AUTOLOGO.jpg"), "html", null, true);
         echo "\" alt=\"Sample Image 1\">
@@ -135,6 +138,6 @@ class __TwigTemplate_1f49d6ac42dad41a0781a1e0b11bd198833a23983dbc414c0915fe1bd36
 
     public function getDebugInfo()
     {
-        return array (  120 => 49,  117 => 48,  113 => 45,  106 => 41,  102 => 39,  92 => 33,  86 => 29,  69 => 16,  64 => 14,  60 => 13,  55 => 11,  51 => 10,  47 => 9,  43 => 8,  39 => 7,  35 => 5,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  123 => 55,  120 => 54,  116 => 51,  109 => 47,  105 => 45,  87 => 31,  81 => 27,  64 => 14,  60 => 13,  55 => 11,  51 => 10,  47 => 9,  43 => 8,  39 => 7,  35 => 5,  32 => 4,  29 => 3,  11 => 1,);
     }
 }

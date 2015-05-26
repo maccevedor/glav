@@ -1,0 +1,30 @@
+facturadetalle:
+    path:     /
+    defaults: { _controller: "GlavBundle:FacturaDetalle:index" }
+
+facturadetalle_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:FacturaDetalle:show" }
+
+facturadetalle_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:FacturaDetalle:new" }
+
+facturadetalle_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:FacturaDetalle:create" }
+    methods:  POST
+
+facturadetalle_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:FacturaDetalle:edit" }
+
+facturadetalle_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:FacturaDetalle:update" }
+    methods:  [POST, PUT]
+
+facturadetalle_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:FacturaDetalle:delete" }
+    methods:  [POST, DELETE]

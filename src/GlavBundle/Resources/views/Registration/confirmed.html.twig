@@ -1,7 +1,18 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
+    {% block menu %}
+
+        <ul class="nav nav-tabs nav-stacked main-menu">
+		    <li><a href="{{ path('fos_user_security_login') }}"><i class="icon-tablet"></i><span class="hidden-tablet"> Iniciar Session</span></a></li>
+            <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Consultar Factura</span></a></li>	
+            <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet">Ayuda</span></a></li>
+		</ul>
+
+    {% endblock %}
+    
+    
 {% block fos_user_content %}
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if app.session is not empty %}
