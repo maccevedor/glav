@@ -15,14 +15,14 @@ class RubroType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+           // ->add('hash')
+            ->add('id_tipo_rubro')
             ->add('nombre')
             ->add('descripcion')
             ->add('valor')
             ->add('iva')
             ->add('estado')
             ->add('fecha')
-            ->add('id_tipo_rubro')
         ;
     }
     

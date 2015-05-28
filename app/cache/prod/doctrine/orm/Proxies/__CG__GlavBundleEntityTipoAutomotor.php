@@ -64,10 +64,10 @@ class TipoAutomotor extends \GlavBundle\Entity\TipoAutomotor implements \Doctrin
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'fecha');
+            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'nombre', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'fecha');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'fecha');
+        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'nombre', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoAutomotor' . "\0" . 'fecha');
     }
 
     /**
@@ -274,6 +274,39 @@ class TipoAutomotor extends \GlavBundle\Entity\TipoAutomotor implements \Doctrin
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFecha', array());
 
         return parent::getFecha();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNombre($nombre)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNombre', array($nombre));
+
+        return parent::setNombre($nombre);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNombre()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNombre', array());
+
+        return parent::getNombre();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
     }
 
 }

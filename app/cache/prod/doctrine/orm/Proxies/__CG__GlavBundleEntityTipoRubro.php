@@ -64,10 +64,10 @@ class TipoRubro extends \GlavBundle\Entity\TipoRubro implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'fecha');
+            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'nombre', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'fecha');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'fecha');
+        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'nombre', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'descripcion', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\TipoRubro' . "\0" . 'fecha');
     }
 
     /**
@@ -274,6 +274,39 @@ class TipoRubro extends \GlavBundle\Entity\TipoRubro implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFecha', array());
 
         return parent::getFecha();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setNombre($nombre)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNombre', array($nombre));
+
+        return parent::setNombre($nombre);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getNombre()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNombre', array());
+
+        return parent::getNombre();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
     }
 
 }

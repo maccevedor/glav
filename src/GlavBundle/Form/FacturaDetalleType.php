@@ -5,6 +5,8 @@ namespace GlavBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
+
 
 class FacturaDetalleType extends AbstractType
 {
@@ -23,7 +25,18 @@ class FacturaDetalleType extends AbstractType
             //->add('estado')
             ->add('fecha')
             ->add('id_factura')
-            ->add('id_servicio')
+            ->add('id_servicio','entity' ,array(
+                'class' => 'GlavBundle:Servicio',
+                "label" => 'Servicio',
+                //'property' => 'nombre',
+                 //'empty_value' => 'Seleccione el programa',
+                 //'mapped' =>    false,
+                 //'property_path' => null,
+                 'attr' => array('class'=>'form-control'),
+                 'query_builder' => function(EntityRepository $er){return $er->createQueryBuilder('u')->where('u.estadoServicio LIKE :q')->setParameters(array('q' => '%'.'Finalizado'.'%')); },
+
+
+            ))
         ;
     }
     

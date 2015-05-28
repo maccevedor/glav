@@ -74,7 +74,9 @@ Estados del servicio
 Iniciado , finalizado , anulado , en espera
 
 1.16
-
+cuando realiza la factura el estado vacambiar ha estado facturado
+que el servicio siempre entre ha estado pendiente
+autocompletar para los listados de clientes
 
 Agregar register al role administrador
 ventana de deslogado aplicar plantilla(ok)

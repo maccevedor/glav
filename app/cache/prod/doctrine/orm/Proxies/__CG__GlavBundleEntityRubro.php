@@ -364,4 +364,15 @@ class Rubro extends \GlavBundle\Entity\Rubro implements \Doctrine\ORM\Proxy\Prox
         return parent::getFecha();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }

@@ -364,4 +364,15 @@ class Factura extends \GlavBundle\Entity\Factura implements \Doctrine\ORM\Proxy\
         return parent::getFecha();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }

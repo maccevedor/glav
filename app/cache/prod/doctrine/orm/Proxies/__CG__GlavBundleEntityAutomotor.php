@@ -64,10 +64,10 @@ class Automotor extends \GlavBundle\Entity\Automotor implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id_tipo_automotor', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'tipo_rubro', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'modelo', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'matricula', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'fecha');
+            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id_tipo_automotor', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'modelo', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'matricula', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'fecha');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id_tipo_automotor', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'tipo_rubro', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'modelo', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'matricula', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'fecha');
+        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'id_tipo_automotor', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'modelo', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'matricula', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Automotor' . "\0" . 'fecha');
     }
 
     /**
@@ -340,6 +340,17 @@ class Automotor extends \GlavBundle\Entity\Automotor implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFecha', array());
 
         return parent::getFecha();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
     }
 
 }
