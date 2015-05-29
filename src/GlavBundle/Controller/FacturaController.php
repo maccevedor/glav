@@ -251,58 +251,34 @@ class FacturaController extends Controller
     
     public function guardarFacturaAction(Request $datos)
     {
+        if($datos->isMethod('POST')){
         
         $em = $this->getDoctrine()->getManager();
-//         $idServicio = $datos->get('servicioId');
-//         $servicio = $em->getRepository('GlavBundle:Servicio')->find($idServicio);
-//         $valor = $servicio->getIdRubro()->getValor();
-//         exit();
-        //print_r($datos);exit;
-        //echo  $idServicio = $datos->get('usuario');exit();
-        //$em = $this->getDoctrine()->getManager();
         $factura = new factura();
         $facturaDetalle = new facturaDetalle();
         $form = $this->createForm(new FacturaType(),$factura);
         $formF = $this->createForm(new FacturaDetalleType(),$facturaDetalle);
+        $form->handleRequest($datos);
         $formF->handleRequest($datos);
         $idServicio = $formF->get('id_servicio')->getData()->getId();//exit();
         $servicio = $this->getDoctrine()->getRepository('GlavBundle:Servicio')->find($idServicio);
-        print_r($servicio);exit();
-        $factura->setUsuario('1');
+        $valor = $servicio->getIdRubro()->getValor();
+        //Se guarda el objeto de Factura
+        $factura->setIdUsuario('1');
         $factura->setValor($valor);
         $factura->setTotal($valor);
-
         $em->persist($factura);
         $em->flush();
-        $idFactura = $factura->getId();
-
-        $factura->setUrl($url);
-
-        $formF->handleRequest($datos);
-        $em->persist($datos);
-        echo 'hasta aca ';exit;
+        //Se guarda el objeto de FacturaDetalle
+        //$idFactura = $factura->getId();
+        $data = $form->getData();
+        }
+        //$factura = $this->getDoctrine()->getRepository('GlavBundle:Factura')->find($idFactura);
+        $facturaDetalle->setIdFactura($data);
+        $facturaDetalle->setValor($valor);
+        $facturaDetalle->setTotal($valor);
+        $em->persist($facturaDetalle);
         $em->flush();
-        //echo  ($datos->get("id_servicio"));
-        //$data = $form->getData();
-        //echo 'hola';exit();
-        //print_r($datos);exit;
-        //echo $id = $datos->query->get('id_servicio');exit();
-        //print_r($datos->request->get('id_servicio'));exit();
-        echo $form['id_servicio']->getData();exit();
-        //echo $form->get('id_servicio')->getData();exit();
-        //echo  $form->get('id_servicio'); exit();
-        //$idServicio = $formF['id_servicio']->getData();
-        //echo $idServicio;
-        exit();
-        $em = $this->getDoctrine()->getManager();
-        $idServicio = $datos->get('servicioId');
-        $servicio = $em->getRepository('GlavBundle:Servicio')->find($idServicio);
-        $valor = $servicio->getIdRubro()->getValor();
-        $neto = $valor * 0.84;
-        //echo $neto;exit();
-        $valor= 'Neto<br><input type="text" id="neto" name="neto" value="'.$neto.'"><br>Total<br><input type="text" id="total" name="total" value="'.$valor.'">';
-        echo $valor;exit();
-        
 
         $entities = $em->getRepository('GlavBundle:Factura')->findAll();
 
