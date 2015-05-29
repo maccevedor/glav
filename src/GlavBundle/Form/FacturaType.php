@@ -16,9 +16,9 @@ class FacturaType extends AbstractType
     {
         $builder
             //->add('hash')
-            ->add('id_usuario')
-            ->add('valor')
-            ->add('iva')
+            //->add('id_usuario')
+            //->add('valor')
+            //->add('iva')
             //->add('total')
             ->add('observacion')
             //->add('estado')

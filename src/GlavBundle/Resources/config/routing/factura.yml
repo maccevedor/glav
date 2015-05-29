@@ -32,4 +32,10 @@ factura_delete:
 factura_valor:
     path:     /valor
     defaults: { _controller: "GlavBundle:Factura:valorServicio" }
+    #methods:  [POST, DELETE] 
+    
+factura_guardar:
+    path:     /guardar
+    defaults: { _controller: "GlavBundle:Factura:guardarFactura" }
     #methods:  [POST, DELETE]
+

@@ -250,6 +250,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::valorServicioAction',  '_route' => 'factura_valor',);
             }
 
+            // factura_guardar
+            if ($pathinfo === '/factura/guardar') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::guardarFacturaAction',  '_route' => 'factura_guardar',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/servicio')) {

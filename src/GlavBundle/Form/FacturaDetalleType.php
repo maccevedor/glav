@@ -18,13 +18,7 @@ class FacturaDetalleType extends AbstractType
     {
         $builder
             //->add('hash')
-            ->add('cantidad')
-            ->add('valor')
-            ->add('iva')
-            ->add('total')
-            //->add('estado')
-            ->add('fecha')
-            ->add('id_factura')
+            //->add('cantidad')
             ->add('id_servicio','entity' ,array(
                 'class' => 'GlavBundle:Servicio',
                 "label" => 'Servicio',
@@ -33,10 +27,14 @@ class FacturaDetalleType extends AbstractType
                  //'mapped' =>    false,
                  //'property_path' => null,
                  'attr' => array('class'=>'form-control'),
-                 'query_builder' => function(EntityRepository $er){return $er->createQueryBuilder('u')->where('u.estadoServicio LIKE :q')->setParameters(array('q' => '%'.'Finalizado'.'%')); },
+                 'query_builder' => function(EntityRepository $er){return $er->createQueryBuilder('u')->where('u.estadoServicio LIKE :q')->setParameters(array('q' => '%'.'Finalizado'.'%')); },))
+            //->add('valor')
+            //->add('iva')
+            //->add('total')
+            //->add('estado')
+            //->add('fecha')
+            //->add('id_factura')
 
-
-            ))
         ;
     }
     

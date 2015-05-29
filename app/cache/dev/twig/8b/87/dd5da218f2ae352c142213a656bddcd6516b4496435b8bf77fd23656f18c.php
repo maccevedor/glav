@@ -27,33 +27,34 @@ class __TwigTemplate_8b87dd5da218f2ae352c142213a656bddcd6516b4496435b8bf77fd2365
     // line 4
     public function block_infoUserTop($context, array $blocks = array())
     {
+        echo "\\
+<form id=\"factura\" action=\"";
         // line 5
-        echo "<form id=\"factura\" action=\"";
-        echo $this->env->getExtension('routing')->getPath("cliente");
+        echo $this->env->getExtension('routing')->getPath("factura_guardar");
         echo "\" method=\"post\" enctype=\"multipart/form-data\" >
 
     <h1>Factura creation</h1>
-";
+<input type=\"hidden\" id=\"usuario\" name=\"usuario\" value=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "id", array()), "html", null, true);
-        echo "
-    ";
-        // line 9
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
-        echo "
-    
-    
-    <h1>Detalle de Factura</h1>
+        echo "\">
 
     ";
-        // line 14
+        // line 10
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["formF"]) ? $context["formF"] : $this->getContext($context, "formF")), 'widget');
         echo "
     <div id=\"informacion\">
+        <input type=\"text\" id=\"neto\" name=\"neto\">
+        <input type=\"text\" id=\"total\" name=\"total\">
+
+
     </div>
 
-    <input type=\"submit\" />
 
+    ";
+        // line 19
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
+        echo "
 
         <ul class=\"record_actions\">
     <li>
@@ -61,6 +62,8 @@ class __TwigTemplate_8b87dd5da218f2ae352c142213a656bddcd6516b4496435b8bf77fd2365
         // line 23
         echo $this->env->getExtension('routing')->getPath("factura");
         echo "\">
+        
+            <input type=\"submit\" value=\"Guardar\"/>
             Back to the list
         </a>
     </li>
@@ -74,21 +77,37 @@ window.onload = function() {
     //alert( \$(this).find(\":selected\").val());
     servicioId = \$(this).find(\":selected\").val();
     //\$('#informacion').load('";
-        // line 36
+        // line 38
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',
             //\$('#dialogoBox').hide();
             \$('#informacion').load('";
-        // line 38
+        // line 40
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',{servicioId:servicioId},function()
             {
-                \$('#informacion').show();
             });
 
 });
 }
 
+function  enviar(){
+        alert('hola');
+
+\$.ajax({
+        type: \"POST\",
+        url: \"";
+        // line 52
+        echo $this->env->getExtension('routing')->getPath("factura_guardar");
+        echo "\",
+        data: \$('#factura').serialize(),
+        success: function (data)
+        {
+
+        }
+ });
+
+}
 </script>
 
 ";
@@ -106,6 +125,6 @@ window.onload = function() {
 
     public function getDebugInfo()
     {
-        return array (  83 => 38,  78 => 36,  62 => 23,  50 => 14,  42 => 9,  38 => 8,  31 => 5,  28 => 4,  11 => 1,);
+        return array (  101 => 52,  86 => 40,  81 => 38,  63 => 23,  56 => 19,  44 => 10,  39 => 8,  33 => 5,  28 => 4,  11 => 1,);
     }
 }

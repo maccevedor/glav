@@ -57,7 +57,7 @@ class FacturaDetalle
      */
     
     
-    private $cantidad;
+    private $cantidad="1";
     
     
         /**
