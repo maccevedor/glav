@@ -1,0 +1,38 @@
+prestamo:
+    path:     /
+    defaults: { _controller: "GlavBundle:Prestamo:index" }
+
+prestamo_show:
+    path:     /{id}/show
+    defaults: { _controller: "GlavBundle:Prestamo:show" }
+
+prestamo_new:
+    path:     /new
+    defaults: { _controller: "GlavBundle:Prestamo:new" }
+
+prestamo_create:
+    path:     /create
+    defaults: { _controller: "GlavBundle:Prestamo:create" }
+    methods:  POST
+
+prestamo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GlavBundle:Prestamo:edit" }
+
+prestamo_update:
+    path:     /{id}/update
+    defaults: { _controller: "GlavBundle:Prestamo:update" }
+    methods:  [POST, PUT]
+
+prestamo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GlavBundle:Prestamo:delete" }
+    methods:  [POST, DELETE]
+    
+prestamo_valor:
+    path:     /valor
+    defaults: { _controller: "GlavBundle:Prestamo:valorServicio" }
+    methods:  [POST, DELETE]
+    
+    
+    

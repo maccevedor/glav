@@ -1,3 +1,7 @@
+glav_prestamo:
+    resource: "@GlavBundle/Resources/config/routing/prestamo.yml"
+    prefix:   /prestamo
+
 glav_facturadetalle:
     resource: "@GlavBundle/Resources/config/routing/facturadetalle.yml"
     prefix:   /facturadetalle

@@ -1,0 +1,32 @@
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+
+{% block infoUserTop %}
+    <h1>Prestamo creation</h1>
+
+    {{ form(form) }}
+    <div id="informacion">
+    </div>
+    
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('prestamo') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+<script type="text/javascript">
+
+window.onload = function() {
+    $('#glavbundle_prestamo_id_servicio').on('change', function() {
+    alert( $(this).find(":selected").val());
+    servicioId = $(this).find(":selected").val();
+    //$('#informacion').load('{{ path('prestamo_valor') }}',
+            //$('#dialogoBox').hide();
+            $('#informacion').load('{{ path('prestamo_valor') }}',{servicioId:servicioId},function()
+            {
+            });
+
+});
+}
+</script>
+{% endblock %}

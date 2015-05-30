@@ -1,3 +1,26 @@
+Plantilla 
+
+http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/
+
+
+
+Cuando llame el servicio en el select hay que visualizar con el placa del vehiculo(preguntar)
+Generar boton pdf en  la lista de factura
+EL buscar se realizara por placa en factura
+El buscar se realiza por estado en Servicio
+quitar el servicio en prestamo para que aparezca el total de recaudo ue ha realizado ese dia (tiene que estar finalizado)
+los prestamos deben estar ligados al pago semanal
+
+Se debe realizar consultas de pagos a los empleados semanales (obligatorio) y historico
+Validar que se le entregue el dinero al empleado
+
+
+Opcional 
+
+
+Botones con iconos en las tablas
+Grafica de los servicios finalizados
+
 Realizar copia de los archivos
 
 Inicializar el servidor 
@@ -45,9 +68,9 @@ php app/console cache:clear
 php app/console cache:clear --env=prod
 
 
-Gennera getter and setter 
+Generar getter and setter 
 
-php app/console doctrine:generate:entities AppBundle/Entity/Product
+php app/console doctrine:generate:entities GlavBundle/Entity/Prestamo
 
 
 Generar el crud con la consola 
