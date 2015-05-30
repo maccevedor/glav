@@ -27,9 +27,8 @@ class __TwigTemplate_8b87dd5da218f2ae352c142213a656bddcd6516b4496435b8bf77fd2365
     // line 4
     public function block_infoUserTop($context, array $blocks = array())
     {
-        echo "\\
-<form id=\"factura\" action=\"";
         // line 5
+        echo "<form id=\"factura\" action=\"";
         echo $this->env->getExtension('routing')->getPath("factura_guardar");
         echo "\" method=\"post\" enctype=\"multipart/form-data\" >
 
@@ -44,22 +43,17 @@ class __TwigTemplate_8b87dd5da218f2ae352c142213a656bddcd6516b4496435b8bf77fd2365
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["formF"]) ? $context["formF"] : $this->getContext($context, "formF")), 'widget');
         echo "
     <div id=\"informacion\">
-        <input type=\"text\" id=\"neto\" name=\"neto\">
-        <input type=\"text\" id=\"total\" name=\"total\">
-
-
+        <input type=\"hidden\" id=\"neto\" name=\"neto\">
+        <input type=\"hidden\" id=\"total\" name=\"total\">
     </div>
-
-
     ";
-        // line 19
+        // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
-
         <ul class=\"record_actions\">
     <li>
         <a href=\"";
-        // line 23
+        // line 18
         echo $this->env->getExtension('routing')->getPath("factura");
         echo "\">
         
@@ -77,12 +71,12 @@ window.onload = function() {
     //alert( \$(this).find(\":selected\").val());
     servicioId = \$(this).find(\":selected\").val();
     //\$('#informacion').load('";
-        // line 38
+        // line 33
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',
             //\$('#dialogoBox').hide();
             \$('#informacion').load('";
-        // line 40
+        // line 35
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',{servicioId:servicioId},function()
             {
@@ -91,23 +85,6 @@ window.onload = function() {
 });
 }
 
-function  enviar(){
-        alert('hola');
-
-\$.ajax({
-        type: \"POST\",
-        url: \"";
-        // line 52
-        echo $this->env->getExtension('routing')->getPath("factura_guardar");
-        echo "\",
-        data: \$('#factura').serialize(),
-        success: function (data)
-        {
-
-        }
- });
-
-}
 </script>
 
 ";
@@ -125,6 +102,6 @@ function  enviar(){
 
     public function getDebugInfo()
     {
-        return array (  101 => 52,  86 => 40,  81 => 38,  63 => 23,  56 => 19,  44 => 10,  39 => 8,  33 => 5,  28 => 4,  11 => 1,);
+        return array (  80 => 35,  75 => 33,  57 => 18,  51 => 15,  43 => 10,  38 => 8,  31 => 5,  28 => 4,  11 => 1,);
     }
 }

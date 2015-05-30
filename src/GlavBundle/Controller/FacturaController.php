@@ -253,27 +253,29 @@ class FacturaController extends Controller
     {
         if($datos->isMethod('POST')){
         
-        $em = $this->getDoctrine()->getManager();
-        $factura = new factura();
-        $facturaDetalle = new facturaDetalle();
-        $form = $this->createForm(new FacturaType(),$factura);
-        $formF = $this->createForm(new FacturaDetalleType(),$facturaDetalle);
-        $form->handleRequest($datos);
-        $formF->handleRequest($datos);
-        $idServicio = $formF->get('id_servicio')->getData()->getId();//exit();
-        $servicio = $this->getDoctrine()->getRepository('GlavBundle:Servicio')->find($idServicio);
-        $valor = $servicio->getIdRubro()->getValor();
-        //Se guarda el objeto de Factura
-        $factura->setIdUsuario('1');
-        $factura->setValor($valor);
-        $factura->setTotal($valor);
-        $em->persist($factura);
-        $em->flush();
-        //Se guarda el objeto de FacturaDetalle
-        //$idFactura = $factura->getId();
-        $data = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $factura = new factura();
+            $facturaDetalle = new facturaDetalle();
+            $form = $this->createForm(new FacturaType(),$factura);
+            $formF = $this->createForm(new FacturaDetalleType(),$facturaDetalle);
+            $form->handleRequest($datos);
+            $formF->handleRequest($datos);
+            $idServicio = $formF->get('id_servicio')->getData()->getId();//exit();
+            $servicio = $this->getDoctrine()->getRepository('GlavBundle:Servicio')->find($idServicio);
+            $valor = $servicio->getIdRubro()->getValor();
+            //Se guarda el objeto de Factura
+            $idUsuario = $this->getUser()->getId();
+            $factura->setIdUsuario($idUsuario);
+            $factura->setValor($valor);
+            $factura->setTotal($valor);
+            $em->persist($factura);
+            $em->flush();
+            //Se guarda el objeto de FacturaDetalle
+            //$idFactura = $factura->getId();
+            $data = $form->getData();
         }
-        //$factura = $this->getDoctrine()->getRepository('GlavBundle:Factura')->find($idFactura);
+        //$f
+        //actura = $this->getDoctrine()->getRepository('GlavBundle:Factura')->find($idFactura);
         $facturaDetalle->setIdFactura($data);
         $facturaDetalle->setValor($valor);
         $facturaDetalle->setTotal($valor);

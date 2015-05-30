@@ -8,15 +8,15 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "GlavBundle:Factura:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("GlavBundle::layoutAdmin.html.twig", "GlavBundle:Factura:index.html.twig", 1);
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'infoUserTop' => array($this, 'block_infoUserTop'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "GlavBundle::layoutAdmin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,12 +25,12 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_infoUserTop($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Factura list</h1>
+        echo "    <h1>Factura list</h1>
 
-    <table class=\"records_list\">
+    <table class=\"table table-striped\">
         <thead>
             <tr>
                 <th>Id</th>

@@ -1,7 +1,7 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 
-{% block infoUserTop %}\
+{% block infoUserTop %}
 <form id="factura" action="{{ path('factura_guardar') }}" method="post" enctype="multipart/form-data" >
 
     <h1>Factura creation</h1>
@@ -9,15 +9,10 @@
 
     {{ form_widget(formF) }}
     <div id="informacion">
-        <input type="text" id="neto" name="neto">
-        <input type="text" id="total" name="total">
-
-
+        <input type="hidden" id="neto" name="neto">
+        <input type="hidden" id="total" name="total">
     </div>
-
-
     {{ form_widget(form) }}
-
         <ul class="record_actions">
     <li>
         <a href="{{ path('factura') }}">
@@ -42,21 +37,6 @@ window.onload = function() {
             });
 
 });
-}
-
-function  enviar(){
-        alert('hola');
-
-$.ajax({
-        type: "POST",
-        url: "{{ path('factura_guardar') }}",
-        data: $('#factura').serialize(),
-        success: function (data)
-        {
-
-        }
- });
-
 }
 </script>
 
