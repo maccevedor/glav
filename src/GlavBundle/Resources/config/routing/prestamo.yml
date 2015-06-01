@@ -28,11 +28,8 @@ prestamo_delete:
     path:     /{id}/delete
     defaults: { _controller: "GlavBundle:Prestamo:delete" }
     methods:  [POST, DELETE]
-    
-prestamo_valor:
+
+prestamo_total:
     path:     /valor
-    defaults: { _controller: "GlavBundle:Prestamo:valorServicio" }
+    defaults: { _controller: "GlavBundle:Prestamo:totalPrestamo" }
     methods:  [POST, DELETE]
-    
-    
-    

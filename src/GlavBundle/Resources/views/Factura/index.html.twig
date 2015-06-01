@@ -2,18 +2,18 @@
 
 {% block infoUserTop %}
     <h1>Factura list</h1>
-
+    Buscar por Cliente
+    <div id="informacion">
+    <input type="text" id="cliente" name="cliente">
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
-                <th>Id_usuario</th>
-                <th>Valor</th>
-                <th>Iva</th>
+                <th>Usuario</th>
                 <th>Total</th>
+                <th>Cliente</th>
                 <th>Observacion</th>
-                <th>Estado</th>
                 <th>Fecha</th>
                 <th>Actions</th>
             </tr>
@@ -22,13 +22,10 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('factura_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.hash }}</td>
-                <td>{{ entity.idusuario }}</td>
-                <td>{{ entity.valor }}</td>
-                <td>{{ entity.iva }}</td>
+                <td>{{ entity.username }}</td>
                 <td>{{ entity.total }}</td>
+                <td>{{ entity.cliente }}</td>
                 <td>{{ entity.observacion }}</td>
-                <td>{{ entity.estado }}</td>
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
@@ -52,4 +49,22 @@
             </a>
         </li>
     </ul>
+    
+    <script type="text/javascript">
+
+window.onload = function() {
+
+$('#cliente').change(function () {
+
+        cliente = $('#cliente').val();
+        alert(cliente);
+        $('#informacion').load('{{ path('factura_buscar_cliente') }}',{cliente:cliente},function()
+            {
+            });
+        
+        
+});
+
+}
+</script>
     {% endblock %}

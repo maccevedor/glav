@@ -97,6 +97,15 @@ class Servicio
     
     private $observacion;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pago", type="string", length=255)
+     */
+    
+    
+    private $pago="Pendiente";
+    
         
         
     /**
@@ -471,5 +480,28 @@ class Servicio
     public function __toString()
     {
         return $this->getObservacion();
+    }
+
+    /**
+     * Set pago
+     *
+     * @param string $pago
+     * @return Servicio
+     */
+    public function setPago($pago)
+    {
+        $this->pago = $pago;
+
+        return $this;
+    }
+
+    /**
+     * Get pago
+     *
+     * @return string 
+     */
+    public function getPago()
+    {
+        return $this->pago;
     }
 }

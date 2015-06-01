@@ -19,7 +19,7 @@ class PrestamoType extends AbstractType
             ->add('observacion')
             ->add('estado')
             //->add('fecha')
-            ->add('id_servicio')
+            //->add('id_servicio')
             ->add('id_empleado')
             ->add('valor')
 

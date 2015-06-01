@@ -22,7 +22,7 @@ class FacturaDetalleType extends AbstractType
             ->add('id_servicio','entity' ,array(
                 'class' => 'GlavBundle:Servicio',
                 "label" => 'Servicio',
-                //'property' => 'nombre',
+                //'property' => 'idAutomo',
                  //'empty_value' => 'Seleccione el programa',
                  //'mapped' =>    false,
                  //'property_path' => null,

@@ -39,3 +39,7 @@ factura_guardar:
     defaults: { _controller: "GlavBundle:Factura:guardarFactura" }
     #methods:  [POST, DELETE]
 
+factura_buscar_cliente:
+    path:     /buscar
+    defaults: { _controller: "GlavBundle:Factura:buscarCliente" }
+    #methods:  [POST, DELETE]

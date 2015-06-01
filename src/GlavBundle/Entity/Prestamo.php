@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Prestamo
  *
- * @ORM\Table(name="Prestamo", indexes={@ORM\Index(name="FK_Prestamo_Servicio", columns={"id_servicio"}),@ORM\Index(name="FK_Servicio_Empleado", columns={"id_empleado"})})
+ * @ORM\Table(name="Prestamo", indexes={@ORM\Index(name="FK_Servicio_Empleado", columns={"id_empleado"})})
  * @ORM\Entity(repositoryClass="GlavBundle\Entity\PrestamoRepository")
  */
 class Prestamo
@@ -29,18 +29,6 @@ class Prestamo
     
     private $hash;
     
-    
-    /**
-     * @var \Servicio
-     *
-     * @ORM\ManyToOne(targetEntity="Servicio")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_servicio", referencedColumnName="id")
-     * })
-     */
-    
-    
-    private $id_servicio;
     
     /**
      * @var \Empleado

@@ -97,6 +97,15 @@ class Servicio
     
     private $observacion;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pago", type="string", length=255)
+     */
+    
+    
+    private $pago="Pendiente";
+    
         
         
     /**
@@ -132,6 +141,8 @@ class Servicio
     function __construct(){
         $this->hash=md5(time());
         $this->fecha =  new \DateTime('now');
+        $this->fecha_servicio =  new \DateTime('now');
+
     }
 
     /**
@@ -465,5 +476,9 @@ class Servicio
     public function getEstadoServicio()
     {
         return $this->estadoServicio;
+    }
+    public function __toString()
+    {
+        return $this->getObservacion();
     }
 }

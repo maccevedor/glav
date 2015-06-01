@@ -185,16 +185,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_prestamo_delete:
 
-            // prestamo_valor
+            // prestamo_total
             if ($pathinfo === '/prestamo/valor') {
                 if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
                     $allow = array_merge($allow, array('POST', 'DELETE'));
-                    goto not_prestamo_valor;
+                    goto not_prestamo_total;
                 }
 
-                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::valorServicioAction',  '_route' => 'prestamo_valor',);
+                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::totalPrestamoAction',  '_route' => 'prestamo_total',);
             }
-            not_prestamo_valor:
+            not_prestamo_total:
 
         }
 
@@ -324,6 +324,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // factura_guardar
             if ($pathinfo === '/factura/guardar') {
                 return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::guardarFacturaAction',  '_route' => 'factura_guardar',);
+            }
+
+            // factura_buscar_cliente
+            if ($pathinfo === '/factura/buscar') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::buscarClienteAction',  '_route' => 'factura_buscar_cliente',);
             }
 
         }

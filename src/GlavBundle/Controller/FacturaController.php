@@ -26,8 +26,16 @@ class FacturaController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        
+        $sql = "select f.id,f.observacion,f.total,fu.username ,concat(c.nombre,' ',c.apellido) as cliente,f.fecha from Factura f inner join fos_user fu on fu.id = f.id_usuario inner join FacturaDetalle fd on fd.id_factura = f.id inner join Servicio s on s.id = fd.id_servicio inner join Cliente c on c.id = s.id_cliente";
+        //echo $sql;exit();   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //print_r($miData);exit();
 
-        $entities = $em->getRepository('GlavBundle:Factura')->findAll();
+        //$entities = $em->getRepository('GlavBundle:Factura')->findAll();                    
+
 
         return $this->render('GlavBundle:Factura:index.html.twig', array(
             'entities' => $entities,
@@ -289,5 +297,26 @@ class FacturaController extends Controller
         return $this->render('GlavBundle:Factura:index.html.twig', array(
             'entities' => $entities,
         ));
+    }
+    
+    public function buscarClienteAction(Request $datos){
+        echo $datos->get('cliente');exit();
+        $em = $this->getDoctrine()->getManager();
+        
+        $sql = "select f.id,f.observacion,f.total,fu.username ,concat(c.nombre,' ',c.apellido) as cliente,f.fecha from Factura f inner join fos_user fu on fu.id = f.id_usuario inner join FacturaDetalle fd on fd.id_factura = f.id inner join Servicio s on s.id = fd.id_servicio inner join Cliente c on c.id = s.id_cliente";
+        //echo $sql;exit();   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //print_r($miData);exit();
+
+        //$entities = $em->getRepository('GlavBundle:Factura')->findAll();                    
+
+
+        return $this->render('GlavBundle:Factura:index.html.twig', array(
+            'entities' => $entities,
+        ));
+        
+        
     }
 }

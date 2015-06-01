@@ -29,18 +29,18 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
     {
         // line 4
         echo "    <h1>Factura list</h1>
-
+    Buscar por Cliente
+    <div id=\"informacion\">
+    <input type=\"text\" id=\"cliente\" name=\"cliente\">
+    </div>
     <table class=\"table table-striped\">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
-                <th>Id_usuario</th>
-                <th>Valor</th>
-                <th>Iva</th>
+                <th>Usuario</th>
                 <th>Total</th>
+                <th>Cliente</th>
                 <th>Observacion</th>
-                <th>Estado</th>
                 <th>Fecha</th>
                 <th>Actions</th>
             </tr>
@@ -61,34 +61,22 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
             echo "</a></td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "hash", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "username", array()), "html", null, true);
             echo "</td>
                 <td>";
             // line 26
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "idusuario", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 27
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "valor", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 28
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "iva", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "total", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 30
+            // line 27
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "cliente", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "observacion", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 31
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "estado", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 32
+            // line 29
             if ($this->getAttribute($context["entity"], "fecha", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["entity"], "fecha", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -97,13 +85,13 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
                 <ul>
                     <li>
                         <a href=\"";
-            // line 36
+            // line 33
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("factura_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">show</a>
                     </li>
                     <li>
                         <a href=\"";
-            // line 39
+            // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("factura_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">edit</a>
                     </li>
@@ -115,20 +103,41 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 42
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 50
+        // line 47
         echo $this->env->getExtension('routing')->getPath("factura_new");
         echo "\">
                 Create a new entry
             </a>
         </li>
     </ul>
+    
+    <script type=\"text/javascript\">
+
+window.onload = function() {
+
+\$('#cliente').change(function () {
+
+        cliente = \$('#cliente').val();
+        alert(cliente);
+        \$('#informacion').load('";
+        // line 61
+        echo $this->env->getExtension('routing')->getPath("factura_buscar_cliente");
+        echo "',{cliente:cliente},function()
+            {
+            });
+        
+        
+});
+
+}
+</script>
     ";
     }
 
@@ -144,6 +153,6 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
 
     public function getDebugInfo()
     {
-        return array (  126 => 50,  119 => 45,  107 => 39,  101 => 36,  92 => 32,  88 => 31,  84 => 30,  80 => 29,  76 => 28,  72 => 27,  68 => 26,  64 => 25,  58 => 24,  55 => 23,  51 => 22,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  131 => 61,  114 => 47,  107 => 42,  95 => 36,  89 => 33,  80 => 29,  76 => 28,  72 => 27,  68 => 26,  64 => 25,  58 => 24,  55 => 23,  51 => 22,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
