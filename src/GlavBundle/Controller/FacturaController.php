@@ -300,12 +300,13 @@ class FacturaController extends Controller
     }
     
     public function buscarClienteAction(Request $datos){
-        echo $datos->get('cliente');exit();
+        //echo $datos->get('cliente');exit();
         $em = $this->getDoctrine()->getManager();
         
         $sql = "select f.id,f.observacion,f.total,fu.username ,concat(c.nombre,' ',c.apellido) as cliente,f.fecha from Factura f inner join fos_user fu on fu.id = f.id_usuario inner join FacturaDetalle fd on fd.id_factura = f.id inner join Servicio s on s.id = fd.id_servicio inner join Cliente c on c.id = s.id_cliente";
         //echo $sql;exit();   
-        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $where = "WHERE CONCAT(c.identificacion, ' ',c.nombre, ' ',c.apellido) like '%".$datos->get('cliente')."%'";   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql.' '.$where);
         $con->execute();
         $entities = $con->fetchAll(); 
         //print_r($miData);exit();
@@ -313,7 +314,7 @@ class FacturaController extends Controller
         //$entities = $em->getRepository('GlavBundle:Factura')->findAll();                    
 
 
-        return $this->render('GlavBundle:Factura:index.html.twig', array(
+        return $this->render('GlavBundle:Factura:buscar.html.twig', array(
             'entities' => $entities,
         ));
         

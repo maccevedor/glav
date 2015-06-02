@@ -1,11 +1,12 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
+
     <h1>Factura list</h1>
     Buscar por Cliente
-    <div id="informacion">
     <input type="text" id="cliente" name="cliente">
-    </div>
+        <div id="informacion">
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -49,22 +50,7 @@
             </a>
         </li>
     </ul>
-    
-    <script type="text/javascript">
+       </div>
 
-window.onload = function() {
 
-$('#cliente').change(function () {
-
-        cliente = $('#cliente').val();
-        alert(cliente);
-        $('#informacion').load('{{ path('factura_buscar_cliente') }}',{cliente:cliente},function()
-            {
-            });
-        
-        
-});
-
-}
-</script>
     {% endblock %}

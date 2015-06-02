@@ -1118,6 +1118,24 @@
     <script src="{{ asset("frontend/js/counter.js") }}"></script>
     <script src="{{ asset("frontend/js/retina.js") }}"></script>
     <script src="{{ asset("frontend/js/custom.js") }}"></script>
+        
+    <script type="text/javascript">
+
+window.onload = function() {
+
+$('#cliente').change(function () {
+
+        cliente = $('#cliente').val();
+        alert(cliente);
+        $('#informacion').load('{{ path('factura_buscar_cliente') }}',{cliente:cliente},function()
+            {
+            });
+        
+        
+});
+
+}
+</script>
     	<!-- end: JavaScript-->
 
     </body>
