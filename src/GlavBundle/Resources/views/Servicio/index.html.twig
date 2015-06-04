@@ -2,18 +2,22 @@
 
 {% block infoUserTop %}
     <h1>Servicio list</h1>
+    Buscar por Matricula
+    <input type="text" id="matricula" name="matricula">
+        <div id="informacion">
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
+                <th>Modelo</th>
+                <th>Matricula</th>
+                <th>Empleado</th>
                 <th>Estadoservicio</th>
                 <th>Observacion</th>
                 <th>Fecha_servicio</th>
                 <th>Fecha_entrega</th>
-                <th>Estado</th>
-                <th>Fecha</th>
+                <th>Pago</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,13 +25,14 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('servicio_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.hash }}</td>
-                <td>{{ entity.estadoServicio }}</td>
+                <td>{{ entity.modelo }}</td>
+                <td>{{ entity.matricula }}</td>
+                <td>{{ entity.empleado }}</td>
+                <td>{{ entity.estado_servicio }}</td>
                 <td>{{ entity.observacion }}</td>
-                <td>{% if entity.fechaservicio %}{{ entity.fechaservicio|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if entity.fechaentrega %}{{ entity.fechaentrega|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.estado }}</td>
-                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fecha_servicio %}{{ entity.fecha_servicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fecha_entrega %}{{ entity.fecha_entrega|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.pago }}</td>
                 <td>
                 <ul>
                     <li>
@@ -50,4 +55,5 @@
             </a>
         </li>
     </ul>
+    </div>
     {% endblock %}

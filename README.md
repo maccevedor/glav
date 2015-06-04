@@ -4,8 +4,8 @@ http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template
 
 Cuando llame el servicio en el select hay que visualizar con el placa del vehiculo(preguntar)
 Generar boton pdf en  la lista de factura
-EL buscar se realizara por placa en factura
-El buscar se realiza por estado en Servicio
+EL buscar se realizara por cliente en factura(ok)
+El buscar se realiza por estado en Servicio(se dejo buscando por matricula)
 quitar el servicio en prestamo para que aparezca el total de recaudo ue ha realizado ese dia (tiene que estar finalizado)(ok)
 
 Se debe realizar consultas de pagos a los empleados semanales (obligatorio) y historico

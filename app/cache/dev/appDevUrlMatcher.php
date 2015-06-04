@@ -391,6 +391,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_servicio_delete:
 
+            // servicio_buscar_matricula
+            if ($pathinfo === '/servicio/matricula') {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_servicio_buscar_matricula;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::buscarMatriculaAction',  '_route' => 'servicio_buscar_matricula',);
+            }
+            not_servicio_buscar_matricula:
+
         }
 
         if (0 === strpos($pathinfo, '/automotor')) {

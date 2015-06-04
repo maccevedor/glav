@@ -28,3 +28,8 @@ servicio_delete:
     path:     /{id}/delete
     defaults: { _controller: "GlavBundle:Servicio:delete" }
     methods:  [POST, DELETE]
+
+servicio_buscar_matricula:
+    path:     /matricula
+    defaults: { _controller: "GlavBundle:Servicio:buscarMatricula" }
+    methods:  [POST, DELETE]

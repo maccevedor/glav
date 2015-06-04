@@ -1134,6 +1134,17 @@ $('#cliente').change(function () {
         
 });
 
+$('#matricula').change(function () {
+
+        matricula = $('#matricula').val();
+        alert(matricula);
+        $('#informacion').load('{{ path('servicio_buscar_matricula') }}',{matricula:matricula},function()
+            {
+            });
+        
+        
+});
+
 }
 </script>
     	<!-- end: JavaScript-->

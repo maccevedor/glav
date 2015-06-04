@@ -22,8 +22,13 @@ class ServicioController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $sql = "select s.id , a.modelo , a.matricula ,concat(e.nombre,' ',e.apellido )as empleado ,s.estado_servicio,s.fecha_servicio,s.fecha_entrega, s.observacion,s.pago from Servicio s inner join Automotor a on a.id=s.id_automotor inner join Empleado e on e.id=s.id_empleado";
 
-        $entities = $em->getRepository('GlavBundle:Servicio')->findAll();
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //print_r($entities);exit();
+        //$entities = $em->getRepository('GlavBundle:Servicio')->findAll();
 
         return $this->render('GlavBundle:Servicio:index.html.twig', array(
             'entities' => $entities,
@@ -220,5 +225,22 @@ class ServicioController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+    public function buscarMatriculaAction(Request $datos)
+    {
+      $em = $this->getDoctrine()->getManager();
+      $sql = "select s.id , a.modelo , a.matricula ,concat(e.nombre,' ',e.apellido )as empleado ,s.estado_servicio,s.fecha_servicio,s.fecha_entrega, s.observacion,s.pago from Servicio s inner join Automotor a on a.id=s.id_automotor inner join Empleado e on e.id=s.id_empleado";
+        $where = "WHERE CONCAT(a.matricula) like '%".$datos->get('matricula')."%'";   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql.' '.$where);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //print_r($entities);exit();
+        //$entities = $em->getRepository('GlavBundle:Servicio')->findAll();
+
+        return $this->render('GlavBundle:Servicio:buscar.html.twig', array(
+            'entities' => $entities,
+        ));   
+        
+        
     }
 }
