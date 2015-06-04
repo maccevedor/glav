@@ -96,6 +96,12 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("factura_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">edit</a>
                     </li>
+                     <li>
+                        <a href=\"";
+            // line 40
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("factura_imprimir", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\">PDF</a>
+                    </li>
                 </ul>
                 </td>
             </tr>
@@ -104,14 +110,14 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 46
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 48
+        // line 51
         echo $this->env->getExtension('routing')->getPath("factura_new");
         echo "\">
                 Create a new entry
@@ -136,6 +142,6 @@ class __TwigTemplate_8cd5a55fea69e24ca411a864271d7e08e55014eb02e10a27a65ac92fa0d
 
     public function getDebugInfo()
     {
-        return array (  115 => 48,  108 => 43,  96 => 37,  90 => 34,  81 => 30,  77 => 29,  73 => 28,  69 => 27,  65 => 26,  59 => 25,  56 => 24,  52 => 23,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  121 => 51,  114 => 46,  102 => 40,  96 => 37,  90 => 34,  81 => 30,  77 => 29,  73 => 28,  69 => 27,  65 => 26,  59 => 25,  56 => 24,  52 => 23,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

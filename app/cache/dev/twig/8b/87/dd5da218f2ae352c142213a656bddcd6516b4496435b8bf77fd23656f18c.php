@@ -67,22 +67,7 @@ class __TwigTemplate_8b87dd5da218f2ae352c142213a656bddcd6516b4496435b8bf77fd2365
 <script type=\"text/javascript\">
 
 window.onload = function() {
-    \$('#glavbundle_facturadetalle_id_servicio').on('change', function() {
-    //alert( \$(this).find(\":selected\").val());
-    servicioId = \$(this).find(\":selected\").val();
-    //\$('#informacion').load('";
-        // line 33
-        echo $this->env->getExtension('routing')->getPath("factura_valor");
-        echo "',
-            //\$('#dialogoBox').hide();
-            \$('#informacion').load('";
-        // line 35
-        echo $this->env->getExtension('routing')->getPath("factura_valor");
-        echo "',{servicioId:servicioId},function()
-            {
-            });
 
-});
 }
 </script>
 
@@ -101,6 +86,6 @@ window.onload = function() {
 
     public function getDebugInfo()
     {
-        return array (  80 => 35,  75 => 33,  57 => 18,  51 => 15,  43 => 10,  38 => 8,  31 => 5,  28 => 4,  11 => 1,);
+        return array (  57 => 18,  51 => 15,  43 => 10,  38 => 8,  31 => 5,  28 => 4,  11 => 1,);
     }
 }

@@ -27,6 +27,77 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/prestamo')) {
+            // prestamo
+            if (rtrim($pathinfo, '/') === '/prestamo') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'prestamo');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::indexAction',  '_route' => 'prestamo',);
+            }
+
+            // prestamo_show
+            if (preg_match('#^/prestamo/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'prestamo_show')), array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::showAction',));
+            }
+
+            // prestamo_new
+            if ($pathinfo === '/prestamo/new') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::newAction',  '_route' => 'prestamo_new',);
+            }
+
+            // prestamo_create
+            if ($pathinfo === '/prestamo/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_prestamo_create;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::createAction',  '_route' => 'prestamo_create',);
+            }
+            not_prestamo_create:
+
+            // prestamo_edit
+            if (preg_match('#^/prestamo/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'prestamo_edit')), array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::editAction',));
+            }
+
+            // prestamo_update
+            if (preg_match('#^/prestamo/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_prestamo_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'prestamo_update')), array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::updateAction',));
+            }
+            not_prestamo_update:
+
+            // prestamo_delete
+            if (preg_match('#^/prestamo/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_prestamo_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'prestamo_delete')), array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::deleteAction',));
+            }
+            not_prestamo_delete:
+
+            // prestamo_total
+            if ($pathinfo === '/prestamo/valor') {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_prestamo_total;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\PrestamoController::totalPrestamoAction',  '_route' => 'prestamo_total',);
+            }
+            not_prestamo_total:
+
+        }
+
         if (0 === strpos($pathinfo, '/factura')) {
             if (0 === strpos($pathinfo, '/facturadetalle')) {
                 // facturadetalle
@@ -155,6 +226,16 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::guardarFacturaAction',  '_route' => 'factura_guardar',);
             }
 
+            // factura_buscar_cliente
+            if ($pathinfo === '/factura/buscar') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::buscarClienteAction',  '_route' => 'factura_buscar_cliente',);
+            }
+
+            // factura_imprimir
+            if (0 === strpos($pathinfo, '/factura/imprimir') && preg_match('#^/factura/imprimir/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_imprimir')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::imprimirAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/servicio')) {
@@ -214,6 +295,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'servicio_delete')), array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::deleteAction',));
             }
             not_servicio_delete:
+
+            // servicio_buscar_matricula
+            if ($pathinfo === '/servicio/matricula') {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_servicio_buscar_matricula;
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\ServicioController::buscarMatriculaAction',  '_route' => 'servicio_buscar_matricula',);
+            }
+            not_servicio_buscar_matricula:
 
         }
 

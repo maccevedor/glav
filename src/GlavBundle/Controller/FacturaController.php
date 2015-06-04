@@ -320,4 +320,25 @@ class FacturaController extends Controller
         
         
     }
+    public function imprimirAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('GlavBundle:Factura')->find($id);
+        $idUsuario = $this->getUser()->getId();
+
+        //$pago = $em->getRepository('EduCampDbBundle:ProPago')->find($id);
+        //$persona = $pago->getPersona();
+        //$programa = $pago->getPersona()->getIdPrograma()->getNombre();
+        //$operaciones = new operaciones();
+        
+        //$valorTexto = $operaciones->numtoletras($pago->getPersona()->getIdPrograma()->getInscripcion());
+        //echo $programa;
+        //exit();
+
+    	return $this->render('GlavBundle:Factura:imprimir.html.twig', array('entities' => $entities));
+
+
+        //return $this->redirect($this->generateURL('apps_educam_admision_academico'));
+
+    }
 }

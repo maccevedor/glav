@@ -331,6 +331,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::buscarClienteAction',  '_route' => 'factura_buscar_cliente',);
             }
 
+            // factura_imprimir
+            if (0 === strpos($pathinfo, '/factura/imprimir') && preg_match('#^/factura/imprimir/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'factura_imprimir')), array (  '_controller' => 'GlavBundle\\Controller\\FacturaController::imprimirAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/servicio')) {

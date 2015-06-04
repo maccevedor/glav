@@ -64,10 +64,10 @@ class Servicio extends \GlavBundle\Entity\Servicio implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_cliente', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_empleado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_automotor', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_rubro', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estadoServicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'observacion', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_servicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_entrega', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha');
+            return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_cliente', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_empleado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_automotor', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_rubro', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estadoServicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'observacion', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'pago', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_servicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_entrega', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_cliente', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_empleado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_automotor', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_rubro', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estadoServicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'observacion', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_servicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_entrega', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha');
+        return array('__isInitialized__', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'hash', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_cliente', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_empleado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_automotor', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'id_rubro', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estadoServicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'observacion', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'pago', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_servicio', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha_entrega', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'estado', '' . "\0" . 'GlavBundle\\Entity\\Servicio' . "\0" . 'fecha');
     }
 
     /**
@@ -505,6 +505,28 @@ class Servicio extends \GlavBundle\Entity\Servicio implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPago($pago)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPago', array($pago));
+
+        return parent::setPago($pago);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPago()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPago', array());
+
+        return parent::getPago();
     }
 
 }

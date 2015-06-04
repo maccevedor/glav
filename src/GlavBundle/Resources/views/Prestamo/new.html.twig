@@ -1,4 +1,4 @@
-	{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
     <h1>Prestamo creation</h1>
@@ -14,19 +14,4 @@
         </a>
     </li>
 </ul>
-<script type="text/javascript">
-
-window.onload = function() {
-    $('#glavbundle_prestamo_id_empleado').on('change', function() {
-    alert( $(this).find(":selected").val());
-    servicioId = $(this).find(":selected").val();
-    //$('#informacion').load('{{ path('prestamo_total') }}',
-            //$('#dialogoBox').hide();
-            $('#informacion').load('{{ path('prestamo_total') }}',{servicioId:servicioId},function()
-            {
-            });
-
-});
-}
-</script>
 {% endblock %}

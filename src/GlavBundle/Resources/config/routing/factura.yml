@@ -43,3 +43,8 @@ factura_buscar_cliente:
     path:     /buscar
     defaults: { _controller: "GlavBundle:Factura:buscarCliente" }
     #methods:  [POST, DELETE]
+    
+factura_imprimir:
+    path:     /imprimir/{id}
+    defaults: { _controller: "GlavBundle:Factura:imprimir" }
+    #methods:  [POST, DELETE]
