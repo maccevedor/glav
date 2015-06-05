@@ -325,6 +325,9 @@ class FacturaController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('GlavBundle:Factura')->find($id);
         $idUsuario = $this->getUser()->getId();
+        //exit(\Doctrine\Common\Util\Debug::dump($entities));
+        $unitario = $entities->getValor() * 0.84 ;
+        echo $rubro = $entities->getIdServicio()->getObservacion();exit();
 
         //$pago = $em->getRepository('EduCampDbBundle:ProPago')->find($id);
         //$persona = $pago->getPersona();
@@ -335,7 +338,7 @@ class FacturaController extends Controller
         //echo $programa;
         //exit();
 
-    	return $this->render('GlavBundle:Factura:imprimir.html.twig', array('entities' => $entities));
+    	return $this->render('GlavBundle:Factura:imprimir.html.twig', array('entities' => $entities, 'unitario' => $unitario , 'rubro' => $rubro ));
 
 
         //return $this->redirect($this->generateURL('apps_educam_admision_academico'));
