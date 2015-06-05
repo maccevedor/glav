@@ -15,7 +15,13 @@
 	<!-- end: Mobile Specific -->
 	
 	<!-- start: CSS -->
-	<link id="bootstrap-style" href="{{ asset("frontend/css/bootstrap.min.css") }}"  rel="stylesheet">
+	<link id="bootstrap-style" href="{{ asset("frontend/css/bootstrap.min.css") }}" 
+    rel="stylesheet">
+    <link id="bootstrap-style" href="{{ asset("frontend/css/jquery.dataTables.css") }}" 
+    rel="stylesheet">
+    
+   
+    
 
     
     
@@ -316,7 +322,14 @@
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li>
                             <a href="{{ path('fos_user_profile_show') }}"><i class="halflings-icon white user"></i> {{ app.user.username }}</a>
-                        </li>    
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_user_change_password') }}"><i class="halflings-icon white user"></i> Cambiar clave</a>
+                        </li>
+                        
+                        
+                        
+                        
                         <li>
                             <a href="{{ path('fos_user_security_logout') }}"><i class="halflings-icon off"></i> Log Out / Salir</a>
                         </li>
@@ -1125,6 +1138,9 @@
     <script type="text/javascript">
 
 window.onload = function() {
+
+$('#example').DataTable();
+
 
 $('#cliente').change(function () {
 

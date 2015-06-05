@@ -323,12 +323,34 @@ class FacturaController extends Controller
     public function imprimirAction($id){
 
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository('GlavBundle:Factura')->find($id);
-        $idUsuario = $this->getUser()->getId();
-        //exit(\Doctrine\Common\Util\Debug::dump($entities));
-        $unitario = $entities->getValor() * 0.84 ;
-        echo $rubro = $entities->getIdServicio()->getObservacion();exit();
+        
+//         $entities = $em->getRepository('GlavBundle:Factura')->find($id);
+//         $facturaDetalle = $em->getRepository('GlavBundle:FacturaDetalle')->findOneBy(array('id_factura' => $id));
+//        // $rubro = $em->getRepository('GlavBundle:Rubro')->find($id);
 
+//         //print_r($facturaDetalle);exit();
+//         $idUsuario = $this->getUser()->getId();
+//         //exit(\Doctrine\Common\Util\Debug::dump($facturaDetalle));
+//         $unitario = $entities->getValor() * 0.84 ;
+//         $rubro = $facturaDetalle->getIdServicio();
+        
+        
+        
+        $sql = "select f.*,r.nombre from Factura f 
+                inner join FacturaDetalle fd on fd.id = f.id
+                inner join Servicio s on fd.id_servicio = s.id
+                inner join Rubro r on r.id = s.id_rubro
+                inner join Cliente c on c.id = s.id_cliente
+                where f.id = 10
+                ";
+        //echo $sql;exit();   
+        $where = "where f.id = ".$id." ";
+        
+
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql.' '.$where);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        
         //$pago = $em->getRepository('EduCampDbBundle:ProPago')->find($id);
         //$persona = $pago->getPersona();
         //$programa = $pago->getPersona()->getIdPrograma()->getNombre();

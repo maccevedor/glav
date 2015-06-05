@@ -9,6 +9,8 @@ servicio_show:
 servicio_new:
     path:     /new
     defaults: { _controller: "GlavBundle:Servicio:new" }
+    requirements:
+        _locale: es
 
 servicio_create:
     path:     /create

@@ -5,8 +5,9 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallbacks: ["%locale%"] }
-    #translator: { fallbacks: [es] }
+    #translator:      { fallbacks: ["%locale%"] }
+    translator: { fallbacks: [en] }
+    default_locale:  "es"
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"

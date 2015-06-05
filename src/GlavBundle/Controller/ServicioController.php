@@ -40,6 +40,7 @@ class ServicioController extends Controller
      */
     public function createAction(Request $request)
     {
+        //echo $request->getLocale();exit();
         $entity = new Servicio();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
