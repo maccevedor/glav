@@ -10,8 +10,6 @@ use GlavBundle\Entity\FacturaDetalle;
 use GlavBundle\Form\FacturaType;
 use GlavBundle\Form\FacturaDetalleType;
 
-
-
 /**
  * Factura controller.
  *
@@ -294,9 +292,11 @@ class FacturaController extends Controller
 
         $entities = $em->getRepository('GlavBundle:Factura')->findAll();
 
-        return $this->render('GlavBundle:Factura:index.html.twig', array(
-            'entities' => $entities,
-        ));
+        //return $this->generateUrl('factura');
+        return $this->redirect($this->generateURL('factura'));
+//         return $this->render('GlavBundle:Factura:index.html.twig', array(
+//             'entities' => $entities
+//         ));
     }
     
     public function buscarClienteAction(Request $datos){
@@ -341,7 +341,6 @@ class FacturaController extends Controller
                 inner join Servicio s on fd.id_servicio = s.id
                 inner join Rubro r on r.id = s.id_rubro
                 inner join Cliente c on c.id = s.id_cliente
-                where f.id = 10
                 ";
         //echo $sql;exit();   
         $where = "where f.id = ".$id." ";
@@ -350,6 +349,8 @@ class FacturaController extends Controller
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql.' '.$where);
         $con->execute();
         $entities = $con->fetchAll(); 
+        exit(\Doctrine\Common\Util\Debug::dump($entities));
+        
         
         //$pago = $em->getRepository('EduCampDbBundle:ProPago')->find($id);
         //$persona = $pago->getPersona();

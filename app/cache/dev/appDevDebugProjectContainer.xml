@@ -2067,6 +2067,12 @@
       </call>
       <call method="addResource">
         <argument>yml</argument>
+        <argument>/home/codio/workspace/app/Resources/GlavBundle/translations/GlavBundle.es.yml</argument>
+        <argument>es</argument>
+        <argument>GlavBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
         <argument>/home/codio/workspace/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml</argument>
         <argument>ar</argument>
         <argument>FOSUserBundle</argument>
@@ -2520,12 +2526,6 @@
         <argument>/home/codio/workspace/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
         <argument>es</argument>
         <argument>FOSUserBundle</argument>
-      </call>
-      <call method="addResource">
-        <argument>yml</argument>
-        <argument>/home/codio/workspace/app/Resources/translations/GlavBundle.es.yml</argument>
-        <argument>es</argument>
-        <argument>GlavBundle</argument>
       </call>
     </service>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
@@ -3499,7 +3499,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55721a74ab41d</argument>
+            <argument>557229db33bc9</argument>
           </service>
         </argument>
       </argument>
@@ -3789,7 +3789,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55721a74ab41d</argument>
+            <argument>557229db33bc9</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
