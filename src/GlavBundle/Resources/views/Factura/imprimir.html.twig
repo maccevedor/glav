@@ -87,20 +87,24 @@
 
             <textarea id="customer-title">Widget Corp.
 c/o Steve Widget</textarea>
+            {% set contador = 1 %}
+
+            {% for entitie in entities %}
+
 
             <table id="meta">
                 <tr>
                     <td class="meta-head">Factura No.</td>
-                    <td>{{ entities.id }}</td>
+                    <td>{{ entitie.id }}</td>
                 </tr>
                 <tr>
 
                     <td class="meta-head">Fecha</td>
-                    <td><textarea id="date">December 15, 2009</textarea></td>
+                    <td><textarea id="date">{{ "now"|date("m/d/Y") }}</textarea></td>
                 </tr>
                 <tr>
                     <td class="meta-head">Total</td>
-                    <td><div class="due">${{ entities.total }}</div></td>
+                    <td><div class="due">${{ entitie.total }}</div></td>
                 </tr>
 
             </table>
@@ -119,11 +123,11 @@ c/o Steve Widget</textarea>
 		  
 		  <tr class="item-row">
 
-		      <td class="description">{{ rubro }}</td>
-		      <td>{{ entities.observacion }}</td>
+		      <td class="description">{{ entitie.nombre }}</td>
+		      <td>{{ entitie.observacion }}</td>
 		      <td><textarea class="qty">1</textarea></td>
-		      <td><span class="price">{{ unitario }}</span></td>
-   		      <td><span class="price">{{ entities.total }}</span></td>
+		      <td><span class="price">{{ entitie.unitario }}</span></td>
+   		      <td><span class="price">{{ entitie.total }}</span></td>
 
 		  </tr>
 		         
@@ -162,7 +166,10 @@ c/o Steve Widget</textarea>
 	
 	
 	</div>
-    
+                    {% set contador = contador + 1 %}
+
+                {% endfor %}
+
     
 
 <button type="button"  onclick="javascript:imprSelec('page-wrap')" class="btn btn-default" id="imprimir" style="font-size: 10pt !important; margin: 2pt; width: 70pt !important" title="Imprimir en formato PDF">IMPRIMIR</button>

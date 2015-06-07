@@ -336,8 +336,8 @@ class FacturaController extends Controller
         
         
         
-        $sql = "select f.*,r.nombre from Factura f 
-                inner join FacturaDetalle fd on fd.id = f.id
+        $sql = "select f.*,concat(c.nombre,' ',c.apellido) as cliente , (fd.valor * 0.84) as unitario , r.nombre from Factura f 
+                inner join FacturaDetalle fd on fd.id_factura = f.id
                 inner join Servicio s on fd.id_servicio = s.id
                 inner join Rubro r on r.id = s.id_rubro
                 inner join Cliente c on c.id = s.id_cliente
@@ -349,7 +349,24 @@ class FacturaController extends Controller
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql.' '.$where);
         $con->execute();
         $entities = $con->fetchAll(); 
-        exit(\Doctrine\Common\Util\Debug::dump($entities));
+        
+        //echo $entities[2]['valor'];exit();
+        //exit(\Doctrine\Common\Util\Debug::dump($entities));
+        
+//         $dql = "SELECT f.id,f.valor FROM GlavBundle\Entity\Factura f  " .
+//        "WHERE f.id = ?1 ";
+//         $entities = $em->createQuery($dql)
+//               ->setParameter(1, $id)
+//               ->getSingleResult();
+        
+//         echo $entities->getValor()->getData;exit();
+         
+//         exit(\Doctrine\Common\Util\Debug::dump($entities));
+
+//         $valor= 'Total disponible<br><input type="text" id="neto" value="'.$balance.'">';
+//         echo $valor;exit();
+        
+        
         
         
         //$pago = $em->getRepository('EduCampDbBundle:ProPago')->find($id);
@@ -361,7 +378,7 @@ class FacturaController extends Controller
         //echo $programa;
         //exit();
 
-    	return $this->render('GlavBundle:Factura:imprimir.html.twig', array('entities' => $entities, 'unitario' => $unitario , 'rubro' => $rubro ));
+    	return $this->render('GlavBundle:Factura:imprimir.html.twig', array('entities' => $entities ));
 
 
         //return $this->redirect($this->generateURL('apps_educam_admision_academico'));

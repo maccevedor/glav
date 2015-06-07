@@ -696,7 +696,7 @@ class appProdProjectContainer extends Container
     }
     protected function getLocaleListenerService()
     {
-        return $this->services['locale_listener'] = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('en', $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('request_stack'));
+        return $this->services['locale_listener'] = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('es', $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('request_stack'));
     }
     protected function getLoggerService()
     {
@@ -858,7 +858,7 @@ class appProdProjectContainer extends Container
         $o->setProviderKey('main');
         $p = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $m, array(), $a);
         $p->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c), 2 => $n, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $m, 'main', $o, $p, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '556fbf79a4f1d', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $m, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $m, '/login', false), '/login', NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_provider.username')), 'main', $a, $c), 2 => $n, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $m, 'main', $o, $p, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, $this->get('security.csrf.token_manager')), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5573be1aae09c', $a, $f), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $l, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $m, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $m, '/login', false), '/login', NULL, $a));
     }
     protected function getSecurity_PasswordEncoderService()
     {
@@ -1312,8 +1312,84 @@ class appProdProjectContainer extends Container
         $instance->addResource('xlf', ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sv.xlf'), 'sv', 'security');
         $instance->addResource('xlf', ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.tr.xlf'), 'tr', 'security');
         $instance->addResource('xlf', ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ua.xlf'), 'ua', 'security');
-        $instance->addResource('xlf', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/messages.fr.xlf'), 'fr', 'messages');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.ar.yml'), 'ar', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.bg.yml'), 'bg', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.ca.yml'), 'ca', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.cs.yml'), 'cs', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.da.yml'), 'da', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.de.yml'), 'de', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.el.yml'), 'el', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.et.yml'), 'et', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.eu.yml'), 'eu', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.fa.yml'), 'fa', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.fi.yml'), 'fi', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.fr.yml'), 'fr', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.he.yml'), 'he', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.hr.yml'), 'hr', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.hu.yml'), 'hu', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.id.yml'), 'id', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.it.yml'), 'it', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.ja.yml'), 'ja', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.lb.yml'), 'lb', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.lt.yml'), 'lt', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.lv.yml'), 'lv', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.nb.yml'), 'nb', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.nl.yml'), 'nl', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.pl.yml'), 'pl', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.pt.yml'), 'pt', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.pt_BR.yml'), 'pt_BR', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.ro.yml'), 'ro', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.ru.yml'), 'ru', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.sk.yml'), 'sk', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.sl.yml'), 'sl', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.sr_Latn.yml'), 'sr_Latn', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.sv.yml'), 'sv', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.th.yml'), 'th', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.tr.yml'), 'tr', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.uk.yml'), 'uk', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.vi.yml'), 'vi', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.zh_CN.yml'), 'zh_CN', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.ar.yml'), 'ar', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.bg.yml'), 'bg', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.ca.yml'), 'ca', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.cs.yml'), 'cs', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.da.yml'), 'da', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.de.yml'), 'de', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.el.yml'), 'el', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.en.yml'), 'en', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.es.yml'), 'es', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.eu.yml'), 'eu', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.fa.yml'), 'fa', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.fi.yml'), 'fi', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.fr.yml'), 'fr', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.he.yml'), 'he', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.hr.yml'), 'hr', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.hu.yml'), 'hu', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.id.yml'), 'id', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.it.yml'), 'it', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.ja.yml'), 'ja', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.lt.yml'), 'lt', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.lv.yml'), 'lv', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.nb.yml'), 'nb', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.nl.yml'), 'nl', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.pl.yml'), 'pl', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.pt.yml'), 'pt', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.pt_BR.yml'), 'pt_BR', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.ro.yml'), 'ro', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.ru.yml'), 'ru', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.sk.yml'), 'sk', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.sl.yml'), 'sl', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.sr_Latn.yml'), 'sr_Latn', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.sv.yml'), 'sv', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.th.yml'), 'th', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.tr.yml'), 'tr', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.uk.yml'), 'uk', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.vi.yml'), 'vi', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/validators.zh_CN.yml'), 'zh_CN', 'validators');
         $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.en.yml'), 'en', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/GlavBundle.es.yml'), 'es', 'GlavBundle');
+        $instance->addResource('yml', ($this->targetDirs[3].'/src/GlavBundle/Resources/translations/FOSUserBundle.es.yml'), 'es', 'FOSUserBundle');
+        $instance->addResource('yml', ($this->targetDirs[2].'/Resources/GlavBundle/translations/GlavBundle.es.yml'), 'es', 'GlavBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml'), 'ar', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.bg.yml'), 'bg', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ca.yml'), 'ca', 'FOSUserBundle');
@@ -1322,7 +1398,6 @@ class appProdProjectContainer extends Container
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml'), 'de', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml'), 'el', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml'), 'en', 'FOSUserBundle');
-        $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml'), 'es', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.et.yml'), 'et', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eu.yml'), 'eu', 'FOSUserBundle');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fa.yml'), 'fa', 'FOSUserBundle');
@@ -1390,6 +1465,7 @@ class appProdProjectContainer extends Container
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml'), 'uk', 'validators');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.vi.yml'), 'vi', 'validators');
         $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml'), 'zh_CN', 'validators');
+        $instance->addResource('yml', ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml'), 'es', 'FOSUserBundle');
         return $instance;
     }
     protected function getTranslatorListenerService()
@@ -1500,7 +1576,7 @@ class appProdProjectContainer extends Container
     }
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('556fbf79a4f1d')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5573be1aae09c')), true);
         $instance->setEventDispatcher($this->get('event_dispatcher'));
         return $instance;
     }
@@ -1646,7 +1722,7 @@ class appProdProjectContainer extends Container
             ),
             'kernel.trusted_proxies' => array(
             ),
-            'kernel.default_locale' => 'en',
+            'kernel.default_locale' => 'es',
             'session.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Session',
             'session.flashbag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Flash\\FlashBag',
             'session.attribute_bag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Attribute\\AttributeBag',
