@@ -19,7 +19,14 @@ class ServicioType extends AbstractType
             ->add('fecha_servicio')    
             //->add('estado')
             //->add('fecha')
-            ->add('id_cliente')
+            //->add('id_cliente')
+            ->add('id_cliente', 'entity', array(
+            //'multiple' => true,
+            'class'    => 'GlavBundle:Cliente',
+            'property' => 'label',
+            'attr' => array('data-rel'=>'chosen'),
+            ))
+            //->add('id_cliente','choice', array('label' => 'Cliente', 'attr' => array('data-rel'=>'chosen')))
             ->add('id_empleado')
             ->add('id_automotor')
             ->add('estadoServicio', 'choice', array(
@@ -30,6 +37,7 @@ class ServicioType extends AbstractType
             ->add('id_rubro')
             ->add('fecha_entrega')
             ->add('observacion')
+            ->add('pago', 'choice', array('choices' => array('Pendiente' => 'Pendiente', 'Pagado' => 'Pagado')))
         ;
     }
     

@@ -3,9 +3,9 @@ Plantilla
 http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/
 
 Cuando llame el servicio en el select hay que visualizar con el placa del vehiculo(preguntar)
-Generar boton pdf en  la lista de factura
+Generar boton pdf en  la lista de factura(ok)
 EL buscar se realizara por cliente en factura(ok)
-El buscar se realiza por estado en Servicio(se dejo buscando por matricula)
+El buscar se realiza por estado en Servicio(se dejo buscando por matricula)(ok)
 quitar el servicio en prestamo para que aparezca el total de recaudo ue ha realizado ese dia (tiene que estar finalizado)(ok)
 
 Se debe realizar consultas de pagos a los empleados semanales (obligatorio) y historico
@@ -41,6 +41,10 @@ git status
 Crear base datos
 
 php app/console doctrine:database:create
+
+Cambiar el Idioma(no me funciono)
+
+php app/console translation:update  es GlavBundle --force 
 
 
 Crear base de datos con las entitys
