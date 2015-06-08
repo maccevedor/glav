@@ -1,25 +1,18 @@
-fos_user:
-    username:
-        already_used: El nombre de usuario ya está en uso
-        blank: Por favor, ingrese un nombre de usuario
-        short: "[-Inf,Inf]El nombre de usuario es demasiado corto"
-        long: "[-Inf,Inf]El nombre de usuario es demasiado largo"
-    email:
-        already_used: La dirección de correo ya está en uso
-        blank: Por favor, ingrese una dirección de correo
-        short: "[-Inf,Inf]La dirección de correo es demasiado corta"
-        long: "[-Inf,Inf]La dirección de correo es demasiado larga"
-        invalid: La dirección de correo no es válida
-    password:
-        blank: Por favor, ingrese una contraseña
-        short: "[-Inf,Inf]La contraseña es demasiado corta"
-        mismatch: Las dos contraseñas no coinciden
-    new_password:
-        blank: Por favor, ingrese una nueva contraseña
-        short: "[-Inf,Inf]La nueva contraseña es demasiado corta"
-    current_password:
-        invalid: La contraseña ingresada no es válida
-    group:
-        blank: Por favor, ingrese un nombre
-        short: "[-Inf,Inf]El nombre es demasiado corto"
-        long: "[-Inf,Inf]El nombre es demasiado largo"
+fos_user.username.already_used: 'El nombre de usuario ya está en uso'
+fos_user.username.blank: 'Por favor, ingrese un nombre de usuario'
+fos_user.username.short: '[-Inf,Inf]El nombre de usuario es demasiado corto'
+fos_user.username.long: '[-Inf,Inf]El nombre de usuario es demasiado largo'
+fos_user.email.already_used: 'La dirección de correo ya está en uso'
+fos_user.email.blank: 'Por favor, ingrese una dirección de correo'
+fos_user.email.short: '[-Inf,Inf]La dirección de correo es demasiado corta'
+fos_user.email.long: '[-Inf,Inf]La dirección de correo es demasiado larga'
+fos_user.email.invalid: 'La dirección de correo no es válida'
+fos_user.password.blank: 'Por favor, ingrese una contraseña'
+fos_user.password.short: '[-Inf,Inf]La contraseña es demasiado corta'
+fos_user.password.mismatch: 'Las dos contraseñas no coinciden'
+fos_user.new_password.blank: 'Por favor, ingrese una nueva contraseña'
+fos_user.new_password.short: '[-Inf,Inf]La nueva contraseña es demasiado corta'
+fos_user.current_password.invalid: 'La contraseña ingresada no es válida'
+fos_user.group.blank: 'Por favor, ingrese un nombre'
+fos_user.group.short: '[-Inf,Inf]El nombre es demasiado corto'
+fos_user.group.long: '[-Inf,Inf]El nombre es demasiado largo'
