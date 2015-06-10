@@ -1,0 +1,87 @@
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+
+{% block infoUserTop %}
+
+    <h1>Informe Empleados</h1>
+    {# Buscar por Cliente
+    <input type="text" id="cliente" name="cliente"> #}
+        <div id="informacion">
+
+        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+
+        {% set cantidad = 'inicial' %}
+        {% set prestamo = 'cero' %}
+        {% set total = 0 %}
+        {% set neto = 0 %}
+
+
+           
+        {% for entity in entities %}
+        
+        
+        {% if cantidad == entity.empleado %}
+        
+        {% else %}
+        
+            {% if cantidad == 'inicial' %}
+            
+            {% else %}    
+            <tr>
+                <td>Prestamo</td>
+                <td>{{ prestamo }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ total }}</td>
+            </tr>
+             <tr>
+               {% set neto = (total * 0.4) - prestamo %}
+
+                <td>Neto</td>
+                <td>${{ neto }}</td>
+            </tr>
+                {% set total = 0 %}
+            {% endif %}
+        <thead>
+            <tr>
+                <th colspan="2">{{ entity.empleado }}</th>
+            </tr>
+        </thead>
+        {% endif %}
+            {% set cantidad = entity.empleado %}
+        <tbody>
+            <tr>
+                <td>{{ entity.matricula }}</td>
+                <td>{{ entity.valor }}</td>
+                {% set prestamo = entity.prestamo %}
+                {% set total = total + entity.valor %}
+                {% set neto = (total * 0.4) - prestamo   %}
+
+            </tr>
+        {% endfor %}
+        <tr>
+            <tr>
+                <td>Prestamo</td>
+                <td>{{ prestamo }}</td>
+            </tr>
+                <td>Total</td>
+                <td>{{ total }}</td>
+            </tr>
+            </tr>
+                <td>Neto</td>
+                <td>${{ neto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('factura_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+       </div>
+
+
+    {% endblock %}

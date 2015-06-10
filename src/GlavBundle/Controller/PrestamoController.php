@@ -256,7 +256,8 @@ $balance = $em->createQuery($dql)
               ->setParameter(1, $idEmpleado)
               ->setParameter(2, "Pendiente")
               ->getSingleScalarResult();
-        $valor= 'Total disponible<br><input type="text" id="neto" value="'.$balance.'">';
+        $balance = $balance * 0.4;
+        $valor= 'Total disponible<br><input type="text" id="neto" value="'.$balance.'" readonly >';
         echo $valor;exit();
         
         
