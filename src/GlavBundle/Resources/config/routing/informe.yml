@@ -1,0 +1,7 @@
+informe:
+    path:     /
+    defaults: { _controller: "GlavBundle:Informe:empleado" }
+    
+informe_empleado:
+    path:     /empleado
+    defaults: { _controller: "GlavBundle:Informe:informeEmpleado" }

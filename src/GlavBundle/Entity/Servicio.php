@@ -142,6 +142,8 @@ class Servicio
         $this->hash=md5(time());
         $this->fecha =  new \DateTime('now');
         $this->fecha_servicio =  new \DateTime('now');
+        $this->fecha_entrega =  new \DateTime('now');
+
 
     }
 

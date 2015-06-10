@@ -24,9 +24,11 @@ class CargoController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('GlavBundle:Cargo')->findAll();
+        
+        $breadcrumb = $this->generateUrl('cargo');
 
         return $this->render('GlavBundle:Cargo:index.html.twig', array(
-            'entities' => $entities,
+            'entities' => $entities, 'breadcrumb' => $breadcrumb
         ));
     }
     /**

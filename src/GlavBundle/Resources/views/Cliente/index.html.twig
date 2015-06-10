@@ -20,9 +20,15 @@
 
 
 {% block infoUserTop %}
-    <h1>Cliente list</h1>
+    <h1>Lista de Clientes</h1>
     
-
+ <ul>
+        <li>
+            <a href="{{ path('cliente_new') }}">
+                Crear Cliente
+            </a>
+        </li>
+    </ul>
     
 {# {{ app.user.roles|join(', ') }} #}
     
@@ -56,12 +62,13 @@
                 <td>{{ entity.estado }}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('cliente_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('cliente_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                <a class="btn btn-success" href="{{ path('cargo_show', { 'id': entity.id }) }}">
+                <i class="halflings-icon white zoom-in"></i>  
+                </a>
+                <a class="btn btn-info" href="{{ path('cargo_edit', { 'id': entity.id }) }}">
+                <i class="halflings-icon white edit"></i>  
+                </a>
+               
                 </ul>
                 </td>
             </tr>
@@ -72,7 +79,7 @@
         <ul>
         <li>
             <a href="{{ path('cliente_new') }}">
-                Create a new entry
+                Crear Cliente
             </a>
         </li>
     </ul>

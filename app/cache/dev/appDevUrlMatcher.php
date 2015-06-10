@@ -835,6 +835,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/informe')) {
+            // informe
+            if (rtrim($pathinfo, '/') === '/informe') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'informe');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::empleadoAction',  '_route' => 'informe',);
+            }
+
+            // informe_empleado
+            if ($pathinfo === '/informe/empleado') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeEmpleadoAction',  '_route' => 'informe_empleado',);
+            }
+
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);

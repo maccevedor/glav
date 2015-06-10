@@ -336,11 +336,13 @@ class FacturaController extends Controller
         
         
         
-        $sql = "select f.*,concat(c.nombre,' ',c.apellido) as cliente , (fd.valor * 0.84) as unitario , r.nombre from Factura f 
+        $sql = "select f.*,concat(c.nombre,' ',c.apellido) as cliente , (fd.valor * 0.84) as unitario , r.nombre,a.modelo,a.matricula from Factura f 
                 inner join FacturaDetalle fd on fd.id_factura = f.id
                 inner join Servicio s on fd.id_servicio = s.id
                 inner join Rubro r on r.id = s.id_rubro
                 inner join Cliente c on c.id = s.id_cliente
+                inner join Automotor a on a.id = s.id_automotor
+
                 ";
         //echo $sql;exit();   
         $where = "where f.id = ".$id." ";

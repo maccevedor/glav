@@ -400,12 +400,13 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
             echo "\"><i class=\"halflings-icon white user\"></i> Cambiar clave</a>
                         </li>
                         
+                     
                         
                         
                         
                         <li>
                             <a href=\"";
-            // line 334
+            // line 335
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\"><i class=\"halflings-icon off\"></i> Log Out / Salir</a>
                         </li>
@@ -414,17 +415,23 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 
                         ";
         } else {
-            // line 340
+            // line 341
             echo "                         <li>
                             <a href=\"";
-            // line 341
+            // line 342
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\"><i class=\"fa fa-fw fa-user\"></i>Iniciar Sesion</a>
+                        </li>
+                        <li>
+                            <a href=\"";
+            // line 345
+            echo $this->env->getExtension('routing')->getPath("fos_user_resetting_request");
+            echo "\"><i class=\"fa fa-fw fa-user\"></i>Olvido Clave</a>
                         </li>
 
                          ";
         }
-        // line 345
+        // line 349
         echo "                    </ul>
                 </li>
             </ul>
@@ -457,9 +464,9 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
                 \t\t\t  
               
                           ";
-        // line 376
+        // line 380
         $this->displayBlock('menu', $context, $blocks);
-        // line 404
+        // line 408
         echo "\t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<!-- end: Main Menu -->
@@ -475,15 +482,15 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t\t\t<div id=\"content\" class=\"span10\">
             
             ";
-        // line 418
+        // line 422
         $this->displayBlock('breadcrumb', $context, $blocks);
-        // line 429
-        echo "
+        // line 434
+        echo "            
             \t\t\t
 \t\t\t  ";
-        // line 431
+        // line 436
         $this->displayBlock('infoUserTop', $context, $blocks);
-        // line 1063
+        // line 1068
         echo "       
 
 \t</div><!--/.fluid-container-->
@@ -529,123 +536,123 @@ class __TwigTemplate_4ce389b35b99f31376cc6c0620df5a32bcf96dc2f4378214296c8547fa5
 \t<!-- start: JavaScript-->
     
     <script src=\"";
-        // line 1107
+        // line 1112
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1108
+        // line 1113
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-migrate-1.0.0.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1109
+        // line 1114
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery-ui-1.10.0.custom.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1110
+        // line 1115
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.ui.touch-punch.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1111
+        // line 1116
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/modernizr.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1112
+        // line 1117
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1113
+        // line 1118
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.cookie.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1114
+        // line 1119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/fullcalendar.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1115
+        // line 1120
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1116
+        // line 1121
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/excanvas.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1117
+        // line 1122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1118
+        // line 1123
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.pie.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1119
+        // line 1124
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.stack.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1120
+        // line 1125
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.flot.resize.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1121
+        // line 1126
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.chosen.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1122
+        // line 1127
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.uniform.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1123
+        // line 1128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.cleditor.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1124
+        // line 1129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.noty.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1125
+        // line 1130
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.elfinder.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1126
+        // line 1131
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.raty.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1127
+        // line 1132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.iphone.toggle.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1128
+        // line 1133
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.uploadify-3.1.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1129
+        // line 1134
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.gritter.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1130
+        // line 1135
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.imagesloaded.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1131
+        // line 1136
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.masonry.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1132
+        // line 1137
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.knob.modified.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1133
+        // line 1138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1134
+        // line 1139
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/counter.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1135
+        // line 1140
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/retina.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1136
+        // line 1141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\"></script>
         
@@ -661,7 +668,7 @@ window.onload = function() {
         cliente = \$('#cliente').val();
         alert(cliente);
         \$('#informacion').load('";
-        // line 1149
+        // line 1154
         echo $this->env->getExtension('routing')->getPath("factura_buscar_cliente");
         echo "',{cliente:cliente},function()
             {
@@ -675,7 +682,7 @@ window.onload = function() {
         matricula = \$('#matricula').val();
         alert(matricula);
         \$('#informacion').load('";
-        // line 1160
+        // line 1165
         echo $this->env->getExtension('routing')->getPath("servicio_buscar_matricula");
         echo "',{matricula:matricula},function()
             {
@@ -688,12 +695,12 @@ window.onload = function() {
     alert( \$(this).find(\":selected\").val());
     servicioId = \$(this).find(\":selected\").val();
     //\$('#informacion').load('";
-        // line 1170
+        // line 1175
         echo $this->env->getExtension('routing')->getPath("prestamo_total");
         echo "',
             //\$('#dialogoBox').hide();
             \$('#informacion').load('";
-        // line 1172
+        // line 1177
         echo $this->env->getExtension('routing')->getPath("prestamo_total");
         echo "',{servicioId:servicioId},function()
             {
@@ -706,12 +713,12 @@ window.onload = function() {
     //alert( \$(this).find(\":selected\").val());
     servicioId = \$(this).find(\":selected\").val();
     //\$('#informacion').load('";
-        // line 1182
+        // line 1187
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',
             //\$('#dialogoBox').hide();
             \$('#informacion').load('";
-        // line 1184
+        // line 1189
         echo $this->env->getExtension('routing')->getPath("factura_valor");
         echo "',{servicioId:servicioId},function()
             {
@@ -728,10 +735,10 @@ window.onload = function() {
 </html>";
     }
 
-    // line 376
+    // line 380
     public function block_menu($context, array $blocks = array())
     {
-        // line 377
+        // line 381
         echo "
                 
 \t\t\t\t\t<ul class=\"nav nav-tabs nav-stacked main-menu\">
@@ -761,26 +768,27 @@ window.onload = function() {
                     ";
     }
 
-    // line 418
+    // line 422
     public function block_breadcrumb($context, array $blocks = array())
     {
-        // line 419
-        echo "
-\t\t\t<ul class=\"breadcrumb\">
+        // line 423
+        echo "\t\t\t<!-- start: breadcrumb -->
+
+            <!-- \t\t\t<ul class=\"breadcrumb\">
 \t\t\t\t<li>
 \t\t\t\t\t<i class=\"icon-home\"></i>
 \t\t\t\t\t<a href=\"index.html\">Home</a> 
 \t\t\t\t\t<i class=\"icon-angle-right\"></i>
 \t\t\t\t</li>
 \t\t\t\t<li><a href=\"#\">Dashboard</a></li>
-\t\t\t</ul>
+\t\t\t</ul> -->
             ";
     }
 
-    // line 431
+    // line 436
     public function block_infoUserTop($context, array $blocks = array())
     {
-        // line 432
+        // line 437
         echo "              
               
                
@@ -1155,7 +1163,7 @@ window.onload = function() {
 \t\t\t\t\t\t\t<li class=\"green\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
 \t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
-        // line 805
+        // line 810
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t</a>
@@ -1166,7 +1174,7 @@ window.onload = function() {
 \t\t\t\t\t\t\t<li class=\"yellow\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
 \t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
-        // line 813
+        // line 818
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t</a>
@@ -1177,7 +1185,7 @@ window.onload = function() {
 \t\t\t\t\t\t\t<li class=\"red\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
 \t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
-        // line 821
+        // line 826
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t</a>
@@ -1188,7 +1196,7 @@ window.onload = function() {
 \t\t\t\t\t\t\t<li class=\"blue\">
 \t\t\t\t\t\t\t\t<a href=\"#\">
 \t\t\t\t\t\t\t\t\t<img class=\"avatar\" alt=\"Dennis Ji\" src=\"";
-        // line 829
+        // line 834
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("frontend/js/custom.js"), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t\t</a>
@@ -1438,6 +1446,6 @@ window.onload = function() {
 
     public function getDebugInfo()
     {
-        return array (  1192 => 829,  1181 => 821,  1170 => 813,  1159 => 805,  784 => 432,  781 => 431,  768 => 419,  765 => 418,  735 => 377,  732 => 376,  715 => 1184,  710 => 1182,  697 => 1172,  692 => 1170,  679 => 1160,  665 => 1149,  649 => 1136,  645 => 1135,  641 => 1134,  637 => 1133,  633 => 1132,  629 => 1131,  625 => 1130,  621 => 1129,  617 => 1128,  613 => 1127,  609 => 1126,  605 => 1125,  601 => 1124,  597 => 1123,  593 => 1122,  589 => 1121,  585 => 1120,  581 => 1119,  577 => 1118,  573 => 1117,  569 => 1116,  565 => 1115,  561 => 1114,  557 => 1113,  553 => 1112,  549 => 1111,  545 => 1110,  541 => 1109,  537 => 1108,  533 => 1107,  487 => 1063,  485 => 431,  481 => 429,  479 => 418,  463 => 404,  461 => 376,  428 => 345,  421 => 341,  418 => 340,  409 => 334,  399 => 327,  391 => 324,  388 => 323,  386 => 322,  382 => 320,  355 => 296,  336 => 280,  317 => 264,  298 => 248,  279 => 232,  91 => 47,  84 => 43,  77 => 39,  67 => 32,  63 => 31,  59 => 30,  46 => 20,  41 => 18,  22 => 1,);
+        return array (  1200 => 834,  1189 => 826,  1178 => 818,  1167 => 810,  792 => 437,  789 => 436,  775 => 423,  772 => 422,  742 => 381,  739 => 380,  722 => 1189,  717 => 1187,  704 => 1177,  699 => 1175,  686 => 1165,  672 => 1154,  656 => 1141,  652 => 1140,  648 => 1139,  644 => 1138,  640 => 1137,  636 => 1136,  632 => 1135,  628 => 1134,  624 => 1133,  620 => 1132,  616 => 1131,  612 => 1130,  608 => 1129,  604 => 1128,  600 => 1127,  596 => 1126,  592 => 1125,  588 => 1124,  584 => 1123,  580 => 1122,  576 => 1121,  572 => 1120,  568 => 1119,  564 => 1118,  560 => 1117,  556 => 1116,  552 => 1115,  548 => 1114,  544 => 1113,  540 => 1112,  494 => 1068,  492 => 436,  488 => 434,  486 => 422,  470 => 408,  468 => 380,  435 => 349,  428 => 345,  422 => 342,  419 => 341,  410 => 335,  399 => 327,  391 => 324,  388 => 323,  386 => 322,  382 => 320,  355 => 296,  336 => 280,  317 => 264,  298 => 248,  279 => 232,  91 => 47,  84 => 43,  77 => 39,  67 => 32,  63 => 31,  59 => 30,  46 => 20,  41 => 18,  22 => 1,);
     }
 }

@@ -1,13 +1,19 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Rubro list</h1>
-
+    <h1>Lista de Rubros</h1>
+<ul>
+        <li>
+            <a href="{{ path('rubro_new') }}">
+                Crear Rubro
+            </a>
+        </li>
+    </ul>
     <table  class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
+                
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Valor</th>
@@ -21,7 +27,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('rubro_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.hash }}</td>
+                
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.valor }}</td>
@@ -30,12 +36,12 @@
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('rubro_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('rubro_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                    <a class="btn btn-success" href="{{ path('servicio_show', { 'id': entity.id }) }}">
+                <i class="halflings-icon white zoom-in"></i>  
+                </a>
+                <a class="btn btn-info" href="{{ path('servicio_edit', { 'id': entity.id }) }}">
+                <i class="halflings-icon white edit"></i>  
+                </a>
                 </ul>
                 </td>
             </tr>
@@ -46,7 +52,7 @@
         <ul>
         <li>
             <a href="{{ path('rubro_new') }}">
-                Create a new entry
+                Crear Rubro
             </a>
         </li>
     </ul>

@@ -327,6 +327,7 @@
                             <a href="{{ path('fos_user_change_password') }}"><i class="halflings-icon white user"></i> Cambiar clave</a>
                         </li>
                         
+                     
                         
                         
                         
@@ -339,6 +340,9 @@
                         {% else %}
                          <li>
                             <a href="{{ path('fos_user_security_login') }}"><i class="fa fa-fw fa-user"></i>Iniciar Sesion</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_user_resetting_request') }}"><i class="fa fa-fw fa-user"></i>Olvido Clave</a>
                         </li>
 
                          {% endif %}
@@ -416,17 +420,18 @@
 			<div id="content" class="span10">
             
             {% block breadcrumb %}
+			<!-- start: breadcrumb -->
 
-			<ul class="breadcrumb">
+            <!-- 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
 					<a href="index.html">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
 				<li><a href="#">Dashboard</a></li>
-			</ul>
+			</ul> -->
             {% endblock %}
-
+            
             			
 			  {% block infoUserTop %}
               

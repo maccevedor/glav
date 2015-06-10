@@ -1,9 +1,16 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Cargo list</h1>
+    <h1>Lista de Cargos</h1>
+    <ul>
+        <li>
+            <a href="{{ path('cargo_new') }}">
+                Crear Cargo
+            </a>
+        </li>
+    </ul>
 
-        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+      <table class="table table-striped table-bordered bootstrap-datatable datatable dataTable">
 
 
         <thead>
@@ -38,11 +45,23 @@
         </tbody>
     </table>
 
+
+
         <ul>
         <li>
             <a href="{{ path('cargo_new') }}">
-                Create a new entry
+                Crear Cargo
             </a>
         </li>
     </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     {% endblock %}

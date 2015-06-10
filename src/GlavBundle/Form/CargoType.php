@@ -15,7 +15,7 @@ class CargoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+           // ->add('hash')
             ->add('nombre')
             ->add('descripcion')
             ->add('estado')

@@ -41,6 +41,10 @@ glav_cargo:
 glav_empleado:
     resource: "@GlavBundle/Resources/config/routing/empleado.yml"
     prefix:   /empleado
+    
+glav_informe:
+    resource: "@GlavBundle/Resources/config/routing/informe.yml"
+    prefix:   /informe
 
 glav_homepage:
     path:     /hello/{name}

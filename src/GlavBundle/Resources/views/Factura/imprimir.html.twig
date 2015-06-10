@@ -17,10 +17,9 @@
         #address { width: 250px; height: 150px; float: left; }
         #customer { overflow: hidden; }
 
-        #logo { text-align: right; float: right; position: relative; margin-top: 25px; border: 1px solid #fff; max-width: 540px; max-height: 100px; overflow: hidden; }
-        #logo:hover, #logo.edit { border: 1px solid #000; margin-top: 0px; max-height: 125px; }
+        #logo { text-align: right; float: right; position: relative; border: 1px solid #fff; max-width: 200px; max-height: 200px;  }
         #logoctr { display: none; }
-        #logo:hover #logoctr, #logo.edit #logoctr { display: block; text-align: right; line-height: 25px; background: #eee; padding: 0 5px; }
+        
         #logohelp { text-align: left; display: none; font-style: italic; padding: 10px 5px;}
         #logohelp input { margin-bottom: 5px; }
         .edit #logohelp { display: block; }
@@ -32,6 +31,11 @@
         #meta td { text-align: right;  }
         #meta td.meta-head { text-align: left; background: #eee; }
         #meta td textarea { width: 100%; height: 20px; text-align: right; }
+        
+        #meta1 { margin-top: 1px; width: 300px; float: left; }
+        #meta1 td { text-align: left;  }
+        #meta1 td.meta-head { text-align: left; background: #eee; }
+        #meta1 td textarea { width: 100%; height: 20px; text-align: left; }
 
         #items { clear: both; width: 100%; margin: 30px 0 0 0; border: 1px solid black; }
         #items th { background: #eee; }
@@ -57,41 +61,57 @@
 
           
 </style>
-     
-     
 
-		<textarea id="header">Glav 2.0</textarea>
 		
 		<div id="identity">
 		
-            <label id="address">Nombre <br>
-                Direccion <br>
-                Barrio<br>
-                Telefono<br>
+            <label id="address">HENRY TORRES MORENO <br>
+                NIT. 13.803.973-5 <br>
+                REGIMEN SIMPLIFICADO<br>
+                Calle 14 Cra. 28 Esquina-Bucaramanga<br>
+                Tel. 645 6815 - Fax.645 3696<br>
+                Cel. 320 4048051 - 315 2722340<br>
+                henrytorresmoreno@yahoo.com
             </label>
 
             <div id="logo">
 
-              <div id="logohelp">
-                <input id="imageloc" type="text" size="50" value="" /><br />
-                (max width: 540px, max height: 100px)
-              </div>
-              <img id="image" src="images/logo.png" alt="logo" />
+<img id="image"  src="{{ asset("frontend/img/AUTOLOGO.jpg") }}" alt="logo" style="width:150px; height:150px "/>
             </div>
 		
 		</div>
 		
 		<div style="clear:both"></div>
+        
+        
+        {% set contador = 1 %}
+
+        {% for entitie in entities %}
 		
 		<div id="customer">
 
-            <textarea id="customer-title">Widget Corp.
-c/o Steve Widget</textarea>
-            {% set contador = 1 %}
+            <label><br>
+            <br>
+            
+            </label>
+            
+            <table id="meta1">
+                <tr>
+                    <td class="meta1-head">Cliente</td>
+                    <td>{{ entitie.cliente}}</td>
+                </tr>
+                <tr>
 
-            {% for entitie in entities %}
+                    <td class="meta1-head">Vehiculo</td>
+                    <td><textarea id="date">{{ entitie.modelo}}</textarea></td>
+                </tr>
+                <tr>
+                    <td class="meta1-head">Placa</td>
+                    <td><div class="due">{{ entitie.matricula}}</div></td>
+                </tr>
 
-
+            </table>
+            
             <table id="meta">
                 <tr>
                     <td class="meta-head">Factura No.</td>
@@ -100,7 +120,7 @@ c/o Steve Widget</textarea>
                 <tr>
 
                     <td class="meta-head">Fecha</td>
-                    <td><textarea id="date">{{ "now"|date("m/d/Y") }}</textarea></td>
+                    <td>{{ "now"|date("m/d/Y") }}</td>
                 </tr>
                 <tr>
                     <td class="meta-head">Total</td>
@@ -116,7 +136,7 @@ c/o Steve Widget</textarea>
 		  <tr>
 		      <th>Rubro</th>
 		      <th>Descripcion</th>
-		      <th>Placa</th>
+		      <th>Cantidad</th>
 		      <th>Costo Unitario</th>
 		      <th>Precio</th>
 		  </tr>
@@ -136,25 +156,8 @@ c/o Steve Widget</textarea>
 		  
 		  <tr>
 		      <td colspan="2" class="blank"> </td>
-		      <td colspan="2" class="total-line">Subtotal</td>
-		      <td class="total-value"><div id="subtotal">$875.00</div></td>
-		  </tr>
-		  <tr>
-
-		      <td colspan="2" class="blank"> </td>
-		      <td colspan="2" class="total-line">Total</td>
-		      <td class="total-value"><div id="total">$875.00</div></td>
-		  </tr>
-		  <tr>
-		      <td colspan="2" class="blank"> </td>
-		      <td colspan="2" class="total-line">Amount Paid</td>
-
-		      <td class="total-value"><textarea id="paid">$0.00</textarea></td>
-		  </tr>
-		  <tr>
-		      <td colspan="2" class="blank"> </td>
-		      <td colspan="2" class="total-line balance">Balance Due</td>
-		      <td class="total-value balance"><div class="due">$875.00</div></td>
+		      <td colspan="2" class="total-line balance">Total</td>
+		      <td class="total-value balance"><div class="due">{{ entitie.total }}</div></td>
 		  </tr>
 		
 		</table>
