@@ -72,7 +72,7 @@ swiftmailer:
     transport: "smtp"
     host:      "smtp.mandrillapp.com"
     username:  "tecnologia@umb.edu.co"
-    password:  "a9nuKggtFBlZlTNh_OtYuw"
+    password:  ":)"
     port:      "587"
 
 #FosUser

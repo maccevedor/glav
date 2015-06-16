@@ -1,16 +1,23 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Automotor list</h1>
+    <h1>Lista de Automotores</h1>
+    <ul>
+        <li>
+            <a href="{{ path('automotor_new') }}">
+                Crear Automotor
+            </a>
+        </li>
+    </ul>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
+                
                 <th>Modelo</th>
                 <th>Matricula</th>
-                <th>Estado</th>
+               
                 <th>Fecha</th>
                 <th>Actions</th>
             </tr>
@@ -19,19 +26,20 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('automotor_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.hash }}</td>
+                
                 <td>{{ entity.modelo }}</td>
                 <td>{{ entity.matricula }}</td>
-                <td>{{ entity.estado }}</td>
+               
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('automotor_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('automotor_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                <a class="btn btn-success" href="{{ path('automotor_show', { 'id': entity.id }) }}">
+                <i class="halflings-icon white zoom-in"></i>  
+                </a>
+                <a class="btn btn-info" href="{{ path('automotor_edit', { 'id': entity.id }) }}">
+                <i class="halflings-icon white edit"></i>  
+                </a>
+               
                 </ul>
                 </td>
             </tr>
@@ -42,7 +50,7 @@
         <ul>
         <li>
             <a href="{{ path('automotor_new') }}">
-                Create a new entry
+                Crear Automotor
             </a>
         </li>
     </ul>

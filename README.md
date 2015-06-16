@@ -1,3 +1,67 @@
+
+Explicar a chiqui(M)
+usuario user ++++++++++++
+arreglar los permisos del menu
+
+las fechas de nacimiento no cuenta con los años anteriores suficientes (permitir annos viejos)(M)
+
+diseño de la ventana de Show o resumen mejorar(Aplicar css)(M)
+
+Que el Empleado de Patio puede visualziar le informe de empleados por fecha *hecho()
+
+factura cliente habilitar(consultar factura)
+
+restablecer contraseña (crear correo de gmail para el envio de correos)(A)
+
+crear boton de index(M)
+
+Cambiar los nombres de los label(M)(actualizar y eliminar)
+
+Registro de Servicio
+Crear 
+Id Cliente tiene campo buscar pero no los otros(M)
+
+Revisar las operaciones de prestamo(M)
+
+Agregar valor del rubro al servicio(M)
+Cuanto tipo de usuario sea jefe de patio no aparecer tipo de automotor
+Campo con estado para el prestamo 
+
+Crear un boton que deje el pago al dia  al empleado con el lavadero(opcional)
+Eliminar Observacion
+*******************************
+Prestamo
+***********************
+Ordenar campos Eliminar el hash
+Lista prestamo no aparece columna nombre operario
+Restriccion de prestamo, 
+consolidar de lunes a domingo el saldo disponible 
+
+permite realizar prestamos sin saldo disponible
+
+al crear un nuevo prestamo me muestra de nuevo el ultimo valor
+
+El boton borrar no funciona tipo de servicio
+
+Descripcion aumentar la cantidad de caracteres
+**************************
+Considerar la necesidad de los menus tipo de automotor automotor rubro tipo de rubro
+
+********************
+FACTURA
+
+No muestra todos los campos para editar factura
+
+
+
+
+
+
+
+
+
+
+
 Plantilla 
 
 select s.*,a.matricula from Servicio s inner join Automotor a on a.id= s.id_automotor where s.estado_servicio = "Finalizado" and fecha_servicio between '2011-03-17' and '2016-03-17'

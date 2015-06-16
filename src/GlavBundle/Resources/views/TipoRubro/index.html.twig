@@ -2,11 +2,11 @@
 
 
 {% block infoUserTop %}
-    <h1>Tipos de Rubro</h1>
+    <h1>Tipos de Servicio</h1>
 <ul>
         <li>
             <a href="{{ path('tiporubro_new') }}">
-                Create a new entry
+                Crear Tipo de Servicio
             </a>
         </li>
     </ul>
@@ -32,10 +32,10 @@
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d') }}{% endif %}</td>
                 <td>
                <ul>
-                    <a class="btn btn-success" href="{{ path('servicio_show', { 'id': entity.id }) }}">
+                    <a class="btn btn-success" href="{{ path('tiporubro_show', { 'id': entity.id }) }}">
                 <i class="halflings-icon white zoom-in"></i>  
                 </a>
-                <a class="btn btn-info" href="{{ path('servicio_edit', { 'id': entity.id }) }}">
+                <a class="btn btn-info" href="{{ path('tiporubro_edit', { 'id': entity.id }) }}">
                 <i class="halflings-icon white edit"></i>  
                 </a>
                 </ul>
@@ -48,7 +48,7 @@
         <ul>
         <li>
             <a href="{{ path('tiporubro_new') }}">
-                Create a new entry
+                Crear Tipo de Servicio
             </a>
         </li>
     </ul>

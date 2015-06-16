@@ -2,7 +2,14 @@
 
 {% block infoUserTop %}
 
-    <h1>Factura list</h1>
+    <h1>Registros de Factura</h1>
+     <ul>
+        <li>
+            <a href="{{ path('factura_new') }}">
+                Crear Factura
+            </a>
+        </li>
+    </ul>
     {# Buscar por Cliente
     <input type="text" id="cliente" name="cliente"> #}
         <div id="informacion">
@@ -60,7 +67,7 @@
         <ul>
         <li>
             <a href="{{ path('factura_new') }}">
-                Create a new entry
+                Crear Factura
             </a>
         </li>
     </ul>

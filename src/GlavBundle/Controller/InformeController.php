@@ -41,6 +41,9 @@ class InformeController extends Controller
     }
     public function informeEmpleadoAction(Request $datos)
     {
+        
+        
+        
         //print_r($datos);exit();
         $fechaInicial =  $datos->get('fecha_inicial');
         $fechaFinal =   $datos->get('fecha_final');

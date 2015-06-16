@@ -1,7 +1,7 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>TipoAutomotor</h1>
+    <h1>Tipo Automotor Registrado</h1>
 
     <table class="record_properties">
         <tbody>
@@ -35,12 +35,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('tipoautomotor') }}">
-            Back to the list
+            Volver a la lista Tipo de Automotor
         </a>
     </li>
     <li>
         <a href="{{ path('tipoautomotor_edit', { 'id': entity.id }) }}">
-            Edit
+            Editar Tipo de Automotor
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

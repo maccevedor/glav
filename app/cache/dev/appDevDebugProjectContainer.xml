@@ -418,7 +418,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">587</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.mandrillapp.com</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.username">tecnologia@umb.edu.co</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">a9nuKggtFBlZlTNh_OtYuw</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">:)</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
@@ -3504,7 +3504,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5577867a7e977</argument>
+            <argument>557864837332a</argument>
           </service>
         </argument>
       </argument>
@@ -3794,7 +3794,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5577867a7e977</argument>
+            <argument>557864837332a</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4970,7 +4970,7 @@
               <argument>tecnologia@umb.edu.co</argument>
             </call>
             <call method="setPassword">
-              <argument>a9nuKggtFBlZlTNh_OtYuw</argument>
+              <argument>:)</argument>
             </call>
             <call method="setAuthMode">
               <argument>null</argument>

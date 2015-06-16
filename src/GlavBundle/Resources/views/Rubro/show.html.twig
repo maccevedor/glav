@@ -1,7 +1,7 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Rubro</h1>
+    <h1>Servicios</h1>
 
     <table class="record_properties">
         <tbody>
@@ -43,12 +43,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('rubro') }}">
-            Back to the list
+            Volver a la Lista de Servicios
         </a>
     </li>
     <li>
         <a href="{{ path('rubro_edit', { 'id': entity.id }) }}">
-            Edit
+            Editar Servicio
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

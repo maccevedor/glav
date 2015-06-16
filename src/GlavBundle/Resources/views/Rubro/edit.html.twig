@@ -1,14 +1,14 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Rubro edit</h1>
+    <h1>Editar Servicio</h1>
 
     {{ form(edit_form) }}
 
         <ul class="record_actions">
     <li>
         <a href="{{ path('rubro') }}">
-            Back to the list
+            Volver a la Lista
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

@@ -1,11 +1,11 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>Lista de Rubros</h1>
+    <h1>Servicios</h1>
 <ul>
         <li>
             <a href="{{ path('rubro_new') }}">
-                Crear Rubro
+                Crear Servicio
             </a>
         </li>
     </ul>
@@ -36,10 +36,10 @@
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <a class="btn btn-success" href="{{ path('servicio_show', { 'id': entity.id }) }}">
+                    <a class="btn btn-success" href="{{ path('rubro_show', { 'id': entity.id }) }}">
                 <i class="halflings-icon white zoom-in"></i>  
                 </a>
-                <a class="btn btn-info" href="{{ path('servicio_edit', { 'id': entity.id }) }}">
+                <a class="btn btn-info" href="{{ path('rubro_edit', { 'id': entity.id }) }}">
                 <i class="halflings-icon white edit"></i>  
                 </a>
                 </ul>
@@ -52,7 +52,7 @@
         <ul>
         <li>
             <a href="{{ path('rubro_new') }}">
-                Crear Rubro
+                Crear Servicios
             </a>
         </li>
     </ul>

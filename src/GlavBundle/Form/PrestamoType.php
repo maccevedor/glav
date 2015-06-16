@@ -15,7 +15,7 @@ class PrestamoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+            //->add('hash')
             ->add('observacion')
             ->add('estado')
             //->add('fecha')

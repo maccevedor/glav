@@ -27,6 +27,7 @@ class ServicioType extends AbstractType
             'attr' => array('data-rel'=>'chosen'),
             ))
             //->add('id_cliente','choice', array('label' => 'Cliente', 'attr' => array('data-rel'=>'chosen')))
+            
             ->add('id_empleado')
             ->add('id_automotor')
             ->add('estadoServicio', 'choice', array(

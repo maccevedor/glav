@@ -1,13 +1,19 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
 {% block infoUserTop %}
-    <h1>TipoAutomotor list</h1>
-
+    <h1>Tipo de Automotor</h1>
+<ul>
+        <li>
+            <a href="{{ path('tipoautomotor_new') }}">
+                Crear Tipo de Automotor
+            </a>
+        </li>
+    </ul>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Hash</th>
+               
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th>Estado</th>
@@ -19,19 +25,19 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('tipoautomotor_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.hash }}</td>
+                
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.estado }}</td>
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('tipoautomotor_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('tipoautomotor_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                    <a class="btn btn-success" href="{{ path('tipoautomotor_show', { 'id': entity.id }) }}">
+                <i class="halflings-icon white zoom-in"></i>  
+                </a>
+                <a class="btn btn-info" href="{{ path('tipoautomotor_edit', { 'id': entity.id }) }}">
+                <i class="halflings-icon white edit"></i>  
+                </a>
                 </ul>
                 </td>
             </tr>
@@ -42,7 +48,7 @@
         <ul>
         <li>
             <a href="{{ path('tipoautomotor_new') }}">
-                Create a new entry
+                Crear Tipo de Automotor
             </a>
         </li>
     </ul>

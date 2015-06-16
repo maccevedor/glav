@@ -55,7 +55,7 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
                          <li><a href=\"";
         // line 16
         echo $this->env->getExtension('routing')->getPath("tiporubro");
-        echo "\"><i class=\"icon-fire\"></i><span class=\"hidden-tablet\"> Tipo de Rubro</span></a></li>
+        echo "\"><i class=\"icon-fire\"></i><span class=\"hidden-tablet\"> Tipo de Servicio</span></a></li>
             <li><a href=\"";
         // line 17
         echo $this->env->getExtension('routing')->getPath("rubro");
@@ -87,7 +87,7 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
 \t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"";
         // line 27
         echo $this->env->getExtension('routing')->getPath("informe");
-        echo "\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Diarios</span></a></li>
+        echo "\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\">Empleados</span></a></li>
 \t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Mensuales</span></a></li>
 \t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Totales </span></a></li>
 \t\t\t\t\t\t\t</ul>\t
