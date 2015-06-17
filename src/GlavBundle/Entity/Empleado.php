@@ -406,4 +406,8 @@ class Empleado
     {
         return $this->getNombre();
     }
+    public function getLabel()
+    {
+        return $this->nombre .' '. $this->apellido;
+    }
 }

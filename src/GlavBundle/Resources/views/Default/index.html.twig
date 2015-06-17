@@ -18,7 +18,7 @@
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Informes</span><span class="label label-important"> 3 </span></a>
 							<ul>
 								<li><a class="submenu" href="{{path('informe')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Empleados</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Mensuales</span></a></li>
+								<li><a class="submenu" href="{{path('semanal_empleado')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pagos Semana</span></a></li>
 								<li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Totales </span></a></li>
 							</ul>	
 						</li>
@@ -54,5 +54,170 @@
 
 
     {% block infoUserTop %}
-<img class="grayscale" src="{{ asset("frontend/img/AUTOLOGO.jpg") }}" alt="Sample Image 1">
+
+
+{# comienza la grafica en azul #}
+
+<div class="widget blue span6" ontablet="span6" ondesktop="span5">
+					
+					<h2><span class="glyphicons globe"><i></i></span> Demographics</h2>
+					
+					<hr>
+					
+					<div class="content">
+						
+						<div class="verticalChart">
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 80%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">80%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">US</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 16%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">16%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">PL</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 12%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">12%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">GB</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 9%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">9%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">DE</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 7%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">7%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">NL</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 6%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">6%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">CA</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 5%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">5%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">FI</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 4%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">4%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">RU</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 3%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">3%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">AU</div>
+							
+							</div>
+							
+							<div class="singleBar">
+							
+								<div class="bar">
+								
+									<div class="value" style="height: 1%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">1%</span>
+									</div>
+								
+								</div>
+								
+								<div class="title">N/A</div>
+							
+							</div>	
+							
+							<div class="clearfix"></div>
+							
+						</div>
+					
+					</div>
+					
+				</div>
+
+    {# Termina la grafica #}
+
+
+
     {% endblock %}

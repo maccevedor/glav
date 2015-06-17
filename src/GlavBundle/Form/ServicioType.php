@@ -27,15 +27,32 @@ class ServicioType extends AbstractType
             'attr' => array('data-rel'=>'chosen'),
             ))
             //->add('id_cliente','choice', array('label' => 'Cliente', 'attr' => array('data-rel'=>'chosen')))
-            
-            ->add('id_empleado')
-            ->add('id_automotor')
+            //->add('id_empleado')
+            ->add('id_empleado', 'entity', array(
+            //'multiple' => true,
+            'class'    => 'GlavBundle:Empleado',
+            'property' => 'label',
+            'attr' => array('data-rel'=>'chosen'),
+            ))
+            //->add('id_automotor')
+            ->add('id_automotor', 'entity', array(
+            //'multiple' => true,
+            'class'    => 'GlavBundle:Automotor',
+            'property' => 'label',
+            'attr' => array('data-rel'=>'chosen'),
+            ))
             ->add('estadoServicio', 'choice', array(
                   'choice_list' => new ChoiceList(array('Iniciado', 'Espera','Finalizado','Anulado'), array('Iniciado',  'Espera','Finalizado','Anulado')),
                         'label' => 'Selecciona estado del servido',
                     	'empty_value' => 'Selecciona estado del servido'
-                ,'attr' => array('class'=>'form-control')))
-            ->add('id_rubro')
+                ,'attr' => array('data-rel'=>'chosen')))
+            //->add('id_rubro')
+            ->add('id_rubro', 'entity', array(
+            //'multiple' => true,
+            'class'    => 'GlavBundle:Rubro',
+            //'property' => 'label',
+            'attr' => array('data-rel'=>'chosen'),
+            ))
             ->add('fecha_entrega')
             ->add('observacion')
             ->add('pago', 'choice', array('choices' => array('Pendiente' => 'Pendiente', 'Pagado' => 'Pagado')))

@@ -88,7 +88,10 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
         // line 27
         echo $this->env->getExtension('routing')->getPath("informe");
         echo "\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\">Empleados</span></a></li>
-\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu2.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Mensuales</span></a></li>
+\t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"";
+        // line 28
+        echo $this->env->getExtension('routing')->getPath("semanal_empleado");
+        echo "\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Pagos Semana</span></a></li>
 \t\t\t\t\t\t\t\t<li><a class=\"submenu\" href=\"submenu3.html\"><i class=\"icon-file-alt\"></i><span class=\"hidden-tablet\"> Totales </span></a></li>
 \t\t\t\t\t\t\t</ul>\t
 \t\t\t\t\t\t</li>
@@ -121,6 +124,6 @@ class __TwigTemplate_8c79dbc8e3988c8f5ff7a5871aa9041f306ac9e0916a53443a5b6c58a90
 
     public function getDebugInfo()
     {
-        return array (  106 => 38,  103 => 37,  89 => 27,  81 => 22,  77 => 21,  73 => 20,  69 => 19,  65 => 18,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  45 => 13,  41 => 11,  38 => 10,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  109 => 38,  106 => 37,  93 => 28,  89 => 27,  81 => 22,  77 => 21,  73 => 20,  69 => 19,  65 => 18,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  45 => 13,  41 => 11,  38 => 10,  33 => 4,  30 => 3,  11 => 1,);
     }
 }

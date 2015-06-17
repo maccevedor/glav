@@ -254,4 +254,9 @@ class Automotor
     {
         return $this->getMatricula();
     }
+    
+        public function getLabel()
+    {
+        return $this->matricula;
+    }
 }

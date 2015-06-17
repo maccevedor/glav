@@ -41,9 +41,6 @@ class InformeController extends Controller
     }
     public function informeEmpleadoAction(Request $datos)
     {
-        
-        
-        
         //print_r($datos);exit();
         $fechaInicial =  $datos->get('fecha_inicial');
         $fechaFinal =   $datos->get('fecha_final');
@@ -75,5 +72,28 @@ class InformeController extends Controller
         return $this->render('GlavBundle:Informe:index.html.twig', array(
             'entities'   => $entities,
         ));
+    }
+    
+    public function informeSemanalAction()
+    {
+        
+        $sql="SELECT concat(e.nombre,' ',e.apellido) as empleado ,s.fecha_servicio as fecha ,s.pago,(r.valor * 0.4) as valor
+                FROM Servicio s
+                inner join Empleado e on e.id = s.id_empleado
+                inner join Rubro r on r.id = s.id_rubro
+                WHERE s.fecha_servicio >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY AND s.fecha_servicio < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY 
+                and s.estado_servicio = 'Finalizado'";
+            
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //echo $sql;exit();
+
+        //exit(\Doctrine\Common\Util\Debug::dump($entities));
+        return $this->render('GlavBundle:Informe:semanal.html.twig', array(
+            'entities'   => $entities,
+        ));    
+        
+        
     }
 }

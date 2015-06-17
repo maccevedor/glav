@@ -850,6 +850,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeEmpleadoAction',  '_route' => 'informe_empleado',);
             }
 
+            // semanal_empleado
+            if ($pathinfo === '/informe/semanal') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeSemanalAction',  '_route' => 'semanal_empleado',);
+            }
+
         }
 
         // homepage

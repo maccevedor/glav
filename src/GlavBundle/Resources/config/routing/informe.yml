@@ -5,3 +5,7 @@ informe:
 informe_empleado:
     path:     /empleado
     defaults: { _controller: "GlavBundle:Informe:informeEmpleado" }
+    
+semanal_empleado:
+    path:     /semanal
+    defaults: { _controller: "GlavBundle:Informe:informeSemanal" }
