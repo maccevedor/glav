@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Empleado</th>
                 <th>Valor</th>
                 <th>Observacion</th>
                 <th>Estado</th>
@@ -27,6 +28,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('prestamo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.empleado }}</td>
                 <td>{{ entity.valor }}</td>
                 <td>{{ entity.observacion }}</td>
                 <td>{{ entity.estado }}</td>

@@ -1,0 +1,15 @@
+{% block infoUserTop %}
+    <h1>Registrar Prestamo</h1>
+
+    {{ form(form) }}
+    <div id="informacion">
+    </div>
+    
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('prestamo') }}">
+            Volver a la lista
+        </a>
+    </li>
+</ul>
+{% endblock %}

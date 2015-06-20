@@ -1,3 +1,11 @@
+//EL pago se debe realizar global , no se puede independiente para cada empleado.Porque no sabria los prestamos a que servicio estan asociados
+
+
+
+
+
+
+
 Explicar a chiqui(M)
 usuario user ++++++++++++
 arreglar los permisos del menu
@@ -6,7 +14,9 @@ las fechas de nacimiento no cuenta con los años anteriores suficientes (permiti
 
 diseño de la ventana de Show o resumen mejorar(Aplicar css)(M)(ok show cliente)
 
-Que el Empleado de Patio puede visualziar le informe de empleados por fecha *hecho()
+Que el Empleado de Patio puede visualziar le informe de empleados por fecha (ok)
+
+Restriccion de prestamo(M)(ok)
 
 crear boton de index(M)(ok)
 
@@ -18,25 +28,38 @@ El boton borrar no funciona tipo de servicio( el aplicativo maneja entidad relac
 
 No muestra todos los campos para editar factura (la idea es que no deje editar nada )(se arreglaron los que si dejaba , esto se hace porq q cualquier los podria modificar y no cuadraria los valores con los del sistema)(ok)
 
+Lista prestamo no aparece columna nombre operario(M)(ok)
+
+permite realizar prestamos sin saldo disponible(M)(Ok)
+
+Revisar las operaciones de prestamo(M)(ok)
+
+Campo con estado para el prestamo (ok)
+
+Agregar valor del rubro al servicio(M)(ok)
+
+
+
+
+al crear un nuevo prestamo me muestra de nuevo el ultimo valor(M)(ok) (la condificiones son que el servicio debe estar pendiente y finalizado , en  el prestamo estado debe ser 1)
+
+consolidar de lunes a domingo el saldo disponible (M)
+
+
 
 
 
 
 restablecer contraseña (crear correo de gmail para el envio de correos)(A)
 
-Revisar las operaciones de prestamo(M)
-
-Agregar valor del rubro al servicio(M)
-
 Cuanto tipo de usuario sea jefe de patio no aparecer tipo de automotor
 
-Campo con estado para el prestamo 
 
-Crear un boton que deje el pago al dia  al empleado con el lavadero(opcional)
+Crear un boton que deje el pago al dia  al empleado con el lavadero(M)(opcional)
 
 factura cliente habilitar(consultar factura)
 
-
+// error si no selecciona el estado del servicio
 
 
 
@@ -48,15 +71,10 @@ Prestamo
 ***********************
 Ordenar campos Eliminar el hash(A)
 
-Lista prestamo no aparece columna nombre operario
 
-Restriccion de prestamo
 
-consolidar de lunes a domingo el saldo disponible 
 
-permite realizar prestamos sin saldo disponible(M)(Arreglar)
 
-al crear un nuevo prestamo me muestra de nuevo el ultimo valor
 
 
 Descripcion aumentar la cantidad de caracteres
@@ -66,6 +84,13 @@ Considerar la necesidad de los menus tipo de automotor automotor rubro tipo de r
 ********************
 FACTURA
 
+
+Consulta de prestamo para el nuevo valor permitido
+
+SELECT (SUM(r.valor)* 0.4) - sum(p.valor) FROM Servicio s 
+inner join Rubro r on r.id=s.id_rubro 
+inner join Prestamo p on p.id=s.id_empleado
+WHERE  s.pago = "Pendiente" and s.id_empleado = 2 and p.estado = 1 
 
 
 

@@ -20,8 +20,14 @@ class PrestamoType extends AbstractType
             ->add('estado')
             //->add('fecha')
             //->add('id_servicio')
-            ->add('id_empleado')
-            ->add('valor')
+            //->add('id_empleado')
+            ->add('id_empleado', 'entity', array(
+            //'multiple' => true,
+            'class'    => 'GlavBundle:Empleado',
+            'property' => 'label',
+            'attr' => array('data-rel'=>'chosen'),
+            ))
+            ->add('valor','integer')
 
         ;
     }

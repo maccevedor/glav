@@ -291,4 +291,8 @@ class Rubro
     {
         return $this->getNombre();
     }
+    public function getLabel()
+    {
+        return $this->nombre .' $'. $this->valor;
+    }
 }

@@ -1170,12 +1170,19 @@ $('#matricula').change(function () {
 });
 
     $('#glavbundle_prestamo_id_empleado').on('change', function() {
-    alert( $(this).find(":selected").val());
+    //alert( $(this).find(":selected").val());
     servicioId = $(this).find(":selected").val();
     //$('#informacion').load('{{ path('prestamo_total') }}',
             //$('#dialogoBox').hide();
             $('#informacion').load('{{ path('prestamo_total') }}',{servicioId:servicioId},function()
             {
+                //valor = $('#neto').val();
+                $('#glavbundle_prestamo_valor').val($('#neto').val());
+                $("#glavbundle_prestamo_valor").attr({
+                   "max" : $('#neto').val(),
+                   "min" : 5000
+                });
+                //alert(valor);
             });
 
 });
@@ -1191,6 +1198,10 @@ $('#matricula').change(function () {
             });
 
 });
+
+
+
+    
 
 
 }

@@ -23,7 +23,13 @@ class PrestamoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GlavBundle:Prestamo')->findAll();
+        //$entities = $em->getRepository('GlavBundle:Prestamo')->findAll();
+        $sql = "select p.* , concat(e.nombre,' ' ,e.apellido) as empleado from Prestamo p 
+                inner join Empleado e on e.id = p.id_empleado";
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        
 
         return $this->render('GlavBundle:Prestamo:index.html.twig', array(
             'entities' => $entities,
@@ -250,25 +256,63 @@ class PrestamoController extends Controller
         //$servicio = $em->getRepository('GlavBundle:Servicio')->findOneBy(array('id_empleado' => $idEmpleado,'pago' => 'Pendiente'));
         //echo $servicio->getIdRubro()->getValor();exit();
         
-        $dql = "SELECT SUM(r.valor) FROM GlavBundle\Entity\Servicio s inner join GlavBundle\Entity\Rubro r WITH r.id=s.id_rubro " .
-       "WHERE s.id_empleado = ?1 and s.pago = ?2 ";
-$balance = $em->createQuery($dql)
+        $dql = "SELECT SUM(r.valor) FROM GlavBundle\Entity\Servicio s 
+        inner join GlavBundle\Entity\Rubro r WITH r.id=s.id_rubro 
+        " .
+       "WHERE s.id_empleado = ?1 and s.pago = ?2 and s.estadoServicio = ?3 ";
+        $balance = $em->createQuery($dql)
               ->setParameter(1, $idEmpleado)
               ->setParameter(2, "Pendiente")
+              ->setParameter(3, "Finalizado")            
               ->getSingleScalarResult();
         $balance = $balance * 0.4;
-        $valor= 'Total disponible<br><input type="text" id="neto" value="'.$balance.'" readonly >';
-        echo $valor;exit();
         
+        $dqlPrestamo="SELECT SUM(p.valor) FROM GlavBundle\Entity\Prestamo p
+            inner join GlavBundle\Entity\Empleado e WITH e.id=p.id_empleado
+            inner join GlavBundle\Entity\Servicio s WITH s.id_empleado=e.id
+            inner join GlavBundle\Entity\Rubro r WITH r.id=s.id_rubro ".
+            "WHERE p.id_empleado = ?1 and p.estado = ?2  ";
+   
+        $debe = $em->createQuery($dqlPrestamo)
+              ->setParameter(1, $idEmpleado)
+              ->setParameter(2, 1)
+              ->getSingleScalarResult();
         
-        exit();
+        //echo $debe->getSql();exit();
         
+        //        echo $debe;exit();
         
-        $em = $this->getDoctrine()->getEntityManager();
-        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
-        $con->execute();
-        echo $suma = $con->getResult();  
+        $disponible = $balance - $debe ;
+         
 
+        //return $balance;
+        $valor= '<br><input type="hidden" id="neto" value="'.$disponible.'" readonly >';
+     
+        echo $valor;exit();
+
+        
+        //         $entity = new Prestamo();
+        //         $form   = $this->createCreateForm($entity);
+
+        //         return $this->render('GlavBundle:Prestamo:prestamo.html.twig', array(
+        //             'entity' => $entity,
+        //             'form'   => $form->createView(),
+        //             'balance'=> $balance,
+
+        //         ));
+
+        
+        //$valor= 'Total disponible<br><input type="text" id="neto" value="'.$balance.'" readonly >';
+        //echo $valor;exit();
+                
+        //exit();
+        //        
+        
+        //         $em = $this->getDoctrine()->getEntityManager();
+        //         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        //         $con->execute();
+        //         echo $suma = $con->getResult();  
+        //         exit();
         
         //print_r($servicio);exit();
         //echo $valor = $servicio->getIdRubro()->getValor();exit();
@@ -276,20 +320,18 @@ $balance = $em->createQuery($dql)
         //)->setParameter('name', $vendorCategoryName);
         //$con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
         //$con->execute();
-        
-        exit();
-        //echo $result = $con->fetchOne($sql, Doctrine::HYDRATE_ARRAY);exit();
-        echo $miData = $con->getSingleResult();exit();  
-        $data = $this->entidadesAction();
-        //echo $neto;exit();
-        $valor= 'Neto<br><input type="text" id="neto" value="'.$neto.'"><br>Total<br><input type="text" id="total" value="'.$valor.'">';
-        echo $valor;exit();
-        
+        //         //echo $result = $con->fetchOne($sql, Doctrine::HYDRATE_ARRAY);exit();
+        //         echo $miData = $con->getSingleResult();exit();  
+        //         $data = $this->entidadesAction();
+        //         //echo $neto;exit();
+        //         $valor= 'Neto<br><input type="text" id="neto" value="'.$neto.'"><br>Total<br><input type="text" id="total" value="'.$valor.'">';
+        //         echo $valor;exit();
 
-        $entities = $em->getRepository('GlavBundle:Factura')->findAll();
 
-        return $this->render('GlavBundle:Factura:index.html.twig', array(
-            'entities' => $entities,
-        ));
+        //         $entities = $em->getRepository('GlavBundle:Factura')->findAll();
+
+        //         return $this->render('GlavBundle:Factura:index.html.twig', array(
+        //             'entities' => $entities,
+        //));
     }
 }

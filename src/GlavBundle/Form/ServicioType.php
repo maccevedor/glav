@@ -50,7 +50,7 @@ class ServicioType extends AbstractType
             ->add('id_rubro', 'entity', array(
             //'multiple' => true,
             'class'    => 'GlavBundle:Rubro',
-            //'property' => 'label',
+            'property' => 'label',
             'attr' => array('data-rel'=>'chosen'),
             ))
             ->add('fecha_entrega')
