@@ -1,11 +1,5 @@
 //EL pago se debe realizar global , no se puede independiente para cada empleado.Porque no sabria los prestamos a que servicio estan asociados
 
-
-
-
-
-
-
 Explicar a chiqui(M)
 usuario user ++++++++++++
 arreglar los permisos del menu

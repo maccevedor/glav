@@ -855,6 +855,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeSemanalAction',  '_route' => 'semanal_empleado',);
             }
 
+            // pagar
+            if ($pathinfo === '/informe/pagar') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::pagarAction',  '_route' => 'pagar',);
+            }
+
+            // excel
+            if ($pathinfo === '/informe/excel') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::excelAction',  '_route' => 'excel',);
+            }
+
         }
 
         // homepage

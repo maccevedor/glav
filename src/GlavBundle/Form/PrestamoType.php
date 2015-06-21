@@ -5,6 +5,7 @@ namespace GlavBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class PrestamoType extends AbstractType
 {
@@ -17,7 +18,12 @@ class PrestamoType extends AbstractType
         $builder
             //->add('hash')
             ->add('observacion')
-            ->add('estado')
+            //->add('estado')
+            ->add('estado', 'choice', array(
+                  'choice_list' => new ChoiceList(array('1', '2'), array('Debe',  'Descontado','Finalizado','Anulado')),
+                        'label' => 'Estado del prestamo'
+                    	//'empty_value' => 'Selecciona estado del servido'
+                ,'attr' => array('data-rel'=>'chosen')))
             //->add('fecha')
             //->add('id_servicio')
             //->add('id_empleado')

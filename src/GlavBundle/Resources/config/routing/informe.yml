@@ -9,3 +9,11 @@ informe_empleado:
 semanal_empleado:
     path:     /semanal
     defaults: { _controller: "GlavBundle:Informe:informeSemanal" }
+    
+pagar:
+    path:     /pagar
+    defaults: { _controller: "GlavBundle:Informe:pagar" }
+
+excel:
+    path:     /excel
+    defaults: { _controller: "GlavBundle:Informe:excel" }

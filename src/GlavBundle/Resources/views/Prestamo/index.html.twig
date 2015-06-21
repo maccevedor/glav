@@ -31,7 +31,12 @@
                 <td>{{ entity.empleado }}</td>
                 <td>{{ entity.valor }}</td>
                 <td>{{ entity.observacion }}</td>
-                <td>{{ entity.estado }}</td>
+                {% if entity.estado == 1 %}
+                <td>Debe</td>
+                {% else %}
+                <td>Descontado</td>
+                {% endif %}
+
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                  <ul>

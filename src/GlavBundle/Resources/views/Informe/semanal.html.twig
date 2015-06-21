@@ -38,9 +38,7 @@
                 
                 <td>{{ entity.valor }}</td>
                 
-                <td>{% if entity.pago == 'Pendiente' %}
-                pagar
-                {% endif %}
+                <td>{{ entity.pago }}
                 </td>
             </tr>
         {% endfor %}
@@ -49,7 +47,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('factura_new') }}">
+            <a href="{{ path('pagar') }}">
                Pagar Todo
             </a>
         </li>
