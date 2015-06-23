@@ -1,22 +1,5 @@
 {% extends 'GlavBundle::layoutAdmin.html.twig' %}
 
-{% block menu %}
-  {% if is_granted("ROLE_SUPER_ADMIN") %}
-    {{ parent() }}
-  {% else %}  
-  
-        <ul class="nav nav-tabs nav-stacked main-menu">
-
-            <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet"> Cliente</span></a></li>
-            <li><a href="index.html"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
-            <li><a href="index.html"><i class="icon-inbox"></i><span class="hidden-tablet"> Servicio</span></a></li>	   
-            <li><a href="index.html"><i class="icon-save"></i><span class="hidden-tablet"> Informes</span></a></li>
-					</ul>
-  
-  {% endif %}
-  
-{% endblock %}
-
 
 
 {% block infoUserTop %}

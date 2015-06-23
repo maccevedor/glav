@@ -375,4 +375,15 @@ class Rubro extends \GlavBundle\Entity\Rubro implements \Doctrine\ORM\Proxy\Prox
         return parent::__toString();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getLabel()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLabel', array());
+
+        return parent::getLabel();
+    }
+
 }

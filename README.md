@@ -1,55 +1,29 @@
+SELECT estado_servicio , COUNT( estado_servicio) AS servicios FROM Servicio s group by estado_servicio ;
+
 //EL pago se debe realizar global , no se puede independiente para cada empleado.Porque no sabria los prestamos a que servicio estan asociados
+
+//confirmar los permisos para aplicar la seguridad (A)
+//definir los datos dle informe de excel
 
 Explicar a chiqui(M)
 usuario user ++++++++++++
 arreglar los permisos del menu
 
-las fechas de nacimiento no cuenta con los años anteriores suficientes (permitir annos viejos)(M)(Ok)
+Realizar los manuelas (A)
 
-diseño de la ventana de Show o resumen mejorar(Aplicar css)(M)(ok show cliente)
-
-Que el Empleado de Patio puede visualziar le informe de empleados por fecha (ok)
-
-Restriccion de prestamo(M)(ok)
-
-crear boton de index(M)(ok)
 
 Cambiar los nombres de los label(M)(actualizar y eliminar)(ok cliente)(se cambian directamente en el controlador)
 
-Registro de Servicio Crear Id Cliente tiene campo buscar pero no los otros(M)(ok)
-
 El boton borrar no funciona tipo de servicio( el aplicativo maneja entidad relacion , debido a esto no puede eliminaramnejar estado por un campo independiente)
 
-No muestra todos los campos para editar factura (la idea es que no deje editar nada )(se arreglaron los que si dejaba , esto se hace porq q cualquier los podria modificar y no cuadraria los valores con los del sistema)(ok)
-
-Lista prestamo no aparece columna nombre operario(M)(ok)
-
-permite realizar prestamos sin saldo disponible(M)(Ok)
-
-Revisar las operaciones de prestamo(M)(ok)
-
-Campo con estado para el prestamo (ok)
-
-Agregar valor del rubro al servicio(M)(ok)
-
-
-
-
-al crear un nuevo prestamo me muestra de nuevo el ultimo valor(M)(ok) (la condificiones son que el servicio debe estar pendiente y finalizado , en  el prestamo estado debe ser 1)
-
-consolidar de lunes a domingo el saldo disponible (M)
-
-
-
-
-
+consolidar de lunes a domingo el saldo disponible (M)(Pruebas)
 
 restablecer contraseña (crear correo de gmail para el envio de correos)(A)
 
 Cuanto tipo de usuario sea jefe de patio no aparecer tipo de automotor
 
 
-Crear un boton que deje el pago al dia  al empleado con el lavadero(M)(opcional)
+Crear un boton que deje el pago al dia  al empleado con el lavadero(M)(opcional)(pruebas)
 
 factura cliente habilitar(consultar factura)
 
@@ -66,8 +40,30 @@ Prestamo
 Ordenar campos Eliminar el hash(A)
 
 
+Listos
 
+las fechas de nacimiento no cuenta con los años anteriores suficientes (permitir annos viejos)(M)(Ok)
 
+diseño de la ventana de Show o resumen mejorar(Aplicar css)(M)(ok show cliente)
+
+Que el Empleado de Patio puede visualziar le informe de empleados por fecha (ok)
+
+Restriccion de prestamo(M)(ok)
+
+crear boton de index(M)(ok)
+
+Registro de Servicio Crear Id Cliente tiene campo buscar pero no los otros(M)(ok)
+No muestra todos los campos para editar factura (la idea es que no deje editar nada )(se arreglaron los que si dejaba , esto se hace porq q cualquier los podria modificar y no cuadraria los valores con los del sistema)(ok)
+Lista prestamo no aparece columna nombre operario(M)(ok)
+permite realizar prestamos sin saldo disponible(M)(Ok)
+
+Revisar las operaciones de prestamo(M)(ok)
+
+Campo con estado para el prestamo (ok)
+
+Agregar valor del rubro al servicio(M)(ok)
+
+al crear un nuevo prestamo me muestra de nuevo el ultimo valor(M)(ok) (la condificiones son que el servicio debe estar pendiente y finalizado , en  el prestamo estado debe ser 1)
 
 
 

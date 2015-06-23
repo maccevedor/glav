@@ -21,7 +21,7 @@ class ClienteType extends AbstractType
             ->add('genero', 'choice', array('choices' => array('masculino' => 'Masculino', 'femenino' => 'Femenino')))
             //->add('fNacimiento')
             //->add('fNacimiento','date',array('years' => range(date('Y') -5, date('Y')))
-            ->add('fNacimiento','date', array('years' => range(date('Y') -50, date('Y')),))
+            ->add('fNacimiento','date', array('years' => range(date('Y') -90, date('Y')),))
             ->add('direccion')
             ->add('telefono')
             ->add('celular')

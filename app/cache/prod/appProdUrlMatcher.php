@@ -735,6 +735,38 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        if (0 === strpos($pathinfo, '/informe')) {
+            // informe
+            if (rtrim($pathinfo, '/') === '/informe') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'informe');
+                }
+
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::empleadoAction',  '_route' => 'informe',);
+            }
+
+            // informe_empleado
+            if ($pathinfo === '/informe/empleado') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeEmpleadoAction',  '_route' => 'informe_empleado',);
+            }
+
+            // semanal_empleado
+            if ($pathinfo === '/informe/semanal') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::informeSemanalAction',  '_route' => 'semanal_empleado',);
+            }
+
+            // pagar
+            if ($pathinfo === '/informe/pagar') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::pagarAction',  '_route' => 'pagar',);
+            }
+
+            // excel
+            if ($pathinfo === '/informe/excel') {
+                return array (  '_controller' => 'GlavBundle\\Controller\\InformeController::excelAction',  '_route' => 'excel',);
+            }
+
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);

@@ -3,7 +3,6 @@
 {% block menu %}
   {% if is_granted("ROLE_SUPER_ADMIN") %}
 
-
         <ul class="nav nav-tabs nav-stacked main-menu">
 		    <li><a href="{{path('cargo')}}"><i class="icon-tablet"></i><span class="hidden-tablet"> Cargo</span></a></li>
             <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Empleado</span></a></li>	
@@ -24,20 +23,19 @@
 						</li>
  
             		</ul>
-                    
-                    
+                                     
   {% elseif is_granted("ROLE_USER") %}  
   
-          <ul class="nav nav-tabs nav-stacked main-menu">
+    <ul class="nav nav-tabs nav-stacked main-menu">
 
             <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet"> Cliente</span></a></li>
-            <li><a href="index.html"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
-            <li><a href="index.html"><i class="icon-inbox"></i><span class="hidden-tablet"> Servicio</span></a></li>	   
+            <li><a href="{{path('automotor')}}"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
+            <li><a href="{{path('servicio')}}"><i class="icon-inbox"></i><span class="hidden-tablet"> Servicio</span></a></li>	   
             <li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Informes</span><span class="label label-important"> 3 </span></a>
 							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Diarios</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Mensuales</span></a></li>
+								<li><a class="submenu" href="{{path('informe')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Empleados</span></a></li>
+								<li><a class="submenu" href="{{path('semanal_empleado')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Pagos Semana</span></a></li>
 								<li><a class="submenu" href="{{path('excel')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Excel </span></a></li>
 							</ul>	
 						</li>
@@ -48,176 +46,91 @@
   
     {{ parent() }}
 
-  
   {% endif %}
   {% endblock %}
 
-
     {% block infoUserTop %}
 
+    <div class="row-fluid">	
 
 {# comienza la grafica en azul #}
 
-<div class="widget blue span6" ontablet="span6" ondesktop="span5">
+<div class="widget blue span4" ontablet="span4" ondesktop="span5">
 					
-					<h2><span class="glyphicons globe"><i></i></span> Demographics</h2>
+					<h2><span class="glyphicons globe"><i></i></span> Servicios </h2>
 					
 					<hr>
 					
 					<div class="content">
-						
+	
 						<div class="verticalChart">
+                        
+                        {% for entity in entities %}
+
 							
 							<div class="singleBar">
 							
 								<div class="bar">
 								
-									<div class="value" style="height: 80%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">80%</span>
+									<div class="value" style="height: {{ entity.servicios }}%;">
+										<span style="color: rgb(87, 142, 190); display: inline;">{{ entity.servicios }}%</span>
 									</div>
 								
 								</div>
 								
-								<div class="title">US</div>
+								<div class="title">{{ entity.nombre }}</div>
 							
 							</div>
 							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 16%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">16%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">PL</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 12%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">12%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">GB</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 9%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">9%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">DE</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 7%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">7%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">NL</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 6%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">6%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">CA</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 5%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">5%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">FI</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 4%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">4%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">RU</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 3%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">3%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">AU</div>
-							
-							</div>
-							
-							<div class="singleBar">
-							
-								<div class="bar">
-								
-									<div class="value" style="height: 1%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">1%</span>
-									</div>
-								
-								</div>
-								
-								<div class="title">N/A</div>
-							
-							</div>	
-							
-							<div class="clearfix"></div>
-							
-						</div>
-					
-					</div>
-					
+		            {% endfor %}
+
 				</div>
+              </div>
+    </div>
+    </div>
+    
 
+                
+                
+                
+    
     {# Termina la grafica #}
+    
+    <div class="row-fluid">	
 
+    
+    <a class="quick-button metro yellow span2">
+					<i class="icon-group"></i>
+					<p>Clientes</p>
+					<span class="badge">{{ cliente }}</span>
+				</a>
+    <a class="quick-button metro blue span2">
+					<i class="icon-shopping-cart"></i>
+					<p>Automotores</p>
+					<span class="badge">13</span>
+				</a>
 
+    <a class="quick-button metro red span2">
+					<i class="icon-comments-alt"></i>
+					<p>Comments</p>
+					<span class="badge">46</span>
+				</a>
+                
+    </div>
+                
+                
+                
+          
+          
+          
+          
+          
+          
+          
+          
+                
+
+                
+                
 
     {% endblock %}

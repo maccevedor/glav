@@ -441,4 +441,15 @@ class Cliente extends \GlavBundle\Entity\Cliente implements \Doctrine\ORM\Proxy\
         return parent::__toString();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getLabel()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLabel', array());
+
+        return parent::getLabel();
+    }
+
 }
