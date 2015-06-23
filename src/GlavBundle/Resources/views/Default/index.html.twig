@@ -1,4 +1,6 @@
-{% extends 'GlavBundle::layoutIndex.html.twig' %}
+{#% extends 'GlavBundle::layoutIndex.html.twig' %#}
+{% extends 'frontend.html.twig' %}  
+
 
 {% block menu %}
   {% if is_granted("ROLE_SUPER_ADMIN") %}
@@ -47,25 +49,29 @@
     {{ parent() }}
 
   {% endif %}
+  
   {% endblock %}
 
     {% block infoUserTop %}
 
-    <div class="row-fluid">	
 
-{# comienza la grafica en azul #}
 
-<div class="widget blue span4" ontablet="span4" ondesktop="span5">
+
+
+
+<div class="row-fluid">
+				
+				<div class="widget blue span5" ontablet="span6" ondesktop="span5">
 					
-					<h2><span class="glyphicons globe"><i></i></span> Servicios </h2>
+					<h2><span class="glyphicons globe"><i></i></span> Demographics</h2>
 					
 					<hr>
 					
 					<div class="content">
-	
+						
 						<div class="verticalChart">
-                        
-                        {% for entity in entities %}
+							
+                    {% for entity in entities %}
 
 							
 							<div class="singleBar">
@@ -83,53 +89,112 @@
 							</div>
 							
 		            {% endfor %}
-
+							
+							
+							<div class="clearfix"></div>
+							
+						</div>
+					
+					</div>
+					
+				</div><!--/span-->
+				
+				<div class="widget span3 red" ontablet="span6" ondesktop="span3">
+					
+					<h2><span class="glyphicons pie_chart"><i></i></span> Browsers</h2>
+					
+					<hr>
+					
+					<div class="content">
+						
+						<div class="browserStat big">
+							<img src="{{ asset("frontend/img/browser-chrome-big.png") }}" alt="Chrome">
+							<span>34%</span>
+						</div>
+						<div class="browserStat big">
+							<img src="{{ asset("frontend/img/browser-firefox-big.png") }}"  alt="Firefox">
+							<span>34%</span>
+						</div>
+						<div class="browserStat">
+							<img src="{{ asset("frontend/img/browser-ie.png") }}"  alt="Internet Explorer">
+							<span>34%</span>
+						</div>
+						<div class="browserStat">
+							<img src="{{ asset("frontend/img/browser-safari.png ") }}"  alt="Safari">
+							<span>34%</span>
+						</div>
+						<div class="browserStat">
+							<img src="{{ asset("frontend/img/browser-opera.png ") }}"  alt="Opera">
+							<span>34%</span>
+						</div>	
+								
+						
+					</div>
 				</div>
-              </div>
-    </div>
-    </div>
-    
 
-                
-                
-                
-    
-    {# Termina la grafica #}
-    
-    <div class="row-fluid">	
+            <div class="sparkLineStats span4 widget green" ontablet="span5" ondesktop="span4">
 
+                    <ul class="unstyled">
+                        
+                        <li><span class="sparkLineStats3"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span> 
+                            Pageviews: 
+                            <span class="number">781</span>
+                        </li>
+                        <li><span class="sparkLineStats4"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
+                            Pages / Visit: 
+                            <span class="number">2,19</span>
+                        </li>
+                        <li><span class="sparkLineStats5"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
+                            Avg. Visit Duration: 
+                            <span class="number">00:02:58</span>
+                        </li>
+                        <li><span class="sparkLineStats6"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
+                            Bounce Rate: <span class="number">59,83%</span>
+                        </li>
+                        <li><span class="sparkLineStats7"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
+                            % New Visits: 
+                            <span class="number">70,79%</span>
+                        </li>
+                        <li><span class="sparkLineStats8"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
+                            % Returning Visitor: 
+                            <span class="number">29,21%</span>
+                        </li>
+
+                    </ul>
+					
+					<div class="clearfix"></div>
+
+                </div>
     
-    <a class="quick-button metro yellow span2">
-					<i class="icon-group"></i>
-					<p>Clientes</p>
-					<span class="badge">{{ cliente }}</span>
-				</a>
-    <a class="quick-button metro blue span2">
-					<i class="icon-shopping-cart"></i>
-					<p>Automotores</p>
-					<span class="badge">13</span>
-				</a>
+			</div>
+            
+            
 
-    <a class="quick-button metro red span2">
-					<i class="icon-comments-alt"></i>
-					<p>Comments</p>
-					<span class="badge">46</span>
-				</a>
-                
-    </div>
-                
-                
-                
-          
-          
-          
-          
-          
-          
-          
-          
-                
+         <div class="row-fluid">	
 
+
+            <a class="quick-button metro yellow span2">
+                            <i class="icon-group"></i>
+                            <p>Clientes</p>
+                            <span class="badge">{{ cliente }}</span>
+                        </a>
+            <a class="quick-button metro blue span2">
+                            <i class="icon-shopping-cart"></i>
+                            <p>Automotores</p>
+                            <span class="badge">13</span>
+                        </a>
+
+            <a class="quick-button metro red span2">
+                            <i class="icon-comments-alt"></i>
+                            <p>Comments</p>
+                            <span class="badge">46</span>
+                        </a>
+
+            </div>
+
+            
+            
+            
                 
                 
 
