@@ -140,29 +140,66 @@ and s.estado_servicio = 'Finalizado'";
         // ask the service for a Excel5
        $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
        
-       //$em = $this->getDoctrine()->getManager();
-       $aspirantes = $this->getDoctrine()->getRepository('GlavBundle:Empleado')->findAll(array(),array('nombre' => 'DESC'));
+              
+       $em = $this->getDoctrine()->getManager();
+       //$aspirantes = $this->getDoctrine()->getRepository('GlavBundle:Empleado')->findAll(array(),array('nombre' => 'DESC'));
+        
+       
+       
+       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo group by s.id ORDER BY `s`.`id` ASC";
+        
+       $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+       $con->execute();
+       $aspirantes = $con->fetchAll(); 
+       $user = $this->getUser()->getUsername(); 
        
 
-       $phpExcelObject->getProperties()->setCreator("Sergio")
-           ->setLastModifiedBy("Giulio De Donato")
-           ->setTitle("Office 2005 XLSX Test Document")
-           ->setSubject("Office 2005 XLSX Test Document")
+       $phpExcelObject->getProperties()->setCreator($user)
+           //->setLastModifiedBy("Giulio De Donato")
+           ->setTitle("Historial de Servicios")
+           ->setSubject("Historial de Servicios")
            ->setDescription("Test document for Office 2005 XLSX, generated using PHP classes.")
            ->setKeywords("office 2005 openxml php")
            ->setCategory("Test result file");
        
        $phpExcelObject->setActiveSheetIndex(0)
            ->setCellValue('A1', 'nombre')
-           ->setCellValue('B1', 'apellido');
+           ->setCellValue('B1', 'observacion')
+           ->setCellValue('C1', 'fecha_servicio')
+           ->setCellValue('D1', 'fecha_entrega')
+           ->setCellValue('E1', 'estado_servicio')
+           ->setCellValue('F1', 'pago')
+           ->setCellValue('G1', 'empleado')
+           ->setCellValue('H1', 'identificacion')
+           ->setCellValue('I1', 'cargo')
+           ->setCellValue('J1', 'cliente')
+           ->setCellValue('K1', 'identificacion')
+           ->setCellValue('L1', 'rubro')
+           ->setCellValue('M1', 'valor');
+
+
        $phpExcelObject->getActiveSheet()->setTitle('Simple');
        
    $i = 2;  
    foreach ($aspirantes as $aspirante) 
    {
         $phpExcelObject->setActiveSheetIndex(0)
-           ->setCellValue('A'.$i, $aspirante->getNombre())
-           ->setCellValue('B'.$i, $aspirante->getApellido());
+           ->setCellValue('A'.$i, $aspirante['id'])
+           ->setCellValue('B'.$i, $aspirante['observacion'])
+           ->setCellValue('C'.$i, $aspirante['fecha_servicio'])
+           ->setCellValue('D'.$i, $aspirante['fecha_entrega'])
+           ->setCellValue('E'.$i, $aspirante['estado_servicio'])
+           ->setCellValue('F'.$i, $aspirante['pago'])
+           ->setCellValue('G'.$i, $aspirante['empleado'])
+           ->setCellValue('H'.$i, $aspirante['identificacion'])
+           ->setCellValue('I'.$i, $aspirante['cargo'])
+           ->setCellValue('J'.$i, $aspirante['cliente'])
+           ->setCellValue('K'.$i, $aspirante['cidentificacion'])
+           ->setCellValue('L'.$i, $aspirante['rubro'])
+           ->setCellValue('M'.$i, $aspirante['valor']);
+
+
+
        $phpExcelObject->getActiveSheet()->setTitle('Simple');
        $i++;
    }  
@@ -175,7 +212,7 @@ and s.estado_servicio = 'Finalizado'";
         $response = $this->get('phpexcel')->createStreamedResponse($writer);
         // adding headers
         $response->headers->set('Content-Type', 'text/vnd.ms-excel; charset=utf-8');
-        $response->headers->set('Content-Disposition', 'attachment;filename=stream-file.xls');
+        $response->headers->set('Content-Disposition', 'attachment;filename=Servicios.xls');
         $response->headers->set('Pragma', 'public');
         $response->headers->set('Cache-Control', 'maxage=1');
 

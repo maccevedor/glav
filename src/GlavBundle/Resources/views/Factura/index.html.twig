@@ -48,12 +48,15 @@
                 <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('factura_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('factura_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                    
+                <a class="btn btn-success" href="{{ path('factura_show', { 'id': entity.id }) }}">
+                <i class="halflings-icon white zoom-in"></i>  
+                </a>
+                <a class="btn btn-info" href="{{ path('factura_edit', { 'id': entity.id }) }}">
+                <i class="halflings-icon white edit"></i>  
+                </a>
+               
+               
                      <li>
                         <a href="{{ path('factura_imprimir', { 'id': entity.id }) }}">PDF</a>
                     </li>

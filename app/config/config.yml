@@ -70,11 +70,12 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: "smtp"
-    host:      "smtp.mandrillapp.com"
-    username:  "tecnologia@umb.edu.co"
-    password:  ":)"
-    port:      "587"
-
+    host:      "smtp.gmail.com"
+    username:  "umbautomata@gmail.com"
+    password:  "umb2015*"
+    port:      "465"
+    encryption: "ssl"
+    
 #FosUser
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
@@ -82,6 +83,9 @@ fos_user:
     user_class: GlavBundle\Entity\User
     service:
         mailer: fos_user.mailer.default
+    #registration:
+    #    confirmation:
+    #        enabled:    true
     #resetting:
     #    email:
     #        template: GlavBundle:resetting.email.html.twig

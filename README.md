@@ -1,4 +1,11 @@
+// las graficas deben ser semanales de los operarios
+// la barra de servicios va serdiaria
+// el excel va tener todos los datos del servicio(ok)
+// consultar factura
+
+
 SELECT estado_servicio , COUNT( estado_servicio) AS servicios FROM Servicio s group by estado_servicio ;
+
 
 //EL pago se debe realizar global , no se puede independiente para cada empleado.Porque no sabria los prestamos a que servicio estan asociados
 
@@ -18,7 +25,8 @@ El boton borrar no funciona tipo de servicio( el aplicativo maneja entidad relac
 
 consolidar de lunes a domingo el saldo disponible (M)(Pruebas)
 
-restablecer contraseña (crear correo de gmail para el envio de correos)(A)
+
+restablecer contraseña (crear correo de gmail para el envio de correos)(A)(problema con gmail por la ubicacion de codio )
 
 Cuanto tipo de usuario sea jefe de patio no aparecer tipo de automotor
 

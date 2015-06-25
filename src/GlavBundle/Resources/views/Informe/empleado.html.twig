@@ -3,10 +3,16 @@
 
  <h1>Informes de empleados</h1>
         <form action="{{ path('informe_empleado') }}" method="post" enctype="multipart/form-data" >
-                                            </br>
+         </br>
+         Fecha de Inicio de reporte                                            <br>
+
          <input type="date" id="fecha_inicial" name="fecha_inicial" />
                                             <br>
-         <input type="date" id="fecha_final" name="fecha_final" />                                            <button type="submit" class="btn btn-primary">Guardar</button>
+         Fecha final de reporte                                            <br>
+
+                                            
+         <input type="date" id="fecha_final" name="fecha_final" />                                             <br>
+                                           <button type="submit" class="btn btn-primary">Guardar</button>
                                             <br>
 		</form>
 

@@ -1,7 +1,6 @@
 {#% extends 'GlavBundle::layoutIndex.html.twig' %#}
 {% extends 'frontend.html.twig' %}  
 
-
 {% block menu %}
   {% if is_granted("ROLE_SUPER_ADMIN") %}
 
@@ -46,7 +45,11 @@
   
   {% else %}  
   
-    {{ parent() }}
+              <ul class="nav nav-tabs nav-stacked main-menu">
+		    <li><a href="{{ path('fos_user_security_login') }}"><i class="icon-tablet"></i><span class="hidden-tablet"> Iniciar Sesión</span></a></li>
+            <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Consultar Factura</span></a></li>	
+            <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet">Ayuda</span></a></li>
+		</ul>
 
   {% endif %}
   
@@ -63,7 +66,7 @@
 				
 				<div class="widget blue span5" ontablet="span6" ondesktop="span5">
 					
-					<h2><span class="glyphicons globe"><i></i></span> Demographics</h2>
+					<h2><span class="glyphicons globe"><i></i></span> Servicios </h2>
 					
 					<hr>
 					
@@ -99,66 +102,23 @@
 					
 				</div><!--/span-->
 				
-				<div class="widget span3 red" ontablet="span6" ondesktop="span3">
-					
-					<h2><span class="glyphicons pie_chart"><i></i></span> Browsers</h2>
-					
-					<hr>
-					
-					<div class="content">
-						
-						<div class="browserStat big">
-							<img src="{{ asset("frontend/img/browser-chrome-big.png") }}" alt="Chrome">
-							<span>34%</span>
-						</div>
-						<div class="browserStat big">
-							<img src="{{ asset("frontend/img/browser-firefox-big.png") }}"  alt="Firefox">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="{{ asset("frontend/img/browser-ie.png") }}"  alt="Internet Explorer">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="{{ asset("frontend/img/browser-safari.png ") }}"  alt="Safari">
-							<span>34%</span>
-						</div>
-						<div class="browserStat">
-							<img src="{{ asset("frontend/img/browser-opera.png ") }}"  alt="Opera">
-							<span>34%</span>
-						</div>	
-								
-						
-					</div>
-				</div>
+				
 
             <div class="sparkLineStats span4 widget green" ontablet="span5" ondesktop="span4">
 
                     <ul class="unstyled">
                         
+                {% for empleados in empleado %}
+
+                        
                         <li><span class="sparkLineStats3"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span> 
-                            Pageviews: 
-                            <span class="number">781</span>
+                           {{ empleados.nombre }}
+                            <span class="number">{{ empleados.total }}</span>
                         </li>
-                        <li><span class="sparkLineStats4"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
-                            Pages / Visit: 
-                            <span class="number">2,19</span>
-                        </li>
-                        <li><span class="sparkLineStats5"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
-                            Avg. Visit Duration: 
-                            <span class="number">00:02:58</span>
-                        </li>
-                        <li><span class="sparkLineStats6"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
-                            Bounce Rate: <span class="number">59,83%</span>
-                        </li>
-                        <li><span class="sparkLineStats7"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
-                            % New Visits: 
-                            <span class="number">70,79%</span>
-                        </li>
-                        <li><span class="sparkLineStats8"><canvas width="80" height="40" style="display: inline-block; width: 80px; height: 40px; vertical-align: top;"></canvas></span>
-                            % Returning Visitor: 
-                            <span class="number">29,21%</span>
-                        </li>
+                        
+                 {% endfor %}
+                        
+                       
 
                     </ul>
 					
@@ -181,18 +141,25 @@
             <a class="quick-button metro blue span2">
                             <i class="icon-shopping-cart"></i>
                             <p>Automotores</p>
-                            <span class="badge">13</span>
+                            <span class="badge">{{ automotor }}</span>
                         </a>
 
-            <a class="quick-button metro red span2">
-                            <i class="icon-comments-alt"></i>
-                            <p>Comments</p>
-                            <span class="badge">46</span>
-                        </a>
+
+            <a class="quick-button metro green span2">
+					<i class="icon-barcode"></i>
+					<p>Rubros</p>
+                <span class="badge">{{ rubro }}</span>
+				</a>
+
+                <a class="quick-button metro pink span2">
+					<i class="icon-envelope"></i>
+					<p>Facturas</p>
+					<span class="badge">{{ factura }}</span>
+				</a>
+            
 
             </div>
 
-            
             
             
                 
