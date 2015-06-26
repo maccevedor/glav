@@ -1,0 +1,58 @@
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+
+{% block infoUserTop %}
+
+    <h1>Registros de Factura del Cliente Nombre</h1>
+
+    {# Buscar por Cliente
+    <input type="text" id="cliente" name="cliente"> #}
+        <div id="informacion">
+
+        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+                <th>Total</th>
+                <th>Cliente</th>
+                <th>Observacion</th>
+                <th>Fecha</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('factura_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+               
+                {% if entity.username is not defined %}
+                {% else %}
+                 <td>{{ entity.username }}</td>
+                {% endif %}
+                <td>{{ entity.total }}</td>
+                
+                {% if entity.empleado is not defined %}
+                {% else %}
+                    <td>{{ entity.empleado }}</td>
+                {% endif %}
+                
+                <td>{{ entity.observacion }}</td>
+                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                     <li>
+                        <a href="{{ path('factura_imprimir', { 'id': entity.id }) }}">PDF</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       </div>
+
+
+    {% endblock %}

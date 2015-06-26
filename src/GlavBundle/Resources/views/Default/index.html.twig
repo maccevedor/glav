@@ -47,7 +47,7 @@
   
               <ul class="nav nav-tabs nav-stacked main-menu">
 		    <li><a href="{{ path('fos_user_security_login') }}"><i class="icon-tablet"></i><span class="hidden-tablet"> Iniciar Sesión</span></a></li>
-            <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Consultar Factura</span></a></li>	
+            <li><a href="{{path('cliente_consultar')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Consultar Factura</span></a></li>	
             <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet">Ayuda</span></a></li>
 		</ul>
 
@@ -81,8 +81,8 @@
 							
 								<div class="bar">
 								
-									<div class="value" style="height: {{ entity.servicios }}%;">
-										<span style="color: rgb(87, 142, 190); display: inline;">{{ entity.servicios }}%</span>
+									<div class="value" style="height: {{ entity.servicios }};">
+										<span style="color: rgb(87, 142, 190); display: inline;">{{ entity.servicios }}</span>
 									</div>
 								
 								</div>

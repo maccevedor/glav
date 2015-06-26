@@ -1,0 +1,15 @@
+{% extends 'GlavBundle::layoutAdmin.html.twig' %}
+{% block infoUserTop %}
+
+ <h1>Informes de Facturas</h1>
+        <form action="{{ path('cliente_factura') }}" method="post" enctype="multipart/form-data" >
+         </br>
+         Digite su numero de identificacion                                            <br>
+
+         <input type="text" id="identificacion" name="identificacion" />
+                                            <br>
+                                           <button type="submit" class="btn btn-primary">Generar</button>
+                                            <br>
+		</form>
+
+{% endblock %}

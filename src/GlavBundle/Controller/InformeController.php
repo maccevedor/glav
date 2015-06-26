@@ -218,4 +218,43 @@ and s.estado_servicio = 'Finalizado'";
 
         return $response; 
     }
+    
+    public function clienteAction()
+    {
+
+        return $this->render('GlavBundle:Informe:cliente.html.twig');
+    
+    }
+    
+    
+    public function informeClienteAction(Request $datos)
+    {
+        
+        $identificacion = $datos->get('identificacion');
+        $em = $this->getDoctrine()->getManager();
+        
+        $sql = "select f.id,f.observacion,f.total,fu.username ,concat(e.nombre,' ',e.apellido) as empleado,f.fecha from Factura f 
+        inner join fos_user fu on fu.id = f.id_usuario
+        inner join FacturaDetalle fd on fd.id_factura = f.id 
+        inner join Servicio s on s.id = fd.id_servicio 
+        inner join Cliente c on c.id = s.id_cliente 
+        inner join Empleado e on e.id=s.id_empleado
+        where c.identificacion = '".$identificacion."'";
+        //echo $sql;exit();   
+        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
+        $con->execute();
+        $entities = $con->fetchAll(); 
+        //print_r($miData);exit();
+
+        //$entities = $em->getRepository('GlavBundle:Factura')->findAll();                    
+
+
+        return $this->render('GlavBundle:Informe:factura.html.twig', array(
+            'entities' => $entities,
+        ));
+    
+        
+        
+    }
+    
 }

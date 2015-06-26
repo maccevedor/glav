@@ -1,5 +1,5 @@
-// las graficas deben ser semanales de los operarios
-// la barra de servicios va serdiaria
+// las graficas deben ser semanales de los operarios (ok)
+// la barra de servicios va serdiaria(ok)
 // el excel va tener todos los datos del servicio(ok)
 // consultar factura
 

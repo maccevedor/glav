@@ -17,3 +17,11 @@ pagar:
 excel:
     path:     /excel
     defaults: { _controller: "GlavBundle:Informe:excel" }
+    
+cliente_consultar:
+    path:     /cliente
+    defaults: { _controller: "GlavBundle:Informe:cliente" }
+
+cliente_factura:
+    path:     /factura
+    defaults: { _controller: "GlavBundle:Informe:informeCliente" }

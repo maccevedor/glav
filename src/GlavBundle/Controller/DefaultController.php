@@ -18,7 +18,7 @@ class DefaultController extends Controller
     {
         
         $em = $this->getDoctrine()->getManager();
-        $sqlServicio ="SELECT  SUBSTR(estado_servicio, 1, 3) as nombre , COUNT( estado_servicio) as servicios FROM Servicio s group by estado_servicio ";
+        $sqlServicio ="SELECT  SUBSTR(estado_servicio, 1, 3) as nombre , COUNT( estado_servicio) as servicios FROM Servicio s WHERE DATE(s.fecha_servicio) = CURDATE() group by estado_servicio   ";
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sqlServicio);
         $con->execute();
         $entities = $con->fetchAll(); 
@@ -42,7 +42,10 @@ class DefaultController extends Controller
         $factura = $em->createQuery($Facturadql)->getSingleScalarResult();
         
         
-        $sqlEmpleado="select count(s.id) as total,concat(e.nombre,' ',e.apellido)as nombre from Empleado e inner join Servicio s on s.id_empleado = e.id group by e.id  order by total desc  limit 6";
+        $sqlEmpleado="select count(s.id) as total,concat(e.nombre,' ',e.apellido)as nombre 
+        from Empleado e inner join Servicio s on s.id_empleado = e.id 
+        where s.fecha_servicio between date_sub(now(),INTERVAL 1 WEEK) and now()
+        group by e.id  order by total desc  limit 6";
         $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sqlEmpleado);
         $con->execute();
         $empleado = $con->fetchAll(); 
