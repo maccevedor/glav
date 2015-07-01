@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+
 class TipoRubroType extends AbstractType
 {
     /**
@@ -15,7 +16,7 @@ class TipoRubroType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+           // ->add('hash')
             ->add('nombre')
             ->add('descripcion')
             ->add('estado')

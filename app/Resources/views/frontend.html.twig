@@ -67,7 +67,8 @@
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">
 						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+<!--                             Se quitaron las partes de notificaciones -->
+<!-- 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="icon-bell"></i>
 								<span class="badge red">
 								7 </span>
@@ -151,9 +152,9 @@
                             		<a>View all notifications</a>
 								</li>	
 							</ul>
-						</li>
+						</li> -->
 						<!-- start: Notifications Dropdown -->
-						<li class="dropdown hidden-phone">
+<!-- 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="icon-calendar"></i>
 								<span class="badge red">
@@ -213,10 +214,10 @@
                             		<a class="dropdown-menu-sub-footer">View all tasks</a>
 								</li>	
 							</ul>
-						</li>
+						</li> -->
 						<!-- end: Notifications Dropdown -->
 						<!-- start: Message Dropdown -->
-						<li class="dropdown hidden-phone">
+<!-- 						<li class="dropdown hidden-phone">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="icon-envelope"></i>
 								<span class="badge red">
@@ -311,7 +312,7 @@
                             		<a class="dropdown-menu-sub-footer">View all messages</a>
 								</li>	
 							</ul>
-						</li>
+						</li> -->
 						<!-- start: User Dropdown -->
                         
                           <!-- Logueo configurado con fosUSer -->
@@ -327,9 +328,12 @@
                             <a href="{{ path('fos_user_change_password') }}"><i class="halflings-icon white user"></i> Cambiar clave</a>
                         </li>
                         
-                     
-                        
-                        
+                                 {% if is_granted("ROLE_SUPER_ADMIN") %} 
+                                <li>
+                                    <a href="{{ path('fos_user_registration_register') }}"><i class="halflings-icon white user"></i> Registrar</a>
+                                </li>
+                                {% endif %}
+
                         
                         <li>
                             <a href="{{ path('fos_user_security_logout') }}"><i class="halflings-icon off"></i> Log Out / Salir</a>

@@ -146,7 +146,7 @@ and s.estado_servicio = 'Finalizado'";
         
        
        
-       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo group by s.id ORDER BY `s`.`id` ASC";
+       $sql = "select s.id,s.observacion,s.fecha_servicio,s.fecha_entrega,s.estado_servicio,s.pago,concat(e.nombre,' ',e.apellido) empleado,e.identificacion,ca.nombre cargo, concat(c.nombre,' ',c.apellido) cliente,c.identificacion cidentificacion,r.nombre rubro,r.valor,a.matricula from Servicio s inner join Empleado e on e.id=s.id_empleado inner join Cliente c on c.id =s.id_cliente inner join Rubro r on r.id = s.id_rubro inner join Cargo ca on c.id = e.id_cargo inner join Automotor a on a.id=s.id_automotor group by s.id ORDER BY `s`.`id` ASC";
         
        $con = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);
        $con->execute();
@@ -175,7 +175,9 @@ and s.estado_servicio = 'Finalizado'";
            ->setCellValue('J1', 'cliente')
            ->setCellValue('K1', 'identificacion')
            ->setCellValue('L1', 'rubro')
-           ->setCellValue('M1', 'valor');
+           ->setCellValue('M1', 'valor')
+           ->setCellValue('N1', 'matricula');
+
 
 
        $phpExcelObject->getActiveSheet()->setTitle('Simple');
@@ -196,7 +198,9 @@ and s.estado_servicio = 'Finalizado'";
            ->setCellValue('J'.$i, $aspirante['cliente'])
            ->setCellValue('K'.$i, $aspirante['cidentificacion'])
            ->setCellValue('L'.$i, $aspirante['rubro'])
-           ->setCellValue('M'.$i, $aspirante['valor']);
+           ->setCellValue('M'.$i, $aspirante['valor'])
+           ->setCellValue('N'.$i, $aspirante['matricula']);
+
 
 
 

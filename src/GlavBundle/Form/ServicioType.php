@@ -44,8 +44,10 @@ class ServicioType extends AbstractType
             ->add('estadoServicio', 'choice', array(
                   'choice_list' => new ChoiceList(array('Iniciado', 'Espera','Finalizado','Anulado'), array('Iniciado',  'Espera','Finalizado','Anulado')),
                         'label' => 'Selecciona estado del servido',
-                    	'empty_value' => 'Selecciona estado del servido'
-                ,'attr' => array('data-rel'=>'chosen')))
+                    	'empty_value' => 'Selecciona estado del servido',
+                        'data' => 'Finalizado',
+
+                'attr' => array('data-rel'=>'chosen')))
             //->add('id_rubro')
             ->add('id_rubro', 'entity', array(
             //'multiple' => true,

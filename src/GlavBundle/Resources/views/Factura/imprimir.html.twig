@@ -71,7 +71,8 @@
                 Calle 14 Cra. 28 Esquina-Bucaramanga<br>
                 Tel. 645 6815 - Fax.645 3696<br>
                 Cel. 320 4048051 - 315 2722340<br>
-                henrytorresmoreno@yahoo.com
+                henrytorresmoreno@yahoo.com<br>
+
             </label>
 
             <div id="logo">
@@ -102,8 +103,8 @@
                 </tr>
                 <tr>
 
-                    <td class="meta1-head">Vehiculo</td>
-                    <td>{{ entitie.modelo}}</td>
+                    <td class="meta1-head">Empleado</td>
+                    <td>{{ entitie.empleado}}</td>
                 </tr>
                 <tr>
                     <td class="meta1-head">Placa</td>
@@ -166,12 +167,129 @@
 		  <h5>Terminos</h5>
 		  NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.
 		</div>
-	
-	
-	</div>
-                    {% set contador = contador + 1 %}
+                {% set contador = contador + 1 %}
 
                 {% endfor %}
+   
+	
+         <br>
+         
+         {# segunda factura #}
+         
+         
+        
+        		<div id="identity">
+		
+            <label id="address">HENRY TORRES MORENO <br>
+                NIT. 13.803.973-5 <br>
+                REGIMEN SIMPLIFICADO<br>
+                Calle 14 Cra. 28 Esquina-Bucaramanga<br>
+                Tel. 645 6815 - Fax.645 3696<br>
+                Cel. 320 4048051 - 315 2722340<br>
+                henrytorresmoreno@yahoo.com<br>
+
+            </label>
+
+            <div id="logo">
+
+<img id="image"  src="{{ asset("frontend/img/AUTOLOGO.jpg") }}" alt="logo" style="width:150px; height:150px "/>
+            </div>
+		
+		</div>
+		
+		<div style="clear:both"></div>
+        
+        
+        {% set contador = 1 %}
+
+        {% for entitie in entities %}
+		
+		<div id="customer">
+
+            <label><br>
+            <br>
+            
+            </label>
+            
+            <table id="meta1">
+                <tr>
+                    <td class="meta1-head">Cliente</td>
+                    <td>{{ entitie.cliente}}</td>
+                </tr>
+                <tr>
+
+                    <td class="meta1-head">Empleado</td>
+                    <td>{{ entitie.empleado}}</td>
+                </tr>
+                <tr>
+                    <td class="meta1-head">Placa</td>
+                    <td><div class="due">{{ entitie.matricula}}</div></td>
+                </tr>
+
+            </table>
+            
+            <table id="meta">
+                <tr>
+                    <td class="meta-head">Factura No.</td>
+                    <td>{{ entitie.id }}</td>
+                </tr>
+                <tr>
+
+                    <td class="meta-head">Fecha</td>
+                    <td>{{ "now"|date("m/d/Y") }}</td>
+                </tr>
+                <tr>
+                    <td class="meta-head">Total</td>
+                    <td><div class="due">${{ entitie.total }}</div></td>
+                </tr>
+
+            </table>
+		
+		</div>
+		
+		<table id="items">
+		
+		  <tr>
+		      <th>Rubro</th>
+		      <th>Descripcion</th>
+		      <th>Cantidad</th>
+		      <th>Costo Unitario</th>
+		      <th>Precio</th>
+		  </tr>
+		  
+		  <tr class="item-row">
+
+		      <td class="description">{{ entitie.nombre }}</td>
+		      <td>{{ entitie.observacion }}</td>
+		      <td>1</td>
+		      <td><span class="price">{{ entitie.unitario }}</span></td>
+   		      <td><span class="price">{{ entitie.total }}</span></td>
+
+		  </tr>
+		         
+          
+		 
+		  
+		  <tr>
+		      <td colspan="2" class="blank"> </td>
+		      <td colspan="2" class="total-line balance">Total</td>
+		      <td class="total-value balance"><div class="due">{{ entitie.total }}</div></td>
+		  </tr>
+		
+		</table>
+		
+		<div id="terms">
+		  <h5>Terminos</h5>
+		  NET 30 Days. Finance Charge of 1.5% will be made on unpaid balances after 30 days.
+		</div>
+                {% set contador = contador + 1 %}
+
+                {% endfor %}
+	
+	</div>
+                   
+   
+   
 
     
 
@@ -188,7 +306,5 @@
                 //ventimp.close();
             }
         </script>
-        
-        
         
 {% endblock %}

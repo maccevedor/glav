@@ -23,8 +23,8 @@ class AutomotorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GlavBundle:Automotor')->findAll();
-
+        //$entities = $em->getRepository('GlavBundle:Automotor')->findAll();
+        $entities = $em->getRepository('GlavBundle:Automotor')->findBy(array('estado'=> '1'));
         return $this->render('GlavBundle:Automotor:index.html.twig', array(
             'entities' => $entities,
         ));
@@ -67,7 +67,7 @@ class AutomotorController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -147,7 +147,7 @@ class AutomotorController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -198,7 +198,11 @@ class AutomotorController extends Controller
                 throw $this->createNotFoundException('Unable to find Automotor entity.');
             }
 
-            $em->remove($entity);
+            //$em->remove($entity);
+            //
+            $entity->setEstado('0');
+            $em->persist($entity);
+
             $em->flush();
         }
 
@@ -217,7 +221,7 @@ class AutomotorController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('automotor_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

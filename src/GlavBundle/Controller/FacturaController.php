@@ -77,7 +77,7 @@ class FacturaController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -161,7 +161,7 @@ class FacturaController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -231,7 +231,7 @@ class FacturaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('factura_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }
@@ -336,13 +336,13 @@ class FacturaController extends Controller
         
         
         
-        $sql = "select f.*,concat(c.nombre,' ',c.apellido) as cliente , (fd.valor * 0.84) as unitario , r.nombre,a.modelo,a.matricula from Factura f 
+        $sql = "select f.*,concat(c.nombre,' ',c.apellido) as cliente ,concat(e.nombre,' ',e.apellido) as empleado , (fd.valor * 0.84) as unitario , r.nombre,a.modelo,a.matricula from Factura f 
                 inner join FacturaDetalle fd on fd.id_factura = f.id
                 inner join Servicio s on fd.id_servicio = s.id
                 inner join Rubro r on r.id = s.id_rubro
                 inner join Cliente c on c.id = s.id_cliente
                 inner join Automotor a on a.id = s.id_automotor
-
+                inner join Empleado e on e.id = s.id_empleado
                 ";
         //echo $sql;exit();   
         $where = "where f.id = ".$id." ";

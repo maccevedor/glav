@@ -5,6 +5,7 @@ namespace GlavBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class TipoAutomotorType extends AbstractType
 {
@@ -15,7 +16,7 @@ class TipoAutomotorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hash')
+          //  ->add('hash')
             ->add('nombre')
             ->add('descripcion')
             ->add('estado')

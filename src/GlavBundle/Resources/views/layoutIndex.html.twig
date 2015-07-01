@@ -7,17 +7,17 @@
     {% block menu %}
     
       {% if is_granted("ROLE_SUPER_ADMIN") %}
-
-
-        <ul class="nav nav-tabs nav-stacked main-menu">
+     <ul class="nav nav-tabs nav-stacked main-menu">
 		    <li><a href="{{path('cargo')}}"><i class="icon-tablet"></i><span class="hidden-tablet"> Cargo</span></a></li>
             <li><a href="{{path('empleado')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Empleado</span></a></li>	
             <li><a href="{{path('cliente')}}"><i class="icon-user"></i><span class="hidden-tablet"> Cliente</span></a></li>
-                         <li><a href="{{path('tiporubro')}}"><i class="icon-fire"></i><span class="hidden-tablet"> Tipo de Serivicio</span></a></li>
-            <li><a href="{{path('rubro')}}"><i class="icon-list"></i><span class="hidden-tablet"> Tipos de Servicios</span></a></li>
+                         <li><a href="{{path('tiporubro')}}"><i class="icon-fire"></i><span class="hidden-tablet"> Tipo de Servicio</span></a></li>
+            <li><a href="{{path('rubro')}}"><i class="icon-list"></i><span class="hidden-tablet"> Servicios</span></a></li>
                         <li><a href="{{path('tipoautomotor')}}"><i class="icon-cog"></i><span class="hidden-tablet"> Tipo de Automotor</span></a></li>
             <li><a href="{{path('automotor')}}"><i class="icon-road"></i><span class="hidden-tablet"> Automotor</span></a></li>
-            <li><a href="{{path('servicio')}}"><i class="icon-inbox"></i><span class="hidden-tablet"> Registrar Servicios</span></a></li>	
+            <li><a href="{{path('servicio')}}"><i class="icon-inbox"></i><span class="hidden-tablet">Registrar Servicio</span></a></li>	
+               <li><a href="{{path('prestamo')}}"><i class="icon-thumbs-up"></i><span class="hidden-tablet"> prestamo</span></a></li>
+            
             <li><a href="{{path('factura')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> Facturas</span></a></li>
            <li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Informes</span><span class="label label-important"> 3 </span></a>

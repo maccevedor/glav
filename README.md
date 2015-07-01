@@ -1,7 +1,21 @@
+// En el informe no tiene claridad en lo que presenta es necesario mostrar el acumulado de lo que lleva el negocio acumulado( osea el total de ganancias del local?)
+//Al crear cargo que menus quedan creados para el cargo(eso no tiene nada que ver con los cargos)(se crean los usuarios master que soliciten y los demas son operarios)
+//manual tecnico(A)(se deja comentariado el codigo al final para no realizar este)
+
 // las graficas deben ser semanales de los operarios (ok)
 // la barra de servicios va serdiaria(ok)
 // el excel va tener todos los datos del servicio(ok)
-// consultar factura
+// consultar factura(ok)
+//Ya se dejo el eliminar en automotor que actualiza el estado
+
+//Generar dos veces la misma factura en una hoja(osea quiere que salga horizontal ? para ahorrar papel)(ok toca oficio)
+//Agregar la placa del vehiculo al informe de excel(ok)
+//Estado de registro de servicio por defecto finalizado(ok)
+//No aparece el boton prestamo(ok)
+//No toma la tabla para la opcion show en facturay no carga el icono para el boton pdf(ok)
+//Incluir en la factura el nombre de la persona que lo atendio(ok)
+
+
 
 
 SELECT estado_servicio , COUNT( estado_servicio) AS servicios FROM Servicio s group by estado_servicio ;
